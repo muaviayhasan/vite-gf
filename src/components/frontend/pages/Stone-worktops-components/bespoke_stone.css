@@ -1,0 +1,1000 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+.btn-dark-ch {
+  background-color: #243746 !important;
+  font-size: 20px;
+  color: white;
+  padding: 7px 67px;
+}
+article.entry.entry-display {
+  border: 1px solid #c0c0c029;
+}
+.text-muted {
+  color: #243746 !important;
+}
+.btn-heading:hover {
+  color: #b68150 !important;
+}
+.btn_hover_ch {
+  border: 2px solid green !important;
+}
+#bespoke-stone {
+  width: 100%;
+  height: 48vw;
+  background-image: url("/assets/images/gnf/bespoke-stone/Kitchen Worktops Main Page.png");
+  background-size: 100% 100%;
+  /* border: px solid yellow; */
+}
+#bespoke-stone1 {
+  width: 100%;
+  height: 48vw;
+  background-image: url("/assets/images/gnf_new/glass/MainPage.jpg");
+  background-size: 100% 100%;
+  /* border: px solid yellow; */
+}
+/* .inner-stone-bespoke {
+  width: 115%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+} */
+.heading-bespoke-stone {
+  color: white !important;
+  font-size: 5em;
+  font-weight: 700;
+}
+.span_hero {
+  font-size: 23px;
+}
+.bespoke-inner-stone-text {
+  /* width: 40%; */
+  height: auto;
+  position: relative;
+  top: 25%;
+  /* left: -19.5%; */
+  color: white !important;
+}
+.btn-heading {
+  display: block;
+  margin-top: 30px;
+}
+#one-two-three {
+  /* height: 75vh; */
+  border-radius: px solid green !important;
+}
+.contact-btn {
+  color: orange;
+  background: white;
+  font-size: 20px;
+  padding: 0px 20px;
+}
+.btn-online-quote {
+  font-weight: bold;
+  font-size: 2.5rem;
+  text-align: start;
+  line-height: 27px;
+  padding: 6px 30px;
+}
+.what-make-hr {
+  margin-left: 0;
+  width: 10vw;
+  height: 1px;
+  position: relative;
+  left: -6%;
+  background-color: rgb(180, 178, 178);
+}
+h1.HANDICRAFTS_h {
+  font-size: 4.5em;
+  font-weight: 500;
+  color: #243746;
+}
+.trending-hr {
+  width: 10vw;
+  height: 1px;
+  background-color: rgb(180, 178, 178);
+}
+.top-trending-hr {
+  width: 10% !important;
+  border-bottom: 3px solid darkgoldenrod;
+}
+.templating-trending:hover {
+  color: white;
+}
+#about-stone-us {
+  width: 100%;
+  height: 90vh;
+  /* border: px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-us-quote-text {
+  height: 100%;
+  width: 50%;
+  /* border: px solid rgb(121, 241, 8); */
+}
+.about_us_stone_inner {
+  /* text-align: justify !important; */
+  font-size: 2.5rem !important;
+  color: #243746 !important;
+  padding-right: 70px;
+  display: block;
+  font-weight: 400;
+}
+.about-us-stone-image {
+  height: 90%;
+  width: 50%;
+  /* border: px solid black; */
+}
+.grid-stone-container {
+  display: grid;
+  grid-column-gap: 10px;
+  /* padding: 5px; */
+}
+.grid-item {
+  /* border: px solid black; */
+}
+.grid-stone-item1 {
+  /* border: px solid white; */
+  grid-column-start: 1;
+  grid-column-end: 1;
+}
+.grid-stone-item2 {
+  /* border: px solid white; */
+  grid-column-start: 2;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.grid-stone-item3 {
+  /* border: px solid white; */
+  grid-column-start: 2;
+  grid-column-end: 1;
+}
+.img-stone-1 {
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/images/gnf/bespoke-stone/Banner image 1.jpg");
+  background-size: 100% 100%;
+}
+.img-stone-2 {
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/images/gnf_new/quote/Marble_dummy.png");
+  background-size: 100% 100%;
+}
+.img-stone-3 {
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/images/gnf_new/glass/Who_we_are_Image3.jpg");
+  background-size: 100% 100%;
+}
+#stone-range {
+  height: 90vh;
+  /* border: px solid green; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.glass-stone-grid-container {
+  height: 90%;
+  /* width: 90%; */
+  display: grid;
+  grid-gap: 20px;
+  /* border: px solid black; */
+}
+.item-stone-img4 {
+  /* border: px solid orange; */
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  background-image: url("/assets/images/gnf/bespoke-stone/handicrafts 1.png");
+  background-size: 100% 100%;
+}
+.item-stone-img5 {
+  /* border: px solid orange; */
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  background-image: url("/assets/images/gnf/bespoke-stone/handicrafts 2.png");
+  background-size: 100% 100%;
+}
+.item-stone-img6 {
+  /* border: px solid orange; */
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  background-image: url("/assets/images/gnf/bespoke-stone/handicrafts 3.png");
+  background-size: 100% 100%;
+}
+.item-stone-img7 {
+  /* border: px solid orange; */
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  background-image: url("/assets/images/gnf/bespoke-stone/handicrafts 4.png");
+  background-size: 100% 100%;
+}
+.item-stone-img8 {
+  /* border: px solid orange; */
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  background-image: url("/assets/images/gnf/bespoke-stone/handicrafts 5.jpg");
+  background-size: 100% 100%;
+}
+.item-stone-img9 {
+  /* border: px solid orange; */
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  background-image: url("/assets/images/gnf/bespoke-stone/handicrafts 6.png");
+  background-size: 100% 100%;
+}
+.item-stone-img10 {
+  /* border: px solid orange; */
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  background-image: url("/assets/images/gnf/bespoke-stone/handicrafts 7.jpg");
+  background-size: 100% 100%;
+}
+.item-stone-img11 {
+  /* border: px solid orange; */
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  background-image: url("/assets/images/gnf/bespoke-stone/handicrafts 8.jpg");
+  background-size: 100% 100%;
+}
+#what-makes {
+  width: 100%;
+  height: 90vh;
+  border: 0px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.what-make-grid-container {
+  display: grid;
+  grid-column-gap: 10px;
+  /* padding: 5px; */
+  grid-gap: 10px;
+}
+.item-what-img1 {
+  border: 0px solid orange;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  background-color: rgb(9, 112, 153);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.item-what-img2 {
+  border: 0px solid orange;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  background-color: rgb(9, 112, 153);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.item-what-img3 {
+  border: 0px solid orange;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  background-color: rgb(9, 112, 153);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.item-what-img4 {
+  border: 0px solid orange;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  background-color: rgb(9, 112, 153);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+#top-stone-trending {
+  background-color: rgb(230, 230, 230);
+  justify-content: center;
+}
+.top-stone-trending-text h1 {
+  color: #243746;
+  padding: 2em 0;
+  font-size: 4.5em;
+}
+.top-stone-trending-img {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-column-gap: 10px;
+}
+.templating-trending {
+  position: absolute;
+  bottom: 0%;
+  width: 95%;
+  height: 15%;
+  text-align: center;
+  font-size: 3rem;
+  color: white;
+  background-color: #b68150;
+}
+.trending-stone-1 {
+  position: relative;
+  border: 0px solid orange;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  background-image: url("/assets/images/gnf/bespoke-stone/Trending 1.jpg");
+  background-size: 100% 100%;
+}
+.trending-stone-2 {
+  border: 0px solid orange;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  background-image: url("/assets/images/gnf/bespoke-stone/Trending 2.jpg");
+  background-size: 100% 100%;
+}
+.trending-stone-3 {
+  border: 0px solid orange;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  background-image: url("/assets/images/gnf/bespoke-stone/Trending 3.jpg");
+  background-size: 100% 100%;
+}
+#make-it-happen-stone {
+  width: 100%;
+  height: 50vh;
+  border: 0px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.happen-stone-img {
+  width: 70%;
+  height: 80%;
+  border: 0px solid black;
+  display: grid;
+  grid-column-gap: 15px;
+}
+.happen-stone-img-1 {
+  position: relative;
+  border: 0px solid orange;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  background-image: url("/assets/images/gnf/bespoke/3.jpg");
+  background-size: 100% 100%;
+}
+.happen-stone-img-2 {
+  position: relative;
+  border: 0px solid orange;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  background-image: url("/assets/images/gnf/bespoke/fabrication-2.jpg");
+  background-size: 100% 100%;
+}
+.happen-stone-img-3 {
+  position: relative;
+  border: 0px solid orange;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  background-image: url("/assets/images/gnf/bespoke/installation.jpg");
+  background-size: 100% 100%;
+}
+#over-stone-7000 {
+  background-image: url("/assets/images/gnf/bespoke/Over_4000_installation_BG.png");
+  background-size: 100% 100%;
+  padding: 5em 0;
+}
+.inner-over-stone-7000 {
+  color: white;
+}
+.heading-over-stone-7000 {
+  color: #b68150;
+  font-size: 4.5em;
+}
+.heading-over-inner {
+  color: white !important;
+  font-size: 4.5em;
+  font-weight: 600;
+}
+span.lorem-one {
+  font-size: 23px !important;
+  font-weight: 400;
+}
+.from-our-blog {
+  width: 100%;
+  /* height: 65vh; */
+  border: 0px solid red;
+}
+.blog-section {
+  border: 0px solid rgb(210, 4, 247);
+}
+.blog-inner-section {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.single-blog-img {
+  width: 100%;
+  height: 70%;
+  border: 0px solid red;
+}
+.inner-blog {
+  height: 80%;
+  border: 0px solid rgb(19, 14, 14);
+}
+.blog-div-1 {
+  width: 100%;
+  height: 100%;
+  border: 0px solid green;
+}
+.card-img-top {
+  width: 100%;
+  height: 70%;
+  background-image: url("/assets/images/gnf/bespoke/Over_4000_installation_BG.png");
+  background-size: 100% 100%;
+}
+.card {
+  height: 80%;
+  border: 0px solid black;
+}
+.blog-1 {
+  border: 0px solid green;
+}
+#contact-section-glass {
+  width: 100%;
+  height: 80vh;
+  border: 0px solid aqua;
+}
+.about-us-stone-text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  height: 90%;
+  width: 50%;
+  /* border: px solid black; */
+}
+.about-us-quote-inner {
+  font-size: 2rem;
+}
+.about-us-quote-image {
+  height: 100%;
+  width: 50%;
+  /* border: px solid black; */
+}
+.grid-quote-container {
+  display: grid;
+  grid-column-gap: 10px;
+  /* padding: 5px; */
+}
+.grid-item {
+  /* border: px solid black; */
+}
+.grid-quote-item1 {
+  /* border: px solid white; */
+  grid-column-start: 1;
+  grid-column-end: 1;
+}
+.grid-quote-item2 {
+  /* border: px solid white; */
+  grid-column-start: 2;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.grid-quote-item3 {
+  /* border: px solid white; */
+  grid-column-start: 2;
+  grid-column-end: 1;
+}
+.img-quote-1 {
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/images/gnf/quote/1.jpg");
+  background-size: 100% 100%;
+}
+.img-quote-2 {
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/images/gnf/quote/2.jpg");
+  background-size: 100% 100%;
+}
+.img-quote-3 {
+  width: 100%;
+  height: 100%;
+  background-image: url("/assets/images/gnf/quote/3.jpg");
+  background-size: 100% 100%;
+}
+
+.glass-quote-grid-container {
+  height: 90%;
+  width: 90%;
+  display: grid;
+  grid-gap: 20px;
+  /* border: px solid black; */
+}
+.item-quote-img4 {
+  /* border: px solid orange; */
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  background-image: url("/assets/images/gnf/quote/4.jpg");
+  background-size: 100% 100%;
+}
+.item-quote-img5 {
+  /* border: px solid orange; */
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  background-image: url("/assets/images/gnf/quote/5.jpg");
+  background-size: 100% 100%;
+}
+.item-quote-img8 {
+  /* border: px solid orange; */
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  background-image: url("/assets/images/gnf/quote/6.jpg");
+  background-size: 100% 100%;
+}
+.item-quote-img9 {
+  /* border: px solid orange; */
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  background-image: url("/assets/images/gnf/quote/7.jpg");
+  background-size: 100% 100%;
+}
+.item-quote-img10 {
+  /* border: px solid orange; */
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  background-image: url("/assets/images/gnf/quote/8.jpg");
+  background-size: 100% 100%;
+}
+#material-types {
+  width: 100%;
+  height: 20vh;
+  /* border: px solid yellow; */
+}
+#top-quote-measurements {
+  width: 100%;
+  height: 115vh;
+  /* border: px solid rgb(163, 6, 6); */
+}
+.top-quote-measurement-text {
+  width: 100%;
+  height: 100%;
+  /* border: px solid black; */
+  display: grid;
+}
+.map-img {
+  background-image: url("/assets/images/gnf/quote/map.jpg");
+  background-size: 100% 100%;
+  /* border: px solid red; */
+}
+.top-quote-measurement-form {
+  justify-content: center;
+  align-items: center;
+}
+#measuremnt-content {
+  width: 100%;
+  height: 87%;
+  /* border: px solid aqua; */
+}
+.section-b-space {
+  /* width: 70%; */
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.our-selected-bttn {
+  background-color: #b68150;
+  color: white;
+  border: none;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.contact-map-selected {
+  padding: 20px;
+}
+.contact-map {
+  border: none !important;
+}
+#quote-more-one {
+  background-color: #dee2e6;
+}
+.quote-form-one {
+  width: 65%;
+  height: 90%;
+  /* border: px solid yellow; */
+  color: white;
+}
+.heading-quote {
+  width: 80%;
+  position: relative;
+  left: 6%;
+  top: 5%;
+  font-size: 3.5rem;
+  text-align: center;
+  /* border: px solid yellow; */
+}
+.form-inner {
+}
+
+.send-calculate {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.btn-calcu {
+  background: rgb(183, 130, 80) !important;
+  color: white;
+}
+.btn-calcu:hover {
+  background: rgb(183, 130, 80) !important;
+  color: white;
+}
+#contact-section-glass-form {
+  width: 100%;
+  height: 80%;
+  /* border: px solid rgb(0, 255, 136); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.select-area {
+  width: 100%;
+  /* height: 30%; */
+  /* border: px solid yellow; */
+}
+.select-text {
+  width: 100%;
+  height: 70%;
+  /* border: px solid black; */
+  display: flex;
+}
+.contact-inner-map {
+  height: 100%;
+  /* border: px solid red; */
+}
+.select-text-1 {
+  width: 51%;
+  height: 100%;
+  /* border: px solid orange; */
+}
+.select-text-2 {
+  width: 49%;
+  height: 100%;
+  /* border: px solid orange; */
+}
+.select-text-1 > ul {
+  font-size: 1.5rem;
+  line-height: 50px;
+}
+.select-text-1 > ul > li > a {
+  color: black;
+}
+.select-text-2 > ul > li > a {
+  color: black;
+}
+.select-text-2 > ul {
+  font-size: 1.5rem;
+  line-height: 50px;
+}
+.fill-head {
+  width: 100%;
+  position: relative;
+  left: 10%;
+  top: 2%;
+  text-align: start;
+  color: white !important;
+}
+.form-span {
+  width: 100%;
+  position: relative;
+  left: 10%;
+  text-align: start;
+}
+.contact-inner-form-map {
+  width: 80%;
+  height: 85%;
+  /* border: px solid rgb(13, 238, 13); */
+}
+.contact-map-selected {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #243746 !important;
+  /* border: px solid rgba(241, 20, 0, 0.678); */
+}
+
+.select-text-3 > ul {
+  font-size: 16px;
+  line-height: 49px;
+  font-weight: 500;
+}
+.select-text-3 > ul > li > a {
+  color: #243746;
+}
+.select-text-3 ul li {
+  list-style: initial;
+}
+.HANDICRAFTS_h2 {
+  font-size: 3em;
+  font-weight: bold;
+  color: #b68150;
+  border-bottom: 1px solid #243746;
+  padding-bottom: 0.3em;
+}
+.stone_btn {
+  position: absolute;
+  z-index: 9;
+  bottom: 0;
+  left: 0px;
+  right: 0;
+  background: #ffffffb8;
+  width: 100%;
+  font-size: 25px;
+  color: #243746;
+}
+.step_h {
+  font-size: 30px;
+  color: #b68150;
+}
+.step_1_box_bttom {
+  padding: 12px;
+  border: 1px solid #e3e3e3;
+  margin: 0;
+}
+.btn_div {
+  border: 1px solid #e3e3e3;
+}
+.btn_div button {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #243746;
+}
+.step_1_h {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #243746;
+}
+.lebel_step_2 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #243746;
+  padding: 2px 60px;
+}
+.MEASUREMENTS_p {
+  font-size: 26px;
+  font-weight: 300;
+  color: #243746 !important;
+}
+.form_input_label {
+  font-size: 30px;
+  font-weight: 500;
+  color: silver;
+}
+.form_input_label1 {
+  font-size: 28px;
+  font-weight: 500;
+  color: silver;
+}
+.custome_lable {
+  color: #243746;
+  font-weight: 400;
+  font-size: 14px;
+}
+.note_h {
+  font-size: 22px;
+  color: #b68150;
+}
+.about_us_stone_inner3 {
+  font-size: 2em;
+  font-weight: 600;
+  color: #b68150;
+  display: block;
+}
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .about_us_stone_inner3 {
+    text-align: center;
+  }
+  #bespoke-stone {
+    height: 200vw !important;
+  }
+  #bespoke-stone1 {
+    height: 200vw !important;
+  }
+  .heading-bespoke-stone {
+    font-size: 3em;
+    text-align: center;
+  }
+  .span_hero {
+    font-size: 18px;
+    text-align: center;
+    display: block;
+  }
+  .contact-btn {
+    position: relative;
+    left: 33%;
+  }
+  .btn-online-quote {
+    position: relative;
+    left: 20%;
+    text-align: center;
+  }
+  span.what_make_heading {
+    font-size: 22px !important;
+    padding: 1em;
+  }
+  .about_us_stone_inner {
+    padding: 1em !important;
+    font-size: 18px !important;
+    text-align: justify;
+  }
+  .btn-heading {
+    margin: 31px auto 0 !important;
+  }
+  .style_col_ch {
+    margin: 0 1em 2em 0.5em !important;
+  }
+  .what-make-hr {
+    left: 31% !important;
+    width: 36vw !important;
+  }
+  h1.HANDICRAFTS_h {
+    font-size: 33px !important;
+    text-align: center !important;
+  }
+  .dark_box {
+    margin: 4em 0 0 0;
+  }
+  .top-stone-trending-text h1 {
+    padding: 1em 0.2em 0.7em;
+    font-size: 40px;
+    text-align: center;
+  }
+  .img_style_3 {
+    height: auto;
+    margin-bottom: 2em;
+    padding: 1em;
+  }
+  .img_style_3 .top-stone-trending-img {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: 19px;
+  }
+  .trending-stone-1,
+  .trending-stone-2,
+  .trending-stone-3 {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    height: 39vh;
+  }
+  .heading-over-stone-7000 {
+    font-size: 2.5em;
+  }
+  .heading-over-inner {
+    font-size: 2.5em;
+  }
+  span.lorem-one {
+    font-size: 13px !important;
+  }
+  div#over-stone-7000 {
+    padding: 3em 1em;
+  }
+  h3.entry-title {
+    font-size: 13px !important;
+  }
+  .entry-content p {
+    font-size: 10px;
+  }
+  .entry.entry-display .entry-body {
+    padding: 0 10px 20px 10px !important;
+  }
+  .select-text-3 > ul {
+    line-height: 31px;
+    font-weight: 400;
+  }
+  .select-text-3 ul li {
+    list-style: initial;
+    margin-left: 47px;
+  }
+  .form-span {
+    font-size: 10px;
+    padding-bottom: 17px;
+  }
+  .email_ch {
+    width: 80% !important;
+  }
+  .btn_ch_div {
+    /* display: flex !important; */
+    position: absolute;
+    right: 0;
+    top: -10px;
+  }
+  .step_h,
+  .mobile_text_center {
+    text-align: center !important;
+  }
+  .mobile_text_center1 {
+    font-size: 28px;
+    text-align: center !important;
+  }
+  .step_1_box img {
+    width: 100%;
+    margin-top: 46px;
+  }
+  .form_input_label,
+  .form_input_label1 {
+    font-size: 20px;
+  }
+  span.about_us_stone_inner3 {
+    font-size: 19px;
+  }
+  .about_us_stone_inner {
+    padding: 1em !important;
+    font-size: 14px !important;
+    text-align: -webkit-center;
+  }
+  .mbl_center {
+    text-align: center !important;
+  }
+}

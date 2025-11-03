@@ -1,0 +1,7 @@
+@use "sass:math";
+
+// Generates an element with an intrinsic aspect ratio
+@mixin aspect-ratio($width, $height) {
+  // Use the new math.div() for explicit division
+  padding-top: math.div($height, $width) * 100%;
+}

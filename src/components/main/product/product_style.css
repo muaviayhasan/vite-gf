@@ -1,0 +1,77 @@
+.product-details-action .btn-cart{
+    padding: 1rem 0.1rem;
+}
+.details-filter-row label
+{
+    width: 100px !important;
+}
+.details-filter-row .select-custom
+{
+    width: 190px;
+}
+
+.table td{
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+}
+
+.readMoreButton{
+    padding-left: 0px; 
+    color: #c96;
+}
+
+.btn-product{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin: 2px;
+
+}
+
+.btn-product+.btn-product{
+        border-left: rem #c96 !important;
+}
+
+.btn-product:hover span{
+        color: white;
+}
+
+.btn-product span
+{
+        color: #c96;
+}
+
+.btn-wishlist:before
+{
+    font-family: "molla";
+    margin-right: .9rem;
+}
+
+.btn-wishlist
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    line-height: 1;
+    transition: all .35s ease;
+        flex-grow: 1;
+    flex-basis: auto;
+        margin: 2px;
+    padding: 1rem 0.1rem;
+}
+
+.btn-wishlist span
+{
+    font-size: 1.4rem;
+    color: inherit;
+    text-transform: none;
+    box-shadow: none;
+    transition: box-shadow .35s ease, color 0s ease;
+}
+
+.videoContainer video 
+{
+  width: 100% !important;
+  object-fit: fill;
+}

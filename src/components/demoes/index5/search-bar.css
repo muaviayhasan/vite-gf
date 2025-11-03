@@ -1,0 +1,111 @@
+.custome_select_box {
+  /* z-index:1000; */
+}
+.hidden {
+  display: none;
+}
+
+.slick-slider {
+  width: 100% !important;
+}
+
+.btn-catalouge {
+  opacity: 0;
+}
+
+.banner-link-anim:hover .btn-catalouge {
+  opacity: 1;
+}
+
+.custom-banner-button:hover {
+  color: white !important;
+}
+
+.banner-display > a:before {
+  visibility: visible;
+  opacity: 1;
+}
+
+.card-custom {
+  margin-top: 0px !important;
+}
+
+.custome-search-container {
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  background-color: rgba(202, 150, 98, 0.55);
+  padding: 15px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.custome-search-button {
+  color: #fff !important;
+  background-color: #cc9966 !important;
+  border-color: #cc9966 !important;
+  box-shadow: none !important;
+}
+
+.custome-product-search-container {
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+  background-color: rgba(202, 150, 98, 0.55);
+  padding: 15px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.custom-control.custom-radio .custom-control-label::before {
+  top: 1.2rem !important;
+}
+
+.custom-control.custom-radio
+  .custom-control-input:checked
+  ~ .custom-control-label::after {
+  top: 1.7rem !important;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .custom-control-label {
+    padding-left: 5px !important;
+  }
+
+  .custom-control-label-mobile {
+    padding-left: 6% !important;
+  }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 736px) and (orientation: landscape) {
+  .custom-control-label-mobile {
+    padding-left: 6% !important;
+  }
+
+  .custome-search-button {
+    margin-top: 2%;
+  }
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .custom-control-label-mobile {
+    padding-left: 6% !important;
+  }
+
+  .custome-search-button {
+    margin-top: 2%;
+  }
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .custom-control-label-mobile {
+    padding-left: 6% !important;
+  }
+
+  .custome-search-button {
+    margin-top: 2%;
+  }
+}

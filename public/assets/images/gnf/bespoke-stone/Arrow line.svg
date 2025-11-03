@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="20.003" viewBox="0 0 1920 20.003">
+  <g id="Arrow_line" data-name="Arrow line" transform="translate(-0.5 -4803.498)">
+    <line id="Line_26" data-name="Line 26" x2="1920" transform="translate(0.5 4813.5)" fill="none" stroke="#b68150" stroke-width="2" stroke-dasharray="10 10"/>
+    <g id="Group_17" data-name="Group 17" transform="translate(-2047.271 2856.253)">
+      <path id="Path_79" data-name="Path 79" d="M2241.429,1957.245c-5.973,2.217-13.382,6-17.976,10l3.618-10-3.618-10C2228.046,1951.25,2235.456,1955.031,2241.429,1957.245Z" transform="translate(0 0)" fill="#b68150"/>
+    </g>
+    <g id="Group_18" data-name="Group 18" transform="translate(1717.842 4803.499)">
+      <path id="Path_79-2" data-name="Path 79" d="M2223.453,1957.245c5.973,2.217,13.382,6,17.976,10l-3.618-10,3.618-10C2236.835,1951.25,2229.426,1955.031,2223.453,1957.245Z" transform="translate(-2223.453 -1947.245)" fill="#b68150"/>
+    </g>
+  </g>
+</svg>

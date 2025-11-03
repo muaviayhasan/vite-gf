@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-PTXH59N");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <base href="/" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    
+    <title>Glass And Fusion</title>
+    <meta name="keywords" content="Glass & Fusion" data-react-helmet="true" />
+    <meta name="description" content="Glass & Fusion. Granite, Quartz, Marble, & Ultra-compact works in and around London, UK." data-react-helmet="true" />
+    <meta name="author" content="Glass & Fusion" />
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon.svg" />
+    <link rel="manifest" href="/assets/images/icons/site.webmanifest" />
+    <link rel="mask-icon" href="/assets/images/icons/safari-pinned-tab.svg" color="#666666" />
+    <link rel="shortcut icon" href="/assets/images/icons/favicon.svg" />
+    
+    <meta name="apple-mobile-web-app-title" content="GnF" />
+    <meta name="application-name" content="Glass & Fusion" />
+    <meta name="msapplication-TileColor" content="#cc9966" />
+    <meta name="msapplication-config" content="/assets/images/icons/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <script type="text/javascript">
+      WebFontConfig = {
+        google: {
+          families: ["Open+Sans:300,400,600,700,800", "Poppins:300,400,500,600,700"],
+        },
+      };
+      (function(d) {
+        var wf = d.createElement("script"), s = d.scripts[0];
+        wf.src = "/assets/js/webfont.js";
+        wf.async = true;
+        s.parentNode.insertBefore(wf, s);
+      })(document);
+    </script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/vendor/line-awesome/line-awesome/line-awesome/css/line-awesome.min.css" />
+    <link rel="stylesheet" href="/assets/css/fonts-molla.min.css" />
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/plugins/owl-carousel/owl.carousel.css" />
+    <link rel="stylesheet" href="/assets/css/style.min.css" id="base" />
+
+    <!-- Custom Styles -->
+    <style>
+      .footer .widget-about-info a { color: #cc9966 !important; }
+      ._custom_b_img {
+        width: 100px !important;
+        height: 100px !important;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 9rem !important;
+        font-size: 12px !important;
+      }
+      ._custom_b_img:hover { color: black !important; }
+      .mobile-menu li a { border: 0.1rem solid rgba(253, 253, 253, 0.08) !important; }
+      .mmenu-btn {
+        align-items: end !important;
+        justify-content: end !important;
+        right: 2rem !important;
+        top: 35% !important;
+        width: 100% !important;
+        display: grid !important;
+      }
+      .Sumbit_btn_width { padding: 0 2.5em 0 1.5em; }
+      .member:hover.member-anim .member-overlay p { color: white !important; }
+      .btn-dark.disabled, .btn-dark:disabled {
+        color: #fff;
+        background-color: #c96 !important;
+        border-color: #c96 !important;
+      }
+      .new_home_form { width: 57% !important; }
+      .tcb-button-link {
+        padding: 1%;
+        background: #c96;
+        color: white;
+        border-radius: 4px;
+        font-size: 18px;
+      }
+      a.logo.undefined img { max-width: initial !important; }
+      .menu > li > a { padding: 3.95rem 1.7rem !important; }
+      .tcb-button-link:hover {
+        color: #c96;
+        background-color: white;
+        border: 1px solid #c96;
+      }
+      .select_btn { background-color: #b68150; }
+      .select_btn .slect_btn { color: white !important; }
+      
+      /* Countdown Styles */
+      .countdown {
+        font-family: "Roboto";
+        text-transform: uppercase;
+        text-align: center;
+      }
+      .countdown > div { display: inline-block; }
+      .countdown > div > span {
+        display: block;
+        text-align: center;
+      }
+      .countdown-container { margin: 0 3px; }
+      .countdown-container .countdown-heading {
+        font-size: 11px;
+        margin: 3px;
+        color: #666;
+      }
+      .countdown-container .countdown-value {
+        font-size: 50px;
+        background: #333;
+        padding: 10px;
+        color: #fff;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+      }
+
+      .categories.container::before {
+        content: "";
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        height: 0.2rem;
+        top: 15px !important;
+        background-color: black !important;
+        display: none !important;
+      }
+      #custom_hr_line {
+        content: "";
+        left: 1rem;
+        right: 1rem;
+        height: 0.2rem;
+        top: 15px !important;
+        background-color: black !important;
+        margin-top: 5% !important;
+      }
+      ._____checked { color: orange; }
+      .heading_mobil_quick { left: 0 !important; }
+
+      /* Mobile Styles */
+      @media only screen and (max-device-width: 768px) {
+        .________desktop { display: none; }
+        .________mobile { display: block; }
+        .heading_mobil_quick {
+          font-size: 30px;
+          left: 9% !important;
+        }
+        .heading_mobil_quick_span {
+          text-align: center !important;
+          display: flex;
+          padding-right: 20px !important;
+          padding-left: 6px !important;
+        }
+        .new_hight_for_mobile {
+          overflow: hidden;
+          height: 330px !important;
+        }
+      }
+
+      @media screen and (min-width: 320px) and (max-width: 768px) {
+        .submit_ch_btn_mobile {
+          width: 80% !important;
+          font-size: 20px !important;
+          height: auto !important;
+        }
+        .ch111 {
+          margin-top: 8px;
+          margin-right: 7px;
+          margin-bottom: 7px;
+        }
+      }
+
+      @media only screen and (min-device-width: 900px) {
+        .________desktop { display: block; }
+        .________mobile { display: none; }
+      }
+
+      .red_note { color: red !important; }
+
+      /* Form Styles */
+      .___white {
+        color: white !important;
+        font-size: 15px;
+      }
+      .form__label {
+        font-size: 1.6rem;
+        font-weight: bold;
+      }
+      .p10 {
+        width: 85%;
+        margin-top: 3%;
+      }
+      .custom-text, .custom-text_extra- { min-height: 23px; }
+      .__customSize {
+        font-weight: 400;
+        font-size: 2.4rem;
+        letter-spacing: -0.025em;
+        margin-bottom: 1.2rem;
+        margin-top: -0.5rem;
+        padding-right: 1rem;
+        max-width: 55%;
+      }
+      ._table, ._th, .__td {
+        border: 1px solid black;
+        width: 100% !important;
+      }
+      .__cusMargin {
+        display: flex !important;
+        flex-direction: column !important;
+        margin-top: 9% !important;
+      }
+      .custom-text_extra-services_quantity { padding: 0px !important; }
+      input[type="number"] { padding: 0px !important; }
+      .custome_lable_lenghtt {
+        display: inline-block !important;
+        font-size: 10px !important;
+        margin-left: 5px !important;
+        margin-bottom: 0.5rem !important;
+        position: relative !important;
+        font-weight: 700 !important;
+        color: #000000 !important;
+      }
+      ._custom_padding { padding: 10px !important; }
+      .btn-product:hover { border: 1px solid !important; }
+      .custom-control-label1::before { display: none; }
+
+      /* Smartphone Styles */
+      @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+        ._white, .icon-bars { color: white !important; }
+        ._black { color: black !important; }
+        .__yes { margin-left: 0%; }
+        .landing-page-slider-box:nth-child(1) { background-color: rgb(37, 55, 70) !important; }
+        .landing-page-slider-box:nth-child(2) { background-color: rgb(183, 130, 80) !important; }
+        #landing-heading { font-size: 36px !important; }
+        #videoContainer_parent { height: 210px !important; }
+        .videoContainer { height: auto !important; }
+        ._fixedWidth { min-width: 198px !important; }
+        .custome-search-button { margin-top: 6%; }
+        ._sectionBSpace { margin-top: -12%; }
+        ._selSearch { margin-top: 3%; }
+        .customMarginLeft1 { display: flex; }
+        .top-header-call-mobile { display: none; }
+        .custom-control-label { font-size: inherit !important; }
+        .custom-control-label-mobile { display: none !important; }
+        .product-media { height: 220px !important; }
+        .product-details-action > .row > .col-md-12 { display: block !important; }
+      }
+
+      .sticky-header.fixed {
+        background-color: #333 !important;
+        border-bottom: none !important;
+      }
+      .megamenu-container > a { color: white !important; }
+      .sf-with-ul { color: white !important; }
+      .______pipe ::before { left: none !important; }
+
+      @media only screen and (max-width: 736px) and (orientation: landscape) {
+        .top-header-call-mobile { display: none; }
+      }
+
+      .material-icons { font-size: 21px !important; }
+      .font-class-design, .font-class-cutouts, .col-xs-1 {
+        font-weight: bold !important;
+        color: black !important;
+      }
+      ._customHeading {
+        font-size: 20px;
+        color: black;
+        font-weight: bold;
+      }
+      .custom-span {
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
+      }
+      .font-class-design, .font-class-cutouts, .font-class-extra-service, .padding-class2, .side-survey {
+        font-size: 13px;
+        color: black;
+      }
+      .font-12 {
+        color: black;
+        font-weight: bold;
+        font-size: 14px;
+      }
+      .custome_lable {
+        color: black;
+        font-weight: bold;
+        font-size: 12px;
+      }
+
+      @media only screen and (min-device-width: 768px) {
+        .custome_select_box { z-index: 1000 !important; }
+      }
+
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+        .customMarginLeft {
+          margin-left: 84% !important;
+          display: flex;
+        }
+        .customMarginLeft1 {
+          margin-left: 39% !important;
+          display: flex;
+        }
+      }
+
+      .banner-border:hover:after { background: rgba(255, 255, 255, 0.4) !important; }
+      .banner-border-hover:hover:after { background: rgba(255, 255, 255, 0.4) !important; }
+      .banner-border:after { background: rgba(255, 255, 255, 0.4) !important; }
+      .banner-border-hover:after {
+        background: rgba(255, 255, 255, 0.4) !important;
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .__green {
+        color: green;
+        border-color: green;
+        border: 1px solid green;
+        background-color: transparent !important;
+      }
+      .__red {
+        color: red;
+        border-color: red;
+        border: 1px solid red;
+        background-color: transparent !important;
+      }
+
+      .sidebar-wrapper .sidebar-menu .sidebar-dropdown > a:after { content: "" !important; }
+      .sidebar-wrapper .sidebar-menu .sidebar-dropdown .sidebar-submenu li {
+        padding-left: 10px;
+        font-size: 13px;
+      }
+      ._childCustomFont { font-size: 12px !important; }
+      .MuiTypography-h6 { font-weight: bold !important; }
+      .form__field {
+        border-bottom: 1px solid #d2d2d2 !important;
+        border-left: 0px !important;
+        border-right: 0px !important;
+      }
+      select[class="form__field"] { padding: 12px !important; }
+      .megamenu, .demo { margin-top: -1% !important; }
+      ._custom_pages_view_more :hover { color: white !important; }
+      .editor-content a:hover, .editor-content a:focus { color: gray !important; }
+      .__custom_about-testimonials { padding-bottom: 0px !important; }
+      .editor-content blockquote { border-left: 0px !important; }
+      .editor-content img { margin-bottom: 0.5rem !important; }
+      .editor-content a { box-shadow: none !important; }
+      a[class="brand _custom_b_img"] {
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+      }
+      .editor-content blockquote:before {
+        left: 4rem;
+        top: 50%;
+        display: none !important;
+      }
+    </style>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1J65K9HZKP"></script>
+    <script>
+      if (window.location.href.indexOf("https://glassfusionltd.co.uk") > -1) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag("js", new Date());
+        gtag("config", "G-1J65K9HZKP");
+      }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-207160342-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "UA-207160342-1");
+    </script>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+      !(function(f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function() {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+      fbq("init", "902066167116621");
+      fbq("track", "PageView");
+    </script>
+  </head>
+  
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PTXH59N"
+              height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+
+    <!-- Facebook Pixel (noscript) -->
+    <noscript>
+      <img height="1" width="1" style="display:none" 
+           src="https://www.facebook.com/tr?id=902066167116621&ev=PageView&noscript=1" />
+    </noscript>
+
+    <div id="root"></div>
+    <div class="mobile-menu-overlay"></div>
+    <button id="scroll-top" title="Back to Top">
+      <i class="icon-arrow-up"></i>
+    </button>
+
+    <!-- jQuery (loaded before React for owl.carousel) -->
+    <script src="/assets/js/jquery.min.js"></script>
+    
+    <!-- Vite React App Entry Point -->
+    <script type="module" src="/src/index.jsx"></script>
+
+    <!-- Custom jQuery Scripts -->
+    <script>
+      $(document).ready(function() {
+        setInterval(function() {
+          $("#custom_pound_icon").mouseenter(function() {
+            $("#custom_pound_icon").find("#brown_img").css("display", "none");
+            $("#custom_pound_icon").find("#white_img").css("display", "block");
+          });
+          $("#custom_pound_icon").mouseleave(function() {
+            $("#custom_pound_icon").find("#brown_img").css("display", "block");
+            $("#custom_pound_icon").find("#white_img").css("display", "none");
+          });
+
+          $("#custom_pound_icon1").mouseenter(function() {
+            $("#custom_pound_icon1").find("#brown_img1").css("display", "none");
+            $("#custom_pound_icon1").find("#white_img1").css("display", "block");
+          });
+          $("#custom_pound_icon1").mouseleave(function() {
+            $("#custom_pound_icon1").find("#brown_img1").css("display", "block");
+            $("#custom_pound_icon1").find("#white_img1").css("display", "none");
+          });
+
+          $("#custom_pound_icon2").mouseenter(function() {
+            $("#custom_pound_icon2").find("#brown_img2").css("display", "none");
+            $("#custom_pound_icon2").find("#white_img2").css("display", "block");
+          });
+          $("#custom_pound_icon2").mouseleave(function() {
+            $("#custom_pound_icon2").find("#brown_img2").css("display", "block");
+            $("#custom_pound_icon2").find("#white_img2").css("display", "none");
+          });
+        }, 2000);
+      });
+    </script>
+
+    <!-- LiveChat Monitoring -->
+    <script type="text/javascript">
+      (function() {
+        var se = document.createElement("script");
+        se.type = "text/javascript";
+        se.async = true;
+        se.src = "https://storage.googleapis.com/livechatmonitoring/js/ada472f8-26c8-4c7a-97aa-8b807456aaca.js";
+        var done = false;
+        se.onload = se.onreadystatechange = function() {
+          if (!done && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete")) {
+            done = true;
+          }
+        };
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(se, s);
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,223 @@
+[
+  {
+    "id": "pros-and-cons-of-quartz-worktops",
+    "title": "Pros and Cons of Quartz worktops",
+    "author": "Jane Doe",
+    "date": "2021-07-21",
+    "category": ["Lifestyle"],
+    "image": ["assets/images/blog/1_blog17.jpg"],
+    "content": "Quartz is one of the most beautiful and durable worktops ...",
+    "comments": 0,
+    "type": "image"
+  },
+  {
+    "id": "5-things-to-consider-when-renovating-your-kitchen",
+    "title": "5 things to consider when Renovating your kitchen",
+    "author": "Jane Doe",
+    "date": "2021-06-21",
+    "category": ["Lifestyle"],
+    "image": ["assets/images/blog/16-Picture1.png"],
+    "content": "Renovating your kitchen can be costly work ...",
+    "comments": 0,
+    "type": "image"
+  },
+  {
+    "id": "best-qualities-of-marble-worktops",
+    "title": "Best qualities of Marble worktops",
+    "author": "Jane Doe",
+    "date": "2021-06-7",
+    "category": ["Lifestyle"],
+    "image": ["assets/images/blog/15-Picture1.jpg"],
+    "content": "Marble worktops are the best type of worktops ...",
+    "comments": 0,
+    "type": "image"
+  },
+  {
+    "id": "pros-and-cons-of-granite-worktops",
+    "title": "Pros and Cons of Granite Worktops",
+    "author": "Jane Doe",
+    "date": "2021-03-10",
+    "category": ["Lifestyle"],
+    "image": ["assets/images/blog/bb11.jpg"],
+    "content": "Granite is a natural material that never falls out of ...",
+    "comments": 0,
+    "type": "image"
+  },
+  {
+    "id": "five-home-remodeling-ideas",
+    "title": "Five home remodeling ideas",
+    "author": "Jane Doe",
+    "date": "2021-03-10",
+    "category": ["Lifestyle"],
+    "image": ["assets/images/gnf/posts/Five home remodeling ideas.jpg"],
+    "content": "Remodeling your house can be done for various reasons; you could be ...",
+    "comments": 0,
+    "type": "image"
+  },
+  {
+    "id": "popular-types-glass-splashbacks-kitchens",
+    "title": "MOST POPULAR TYPES OF GLASS SPLASHBACKS FOR KITCHENS",
+    "author": "Jane Doe",
+    "date": "2018-11-22",
+    "category": ["Lifestyle"],
+    "image": [
+      "assets/images/gnf/posts/MOST-POPULAR-TYPES-OF-GLASS-SPLASHBACKS-FOR-KITCHENS.jpg"
+    ],
+    "content": "When it comes to deciding on which material you are going to use for your kitchen...",
+    "comments": 0,
+    "type": "image"
+  },
+  {
+    "id": "stone-kitchen-worktops-vs-glass-worktops",
+    "title": "STONE KITCHEN WORKTOPS VS GLASS WORKTOPS",
+    "author": "Jane Doe",
+    "date": "2018-12-12",
+    "category": ["Lifestyle"],
+    "image": [
+      "assets/images/gnf/posts/Stone-Kitchen-Worktops-vs-Glass-Worktops.jpg"
+    ],
+    "content": "Deciding on the material of your kitchen worktop is such an important one as it will set...",
+    "comments": 0,
+    "type": "image"
+  },
+  {
+    "id": "10-things-know-kitchen-glass-splashbacks",
+    "title": "10 THINGS YOU SHOULD KNOW ABOUT KITCHEN GLASS SPLASHBACKS",
+    "author": "Jane Doe",
+    "date": "2018-12-19",
+    "category": ["Lifestyle"],
+    "image": [
+      "assets/images/gnf/posts/10-Things-You-Should-Know-About-Kitchen-Glass-Splashbacks-1024x768.jpg"
+    ],
+    "content": "You are considering installing a glass splashback in your kitchen but is it right for you?...",
+    "comments": 2
+  },
+  {
+    "id": "best-tips-tricks-clean-kitchen-glass-splashbacks",
+    "title": "BEST TIPS AND TRICKS TO CLEAN KITCHEN GLASS SPLASHBACKS",
+    "author": "John Doe",
+    "date": "2018-11-22",
+    "comments": 2,
+    "category": [
+      "assets/images/gnf/posts/Best-Tips-and-Tricks-to-Clean-Kitchen-Glass-Splashbacks-1.jpg"
+    ],
+    "content": "Here at Glass Fusion we can supply and fit glass splashbacks that are completely bespoke to... ",
+    "image": [
+      "assets/images/gnf/posts/Best-Tips-and-Tricks-to-Clean-Kitchen-Glass-Splashbacks-1.jpg"
+    ],
+    "type": "image"
+  },
+  {
+    "id": "pros-cons-printed-glass-splashbacks",
+    "title": "PROS & CONS FOR PRINTED GLASS SPLASHBACKS",
+    "author": "John Doe",
+    "date": "2018-11-22",
+    "comments": 2,
+    "category": [
+      "assets/images/gnf/posts/Best-Tips-and-Tricks-to-Clean-Kitchen-Glass-Splashbacks-1.jpg"
+    ],
+    "content": "Here at Glass Fusion we can supply and fit glass splashbacks that are completely bespoke to... ",
+    "image": [
+      "assets/images/gnf/posts/Pros-Cons-for-Printed-Glass-Splashbacks-1.jpg"
+    ],
+    "type": "image"
+  },
+  {
+    "id": "glass-splashbacks-north-south-east-west-london-supply-installation",
+    "title": "GLASS SPLASHBACKS IN NORTH, SOUTH, EAST & WEST LONDON – SUPPLY & INSTALLATION",
+    "author": "John Doe",
+    "date": "2018-11-22",
+    "comments": 2,
+    "category": [
+      "assets/images/gnf/posts/Best-Tips-and-Tricks-to-Clean-Kitchen-Glass-Splashbacks-1.jpg"
+    ],
+    "content": "Here at Glass Fusion we can supply and fit glass splashbacks that are completely bespoke to... ",
+    "image": ["assets/images/gnf/posts/shutterstock_56408032.jpg"],
+    "type": "image"
+  },
+  {
+    "id": "how-to-choose-the-right-glass-splashback-for-your-kitchen",
+    "title": "HOW TO CHOOSE THE RIGHT GLASS SPLASHBACK FOR YOUR KITCHEN?",
+    "author": "John Doe",
+    "date": "2018-11-22",
+    "comments": 2,
+    "category": [
+      "assets/images/gnf/posts/Best-Tips-and-Tricks-to-Clean-Kitchen-Glass-Splashbacks-1.jpg"
+    ],
+    "content": "Here at Glass Fusion we can supply and fit glass splashbacks that are completely bespoke to... ",
+    "image": [
+      "assets/images/gnf/posts/kitchen-panels-photos-printed-on-glass.jpg"
+    ],
+    "type": "image"
+  },
+  {
+    "id": "thinking-of-replacing-your-kitchen-worktop",
+    "title": "Thinking of Replacing Your Kitchen Worktop?",
+    "author": "John Doe",
+    "date": "2018-11-22",
+    "comments": 2,
+    "category": [""],
+    "content": "The kitchen worktop plays a significant role in the functionality and design of your kitchen... ",
+    "image": [
+      "assets/images/gnf/posts/thinking of replacing your kitchen worktop.jpg"
+    ],
+    "type": "image"
+  },
+  {
+    "id": "things-to-consider-when-choosing-a-material-for-your-kitchen-worktop",
+    "title": "Things to Consider When Choosing a Material for Your Kitchen Worktop",
+    "author": "John Doe",
+    "date": "2018-11-22",
+    "comments": 2,
+    "category": [
+      "assets/images/gnf/posts/things to consider when choosing a material for your kitchen worktop.jpg"
+    ],
+    "content": "Whether you are remodeling your kitchen or designing one for your new house... ",
+    "image": [
+      "assets/images/gnf/posts/things to consider when choosing a material for your kitchen worktop.jpg"
+    ],
+    "type": "image"
+  },
+  {
+    "id": "the-ideal-thickness-for-your-quartz-worktop",
+    "title": "The Ideal Thickness for Your Quartz Worktop",
+    "author": "John Doe",
+    "date": "2018-11-22",
+    "comments": 2,
+    "category": [
+      "assets/images/gnf/posts/Best-Tips-and-Tricks-to-Clean-Kitchen-Glass-Splashbacks-1.jpg"
+    ],
+    "content": "Quartz worktops are the new popular choice for homes because they are durable ... ",
+    "image": [
+      "assets/images/gnf/posts/the ideal thickness for your worktop.jpg"
+    ],
+    "type": "image"
+  },
+  {
+    "id": "kitchen-worktop-looks-that-never-go-out-of-style",
+    "title": " Kitchen Worktop Looks That Never Go Out of Style",
+    "author": "John Doe",
+    "date": "2018-11-22",
+    "comments": 2,
+    "category": [
+      "assets/images/gnf/posts/Best-Tips-and-Tricks-to-Clean-Kitchen-Glass-Splashbacks-1.jpg"
+    ],
+    "content": "Gone are the days when the only two options for kitchen worktops were stone or marble.... ",
+    "image": [
+      "assets/images/gnf/posts/kitchen worktop looks that never go out of style.jpg"
+    ],
+    "type": "image"
+  },
+  {
+    "id": "5-kitchen-worktop-materials-that-are-easy-to-maintain",
+    "title": "5 Kitchen Worktop Materials that are Easy to Maintain",
+    "author": "John Doe",
+    "date": "2018-11-22",
+    "comments": 2,
+    "content": "Whether it is for the kitchen, bathroom, or island, a worktop should be durable and elegant.... ",
+    "image": [
+      "assets/images/gnf/posts/5 kitchen worktop materials that are easy to maintain.jpg"
+    ],
+    "type": "image"
+  }
+]

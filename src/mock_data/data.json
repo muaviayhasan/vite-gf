@@ -1,0 +1,2648 @@
+{
+  "team_members": [
+    {
+      "img": "assets/images/gnf/showcase-projects/1-1.jpg",
+      "name": "Samanta Grey",
+      "title": "Founder & CEO"
+    },
+    {
+      "img": "assets/images/team/about-2/member-2.jpg",
+      "name": "Bruce Sutton",
+      "title": "Sales & Marketing Manager"
+    },
+    {
+      "img": "assets/images/team/about-2/member-3.jpg",
+      "name": "Janet Joy",
+      "title": "Product Manager"
+    },
+    {
+      "img": "assets/images/team/about-2/member-4.jpg",
+      "name": "Mark Pocket",
+      "title": "Product Manager"
+    },
+    {
+      "img": "assets/images/team/about-2/member-5.jpg",
+      "name": "Damion Blue",
+      "title": "Sales & Marketing Manager"
+    },
+    {
+      "img": "assets/images/team/about-2/member-6.jpg",
+      "name": "Lenard Smith",
+      "title": "Product Manager"
+    },
+    {
+      "img": "assets/images/team/about-2/member-7.jpg",
+      "name": "Rachel Green",
+      "title": "Product Manager"
+    },
+    {
+      "img": "assets/images/team/about-2/member-8.jpg",
+      "name": "David Doe",
+      "title": "Product Manager"
+    }
+  ],
+
+  "brands": {
+    "default": [
+      {
+        "name": "brand",
+        "image": "assets/images/brands/1.png",
+        "url":"search/material=Stone&material_type=all&effect=all&colour=all&brand=Silestone&price_band=0"
+
+      },
+      {
+        "name": "brand",
+        "image": "assets/images/brands/2.jpg",
+        "url":"search/material=Stone&material_type=all&effect=all&colour=all&brand=Compac&price_band=0"
+
+      },
+
+      {
+        "name": "brand",
+        "image": "assets/images/brands/4.jpg",
+        "url":"search/material=Stone&material_type=all&effect=all&colour=all&brand=Caesarstone&price_band=0"
+
+      },
+      {
+        "name": "brand",
+        "image": "assets/images/brands/5.jpg",
+        "url":"search/material=Stone&material_type=all&effect=all&colour=all&brand=Neolith&price_band=0"
+
+      },
+      {
+        "name": "brand",
+        "image": "assets/images/brands/6.jpg",
+        "url":"search/material=Stone&material_type=all&effect=all&colour=all&brand=Dekton&price_band=0"
+
+      },
+      {
+        "name": "brand",
+        "image": "assets/images/brands/brand-img31.png",
+        "url":"search/material=Stone&material_type=all&effect=all&colour=all&brand=Radinaz&price_band=0"
+
+      },
+      {
+        "name": "brand",
+        "image": "assets/images/brands/brand-img28.png",
+        "url":"search/material=Stone&material_type=all&effect=all&colour=all&brand=Picasso%20stone&price_band=0"
+
+      },
+      {
+        "name": "brand",
+        "image": "assets/images/brands/brand-img29.png",
+        "url":"search/material=Stone&material_type=all&effect=all&colour=all&brand=Quarella&price_band=0"
+      },
+      {
+        "name": "brand",
+        "image": "assets/images/brands/10.jpg",
+        "url":"search/material=Stone&material_type=all&effect=all&colour=all&brand=Diresco&price_band=0"
+      }
+    ],
+    "expanded": [
+      {
+        "name": "brand",
+        "image": "assets/images/demos/demo-24/brands/1.png"
+      },
+      {
+        "name": "brand",
+        "image": "assets/images/demos/demo-24/brands/2.png"
+      },
+      {
+        "name": "brand",
+        "image": "assets/images/demos/demo-24/brands/3.png"
+      },
+      {
+        "name": "brand",
+        "image": "assets/images/demos/demo-24/brands/4.png"
+      },
+      {
+        "name": "brand",
+        "image": "assets/images/demos/demo-24/brands/5.png"
+      },
+      {
+        "name": "brand",
+        "image": "assets/images/demos/demo-24/brands/6.png"
+      }
+    ]
+  },
+
+  "categories": {
+    "wears": [
+      {
+        "id": 1,
+        "name": "Dresses"
+      },
+      {
+        "id": 2,
+        "name": "T-shirts"
+      },
+      {
+        "id": 3,
+        "name": "Bags"
+      },
+      {
+        "id": 4,
+        "name": "Jackets"
+      },
+      {
+        "id": 5,
+        "name": "Shoes"
+      },
+      {
+        "id": 6,
+        "name": "Jumpers"
+      },
+      {
+        "id": 7,
+        "name": "Jeans"
+      },
+      {
+        "id": 8,
+        "name": "Sportwear"
+      }
+    ],
+    "electronics": [
+      {
+        "id": 1,
+        "name": "All"
+      },
+      {
+        "id": 2,
+        "name": "TV"
+      },
+      {
+        "id": 3,
+        "name": "Computers"
+      },
+      {
+        "id": 4,
+        "name": "Tablets & Cell Phones"
+      },
+      {
+        "id": 5,
+        "name": "Smartwatches"
+      },
+      {
+        "id": 6,
+        "name": "Accessories"
+      }
+    ]
+  },
+
+  "elementsUrl": [
+    {
+      "url": "/elements/accordions",
+      "name": "accordions",
+      "class": "img-accordions"
+    },
+    {
+      "url": "/elements/banners",
+      "name": "banners",
+      "class": "img-banners"
+    },
+    {
+      "url": "/elements/blog-posts",
+      "name": "blog posts",
+      "class": "img-blog-posts"
+    },
+    {
+      "url": "/elements/buttons",
+      "name": "buttons",
+      "class": "img-buttons"
+    },
+    {
+      "url": "/elements/cta",
+      "name": "call to action",
+      "class": "img-cta"
+    },
+    {
+      "url": "/elements/icon-boxes",
+      "name": "icon boxes",
+      "class": "img-icon-boxes"
+    },
+    {
+      "url": "/elements/portfolios",
+      "name": "portfolio",
+      "class": "img-portfolio"
+    },
+    {
+      "url": "/elements/categories",
+      "name": "product catigories",
+      "class": "img-product-categories"
+    },
+    {
+      "url": "/elements/products",
+      "name": "products",
+      "class": "img-products"
+    },
+    {
+      "url": "/elements/tabs",
+      "name": "tabs",
+      "class": "img-tabs"
+    },
+    {
+      "url": "/elements/testimonials",
+      "name": "testimonials",
+      "class": "img-testimonials"
+    },
+    {
+      "url": "/elements/titles",
+      "name": "titles",
+      "class": "img-titles"
+    },
+    {
+      "url": "/elements/typography",
+      "name": "typography",
+      "class": "img-typography"
+    },
+    {
+      "url": "/elements/video-banners",
+      "name": "video",
+      "class": "img-video"
+    }
+  ],
+
+  "services": [
+    {
+      "id": 1,
+      "icon": "icon-rocket",
+      "title": "Fast & Timely Delivery",
+      "subtitle": ""
+    },
+    {
+      "id": 2,
+      "icon": "icon-rotate-left",
+      "title": "Free Returns",
+      "subtitle": "Within 30 days"
+    },
+    {
+      "id": 3,
+      "icon": "icon-info-circle",
+      "title": "Get 20% Off 1 Item",
+      "subtitle": "When you sign up"
+    },
+    {
+      "id": 4,
+      "icon": "icon-life-ring",
+      "title": "We Support",
+      "subtitle": "24/7 amazing services"
+    },
+    {
+      "id": 5,
+      "icon": "icon-rocket",
+      "title": "Fast & Timely Delivery",
+      "subtitle": ""
+    },
+    {
+      "id": 6,
+      "icon": "icon-rotate-left",
+      "title": "Free Online Quote",
+      "subtitle": ""
+    },
+    {
+      "id": 7,
+      "icon": "icon-life-ring",
+      "title": "Expert Personalised Advice",
+      "subtitle": ""
+    },
+    {
+      "id": 8,
+      "icon": "icon-truck",
+      "title": "Payment & Delivery",
+      "subtitle": "Free shipping for orders over $50"
+    },
+    {
+      "id": 9,
+      "icon": "icon-rotate-left",
+      "title": "Return & Refund",
+      "subtitle": "Free 100% money back guarantee"
+    },
+    {
+      "id": 10,
+      "icon": "icon-headphones",
+      "title": "Quality Support",
+      "subtitle": "Alway online feedback 24/7"
+    },
+    {
+      "id": 11,
+      "icon": "icon-truck",
+      "title": "Payment & Delivery",
+      "subtitle": "Free shipping for orders over $50"
+    },
+    {
+      "id": 12,
+      "icon": "icon-rotate-left",
+      "title": "Return & Refund",
+      "subtitle": "Free 100% money back guarantee"
+    },
+    {
+      "id": 13,
+      "icon": "icon-unlock",
+      "title": "Secure Payment",
+      "subtitle": "100% secure payment"
+    },
+    {
+      "id": 14,
+      "icon": "icon-headphones",
+      "title": "Quality Support",
+      "subtitle": "Alway online feedback 24/7"
+    },
+    {
+      "id": 15,
+      "icon": "icon-truck",
+      "title": "Payment & Delivery",
+      "subtitle": "Free shipping for orders over $50"
+    },
+    {
+      "id": 16,
+      "icon": "icon-rotate-left",
+      "title": "Return & Refund",
+      "subtitle": "Free 100% money back guarantee"
+    },
+    {
+      "id": 17,
+      "icon": "icon-life-ring",
+      "title": "Quality Support",
+      "subtitle": "Alway online feedback 24/7"
+    },
+    {
+      "id": 18,
+      "icon": "icon-envelope",
+      "title": "Join Our Newsletter",
+      "subtitle": "10% off by subscribing to our newsletter"
+    }
+  ],
+
+  "demo1": {
+    "introBanners": [
+      {
+        "image": "/assets/images/demos/demo-2/slider/slide-1.jpg",
+        "subtitle": "Bedroom Furniture",
+        "title": "Find Comfort <br />That Suits You."
+      },
+      {
+        "image": "/assets/images/demos/demo-2/slider/slide-2.jpg",
+        "subtitle": "Deals and Promotions",
+        "title": "Ypperlig <br />Coffee Table <br /><span class=\"text-primary\"><sup>$</sup>49,99</span>"
+      },
+      {
+        "image": "/assets/images/demos/demo-2/slider/slide-3.jpg",
+        "subtitle": "Living Room",
+        "title": "Make Your Living Room <br />Work For You.<br /><span class=\"text-primary\"><sup class=\"text-white font-weight-light\">from</sup><sup>$</sup>9,99</span>"
+      }
+    ],
+
+    "categories": ["All", "Furniture", "Decoration", "Lighting"]
+  },
+
+  "demo2": {
+    "introBanners": [
+      {
+        "image": "assets/images/slider/slide-1.jpg",
+        "srcSet": "assets/images/slider/slide-1-480w.jpg",
+        "subtitle": "Topsale Collection",
+        "title": "Living Room<br/>Furniture"
+      },
+      {
+        "image": "assets/images/slider/slide-2.jpg",
+        "srcSet": "assets/images/slider/slide-2-480w.jpg",
+        "subtitle": "News and Inspiration",
+        "title": "New Arrivals"
+      },
+      {
+        "image": "assets/images/slider/slide-3.jpg",
+        "srcSet": "assets/images/slider/slide-3-480w.jpg",
+        "subtitle": "Outdoor Furniture",
+        "title": "Outdoor Dining <br/>Furniture"
+      }
+    ],
+
+    "banner": [
+      {
+        "img": "assets/images/banners/home/intro/banner-1.jpg",
+        "subtitle": "Clearence",
+        "title": "Chairs & Chaises <br/>Up to 40% off",
+        "btnText": "Shop Now"
+      },
+      {
+        "img": "assets/images/banners/home/intro/banner-2.jpg",
+        "subtitle": "New in",
+        "title": "Best Lighting <br/>Collection",
+        "btnText": "Discover Now",
+        "adClass": "mb-0"
+      }
+    ],
+
+    "categories": ["All", "Furniture", "Decoration", "Lighting"]
+  },
+
+  "demo3": {
+    "introBanners": [
+      {
+        "image": "assets/images/demos/demo-3/slider/slide-1.jpg",
+        "srcSet": "assets/images/demos/demo-3/slider/slide-1-480w.jpg",
+        "subtitle": "Daily Deals",
+        "title": "AirPods <br />Earphones",
+        "price": "<sup>Today:</sup><span class='text-primary'>&nbsp;$247<sup>.99</sup></span>"
+      },
+      {
+        "image": "assets/images/demos/demo-3/slider/slide-2.jpg",
+        "srcSet": "assets/images/demos/demo-3/slider/slide-2-480w.jpg",
+        "subtitle": "Deals and Promotions",
+        "title": "Echo Dot <br />3rd Gen",
+        "price": "<sup class='intro-old-price'>$49,99</sup><span class='text-primary'>&nbsp;$29<sup>.99</sup></span>"
+      }
+    ],
+
+    "banner": [
+      {
+        "img": "assets/images/demos/demo-3/banners/banner-1.jpg",
+        "subtitle": "Top Product",
+        "title": "Edifier <br />Stereo Bluetooth"
+      },
+      {
+        "img": "assets/images/demos/demo-3/banners/banner-2.jpg",
+        "subtitle": "Clearance",
+        "title": "GoPro - Fusion 360 <span>Save $70</span>"
+      },
+      {
+        "img": "assets/images/demos/demo-3/banners/banner-3.jpg",
+        "subtitle": "Featured",
+        "title": "Apple Watch 4 <span>Our Hottest Deals</span>",
+        "adClass": "mb-0"
+      }
+    ],
+
+    "categories": [
+      {
+        "id": 1,
+        "name": "All"
+      },
+      {
+        "id": 2,
+        "name": "TV"
+      },
+      {
+        "id": 3,
+        "name": "Computers"
+      },
+      {
+        "id": 4,
+        "name": "Tablets & Cell Phones"
+      },
+      {
+        "id": 5,
+        "name": "Smartwatches"
+      },
+      {
+        "id": 6,
+        "name": "Accessories"
+      }
+    ]
+  },
+
+  "demo4": {
+    "introBanners": [
+      {
+        "image": "assets/images/demos/demo-4/slider/slide-1.png",
+        "subtitle": "Deals and Promotions",
+        "subtitleAdClass": "text-third",
+        "title": "Beats by <br/>Dre Studio 3",
+        "price": "<sup class=\"intro-old-price\">$349,95</sup><span class=\"text-third\">&nbsp;$279<sup>.99</sup></span>"
+      },
+      {
+        "image": "assets/images/demos/demo-4/slider/slide-2.png",
+        "subtitle": "New Arrival",
+        "subtitleAdClass": "text-primary",
+        "title": "Apple iPad Pro <br/>12.9 Inch, 64GB",
+        "price": "<sup>Today:</sup><span class=\"text-primary\">&nbsp;$999<sup>.99</sup></span>"
+      }
+    ],
+
+    "bannerCategories": [
+      {
+        "image": "assets/images/demos/demo-4/cats/1.png",
+        "name": "Computer & Laptop"
+      },
+      {
+        "image": "assets/images/demos/demo-4/cats/2.png",
+        "name": "Digital Cameras"
+      },
+      {
+        "image": "assets/images/demos/demo-4/cats/3.png",
+        "name": "Smart Phones"
+      },
+      {
+        "image": "assets/images/demos/demo-4/cats/4.png",
+        "name": "Televisions"
+      },
+      {
+        "image": "assets/images/demos/demo-4/cats/5.png",
+        "name": "Audio"
+      },
+      {
+        "image": "assets/images/demos/demo-4/cats/6.png",
+        "name": "Smart Watches"
+      }
+    ],
+
+    "bannerContents": [
+      {
+        "sub_title": "Smart Offer",
+        "title": "Save $150",
+        "title_str": "on Samsung",
+        "title_br": "Galaxy Note9",
+        "img": "assets/images/demos/demo-4/banners/banner-1.png"
+      },
+      {
+        "sub_title": "Time Deals",
+        "title": "",
+        "title_str": "Bose SoundSport",
+        "title_br": "Time Deal -30%",
+        "img": "assets/images/demos/demo-4/banners/banner-2.jpg"
+      },
+      {
+        "sub_title": "Clearance",
+        "title": "",
+        "title_str": "GoPro - Fusion 360",
+        "title_br": "Save $70",
+        "img": "assets/images/demos/demo-4/banners/banner-3.png"
+      }
+    ],
+
+    "dealContents": [
+      {
+        "headerTitle": "Deal of the Day.",
+        "headerSubTitle": "Limited quantities.",
+        "productTitle": "Home Smart Speaker with  Google Assistant",
+        "newPrice": "$129.00",
+        "oldPrice": "$150.99",
+        "dataUntil": "+10h",
+        "bigImage": "assets/images/demos/demo-4/deal/bg-1.jpg",
+        "linkTitle": "Shop Now",
+        "link": "product/default/27"
+      },
+      {
+        "headerTitle": "Your Exclusive Offers.",
+        "headerSubTitle": "Sign in to see amazing deals.",
+        "productTitle": "Certified Wireless Charging  Pad for iPhone / Android",
+        "newPrice": "$29.99",
+        "oldPrice": "",
+        "dataUntil": "+11d",
+        "bigImage": "assets/images/demos/demo-4/deal/bg-2.jpg",
+        "linkTitle": "Sign In and Save money",
+        "link": "pages/login"
+      }
+    ],
+
+    "categories": [
+      {
+        "id": 1,
+        "name": "All"
+      },
+      {
+        "id": 2,
+        "name": "TV"
+      },
+      {
+        "id": 3,
+        "name": "Computers"
+      },
+      {
+        "id": 4,
+        "name": "Tablets & Cell Phones"
+      },
+      {
+        "id": 5,
+        "name": "Smartwatches"
+      },
+      {
+        "id": 6,
+        "name": "Accessories"
+      }
+    ]
+  },
+
+  "demo5": {
+    "introBanners": [
+      {
+        "image": "assets/images/gnf/banners/banner-4.jpg",
+        "subtitle": "",
+        "title": "A wide range of",
+        "text": "Colour and style options at factory prices",
+        "btnText": "View Catalogue",
+        "link":"product-catalogue"
+      },
+      {
+        "image": "assets/images/gnf/banners/banner-5.jpg",
+        "subtitle": "",
+        "title": "Bespoke kitchen worktops",
+        "text": "That are tailored to your requirements",
+        "btnText": "Contact Us",
+        "link":"contact"
+      },{
+        "image": "assets/images/gnf/banners/banner-1.jpg",
+        "subtitle": "",
+        "title": "Everything under one roof",
+        "text": "Luxuries kitchen worktops at affordable prices",
+        "btnText": "More Info",
+        "link":"about-us"
+      },
+      {
+        "image": "assets/images/gnf/banners/banner-2.jpg",
+        "subtitle": "",
+        "title": "Book home visit",
+        "text": "Highest quality workmanship to the heart of your home",
+        "btnText": "BOOK AN APPOINTMENT",
+        "link":"book-an-appointment"
+      },
+      {
+        "image": "assets/images/gnf/banners/banner-3.jpg",
+        "subtitle": "",
+        "title": "Bespoke kitchen worktops",
+        "text": "From granite, quartz, marble, and ultra-compact surfaces",
+        "btnText": "Get a quote",
+        "link":"get-a-quote"
+      }
+      
+    ],
+
+    "banners": [
+      {
+        "img": "assets/images/site/home-image-1.jpg",
+        "height": "630",
+        "subtitle": "",
+        "title": "Templating",
+        "btnText": "VIEW DETAILS",
+        "adClass": "banner-border-hover",
+        "link":"templating"
+      },
+      {
+        "img": "assets/images/site/home-image-4.jpg",
+        "height": "259",
+        "subtitle": "",
+        "title": "Fabrication",
+        "btnText": "VIEW DETAILS",
+        "adClass": "banner-border-hover",
+        "link":"fabrication"
+      },
+      {
+        "img": "assets/images/site/home-image-5.jpg",
+        "height": "259",
+        "subtitle": "",
+        "title": "Installation",
+        "btnText": "VIEW DETAILS",
+        "adClass": "banner-border-hover",
+        "link":"installation"
+      }
+    ],
+
+    "instagram": [
+      {
+        "img": "assets/images/gnf/showcase-projects/1-1.jpg"
+      },
+      {
+        "img": "assets/images/gnf/showcase-projects/4-3.jpg"
+      },
+      {
+        "img": "assets/images/gnf/showcase-projects/11 (1).png"
+      },
+      {
+        "img": "assets/images/gnf/showcase-projects/22 (1).png"
+      },
+      {
+        "img": "assets/images/gnf/showcase-projects/Card11.png"
+      },
+      {
+        "img": "assets/images/gnf/showcase-projects/Gioconda_kitchens1.jpg"
+      },
+      {
+        "img": "assets/images/gnf/showcase-projects/idea-kitchen-design-dubai-1.jpg"
+      },
+      {
+        "img": "assets/images/gnf/showcase-projects/joy-kitchen-design-dubai-1.jpg"
+      },
+      {
+        "img": "assets/images/gnf/showcase-projects/joy-kitchen-design-dubai-4.jpg"
+      },
+      {
+        "img": "assets/images/gnf/showcase-projects/Mitered island with matching calacatta splashback.jpg"
+      },
+      {
+        "img": "assets/images/gnf/showcase-projects/plans-de-travail-pierre-naturelle-1.jpg"
+      },
+      {
+        "img": "assets/images/gnf/showcase-projects/way-kitchen-design-dubai-6.jpg"
+      }
+    ],
+
+    "arrivalCategories": ["Granite", "Marble", "Quartz", "Compact Worktops"],
+    "trendyCategories": ["All", "Women", "Men", "Accessories"]
+  },
+
+  "demo6": {
+    "introBanners": [
+      {
+        "image": "assets/images/demos/demo-6/slider/slide-1.jpg",
+        "subtitle": "You're Looking Good",
+        "title": "New Lookbook"
+      },
+      {
+        "image": "assets/images/demos/demo-6/slider/slide-2.jpg",
+        "subtitle": "Don't Miss",
+        "title": "Mystery Deals"
+      }
+    ],
+
+    "banners": [
+      {
+        "img": "assets/images/demos/demo-6/banners/banner-1.jpg",
+        "subtitle": "New in",
+        "title": "<strong>Women’s</strong>"
+      },
+      {
+        "img": "assets/images/demos/demo-6/banners/banner-2.jpg",
+        "subtitle": "New in",
+        "title": "<strong>Men’s</strong>"
+      },
+      {
+        "img": "assets/images/demos/demo-6/banners/banner-3.jpg",
+        "subtitle": "Limited time only.",
+        "title": "End of Season<br/>save 50% off"
+      }
+    ],
+
+    "categories": ["All", "Women", "Men"]
+  },
+
+  "demo7": {
+    "banners": [
+      {
+        "img": "assets/images/demos/demo-7/banners/banner-1.jpg",
+        "width": 880,
+        "height": 500,
+        "subtitle": "New Collection",
+        "title": "Shop Women's",
+        "btnText": "<span>Discover Now</span>",
+        "adClass": "banner-big banner-overlay",
+        "contentAdClass": "banner-content-center"
+      },
+      {
+        "img": "assets/images/demos/demo-7/banners/banner-2.jpg",
+        "width": 880,
+        "height": 500,
+        "subtitle": "New Collection",
+        "title": "Shop Men's",
+        "btnText": "<span>Discover Now</span>",
+        "adClass": "banner-big banner-overlay",
+        "contentAdClass": "banner-content-center"
+      },
+      {
+        "img": "assets/images/demos/demo-7/banners/banner-3.jpg",
+        "width": 580,
+        "height": 300,
+        "subtitle": "Flip Flop",
+        "title": "Summer<br />sale -70% off",
+        "btnText": "Shop Now",
+        "adClass": "banner-overlay text-white",
+        "contentAdClass": "banner-content-right",
+        "btnAdClass": "btn-outline-white-3 banner-link"
+      },
+      {
+        "img": "assets/images/demos/demo-7/banners/banner-4.jpg",
+        "width": 580,
+        "height": 300,
+        "subtitle": "Accessories",
+        "title": "2020 Winter<br />up to 50% off",
+        "btnText": "Shop Now",
+        "adClass": "banner-overlay color-grey",
+        "contentAdClass": "",
+        "btnAdClass": "banner-link",
+        "textColor": ""
+      },
+      {
+        "img": "assets/images/demos/demo-7/banners/banner-5.jpg",
+        "width": 580,
+        "height": 300,
+        "subtitle": "New in",
+        "title": "Women’s<br />sportswear",
+        "btnText": "Shop Now",
+        "adClass": "banner-overlay text-white",
+        "contentAdClass": "banner-content-right",
+        "btnAdClass": "btn-outline-white-3 banner-link"
+      }
+    ],
+
+    "categories": [
+      {
+        "key": "Women",
+        "value": "Women's Clothing"
+      },
+      {
+        "key": "Men",
+        "value": "Men's Clothing"
+      }
+    ],
+
+    "testimonials": [
+      {
+        "lead": "“Really great store”",
+        "content": "“ Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis. Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra<br>a, ultricies in, diam. Sed arcu. ”",
+        "name": "Charly Smith",
+        "job": "Customer"
+      },
+      {
+        "lead": "“Friendly Support”",
+        "content": "“ Impedit, ratione sequi, sunt incidunt magnam et. Delectus obcaecati optio eius error libero perferendis nesciunt atque dolores magni recusandae! Doloremque quidem error eum quis similique doloribus natus qui ut ipsum.”",
+        "name": "Damon Stone",
+        "job": "Customer"
+      },
+      {
+        "lead": "“Free Shipping”",
+        "content": "“ Molestias animi illo natus ut quod neque ad accusamus praesentium fuga! Dolores odio alias sapiente odit delectus quasi, explicabo a, modi voluptatibus. Perferendis perspiciatis, voluptate, distinctio earum veritatis animi tempora eget blandit nunc tortor mollis ”",
+        "name": "John Smith",
+        "job": "Customer"
+      }
+    ]
+  },
+
+  "demo8": {
+    "introBanners": [
+      {
+        "image": "assets/images/demos/demo-8/slider/slide-1.jpg",
+        "subtitle": "Limited time only *",
+        "title": "Summer<br/><strong>sale</strong>",
+        "aSubtitle": "Up to 50% off",
+        "adClass": "text-left",
+        "subImage": "assets/images/demos/demo-8/slider/img-1.png",
+        "subClass": "position-right"
+      },
+      {
+        "image": "assets/images/demos/demo-8/slider/slide-2.jpg",
+        "subtitle": "PREMIUM QUALITY",
+        "title": "coats <span class='highlight'>&</span><br/>jackets",
+        "adClass": "text-right",
+        "subImage": "assets/images/demos/demo-8/slider/img-2.png",
+        "subClass": "position-left"
+      }
+    ],
+
+    "banners": [
+      {
+        "img": "assets/images/demos/demo-8/banners/banner-1.jpg",
+        "width": 376,
+        "height": 470,
+        "subtitle": "Final reduction",
+        "title": "<strong>Sandals & <br/>Flip Flops</strong> <br/>up to 60% off"
+      },
+      {
+        "img": "assets/images/demos/demo-8/banners/banner-2.jpg",
+        "width": 376,
+        "height": 470,
+        "subtitle": "Limited time only.",
+        "title": "<strong>Trainers & <br/>Sportwear</strong> <br/>40 -70% off"
+      },
+      {
+        "img": "assets/images/demos/demo-8/banners/banner-3.jpg",
+        "width": 376,
+        "height": 470,
+        "subtitle": "This week we love...",
+        "title": "<strong>Women's <br/>Accessories </strong> <br/>from $6.99"
+      },
+      {
+        "img": "assets/images/demos/demo-8/banners/banner-5.jpg",
+        "width": 575,
+        "height": 300,
+        "subtitle": "New Arrivals",
+        "title": "Women’s",
+        "adClass": "d-none d-lg-block"
+      },
+      {
+        "img": "assets/images/demos/demo-8/banners/banner-6.jpg",
+        "width": 575,
+        "height": 300,
+        "subtitle": "New Arrivals",
+        "title": "Men’s",
+        "adClass": "d-none d-lg-block"
+      }
+    ],
+
+    "instagram": [
+      {
+        "img": "assets/images/demos/demo-8/instagram/1.jpg",
+        "likes": 466,
+        "comments": 65
+      },
+      {
+        "img": "assets/images/demos/demo-8/instagram/2.jpg",
+        "likes": 39,
+        "comments": 78
+      },
+      {
+        "img": "assets/images/demos/demo-8/instagram/3.jpg",
+        "likes": 691,
+        "comments": 87
+      },
+      {
+        "img": "assets/images/demos/demo-8/instagram/4.jpg",
+        "likes": 580,
+        "comments": 124
+      },
+      {
+        "img": "assets/images/demos/demo-8/instagram/5.jpg",
+        "likes": 433,
+        "comments": 27
+      },
+      {
+        "img": "assets/images/demos/demo-8/instagram/6.jpg",
+        "likes": 122,
+        "comments": 55
+      }
+    ],
+
+    "categories": ["All", "Women", "Men", "Shoes & Boots"]
+  },
+
+  "demo9": {
+    "introBanners": [
+      {
+        "image": "assets/images/demos/demo-9/slider/slide-1.jpg",
+        "srcSet": "assets/images/demos/demo-9/slider/slide-1-480w.jpg",
+        "subtitle": "New Collection",
+        "title": "Women’s <br />Sportswear & Joggers",
+        "text": "2020"
+      },
+      {
+        "image": "assets/images/demos/demo-9/slider/slide-2.jpg",
+        "srcSet": "assets/images/demos/demo-9/slider/slide-2-480w.jpg",
+        "subtitle": "New Collection",
+        "title": "Men’s <br />Coats & Jackets"
+      },
+      {
+        "image": "assets/images/demos/demo-9/slider/slide-3.jpg",
+        "srcSet": "assets/images/demos/demo-9/slider/slide-3-480w.jpg",
+        "subtitle": "Deals and Promotions",
+        "title": "Sneakers & Athletic Shoes",
+        "text": "from $9.99",
+        "btnText": "SHOP NOW"
+      }
+    ],
+
+    "banners": [
+      {
+        "img": "assets/images/demos/demo-9/banners/banner-1.jpg",
+        "width": 376,
+        "height": 500,
+        "adClass": "banner-lg",
+        "contentAdClass": "banner-content-bottom",
+        "subtitle": "Clearance",
+        "title": "Waterproof",
+        "text": "from $19.00"
+      },
+      {
+        "img": "assets/images/demos/demo-9/banners/banner-4.jpg",
+        "width": 376,
+        "height": 500,
+        "adClass": "banner-lg",
+        "contentAdClass": "banner-content-top",
+        "subtitle": "On Sale",
+        "title": "Women's<br />Sportswear",
+        "text": "from $39.00"
+      },
+      {
+        "img": "assets/images/demos/demo-9/banners/banner-2.jpg",
+        "width": 376,
+        "height": 240,
+        "subtitle": "New Arrivals",
+        "title": "Accessories<br />and Shoes",
+        "btnText": "Shop Now"
+      },
+      {
+        "img": "assets/images/demos/demo-9/banners/banner-3.jpg",
+        "width": 376,
+        "height": 240,
+        "subtitle": "New Arrivals",
+        "title": "Spring 2020",
+        "btnText": "Shop Now"
+      }
+    ],
+
+    "categoryBanners": [
+      {
+        "img": "assets/images/demos/demo-9/banners/banner-5.jpg",
+        "title": "Our Experts Recommend",
+        "category": "Sale",
+        "price": "$29.99",
+        "desc": "Wedge-heel sandals"
+      },
+      {
+        "img": "assets/images/demos/demo-9/banners/banner-6.jpg",
+        "title": "Our Experts Recommend",
+        "category": "Sale",
+        "price": "$129.99",
+        "desc": "Cross Body Bag"
+      }
+    ],
+
+    "instagram": [
+      {
+        "img": "assets/images/demos/demo-9/instagram/1.jpg",
+        "likes": 456,
+        "comments": 65
+      },
+      {
+        "img": "assets/images/demos/demo-9/instagram/2.jpg",
+        "likes": 39,
+        "comments": 78
+      },
+      {
+        "img": "assets/images/demos/demo-9/instagram/3.jpg",
+        "likes": 691,
+        "comments": 87
+      },
+      {
+        "img": "assets/images/demos/demo-9/instagram/4.jpg",
+        "likes": 508,
+        "comments": 124
+      },
+      {
+        "img": "assets/images/demos/demo-9/instagram/5.jpg",
+        "likes": 433,
+        "comments": 27
+      },
+      {
+        "img": "assets/images/demos/demo-9/instagram/6.jpg",
+        "likes": 122,
+        "comments": 55
+      }
+    ],
+
+    "categories": ["Women", "Men"]
+  },
+
+  "demo10": {
+    "introBanners": [
+      {
+        "image": "assets/images/demos/demo-10/slider/slide-1.jpg",
+        "srcSet": "assets/images/demos/demo-10/slider/slide-1-480w.jpg",
+        "subtitle": "Deals and Promotions",
+        "title": "Sneakers & Athletic Shoes",
+        "price": "from $9.99"
+      },
+      {
+        "image": "assets/images/demos/demo-10/slider/slide-2.jpg",
+        "srcSet": "assets/images/demos/demo-10/slider/slide-2-480w.jpg",
+        "subtitle": "Trending Now",
+        "title": "This Week's Most Wanted",
+        "price": "from $49.99"
+      },
+      {
+        "image": "assets/images/demos/demo-10/slider/slide-3.jpg",
+        "srcSet": "assets/images/demos/demo-10/slider/slide-3-480w.jpg",
+        "subtitle": "Deals and Promotions",
+        "title": "Can’t-miss Clearance:",
+        "price": "starting at 60% off"
+      }
+    ],
+
+    "categoryBanners": [
+      {
+        "image": "assets/images/demos/demo-10/banners/banner-5.jpg",
+        "category": "Women's",
+        "count": "125"
+      },
+      {
+        "image": "assets/images/demos/demo-10/banners/banner-6.jpg",
+        "category": "Men's",
+        "count": "97"
+      },
+      {
+        "image": "assets/images/demos/demo-10/banners/banner-7.jpg",
+        "category": "Kid's",
+        "count": "48"
+      }
+    ],
+
+    "categories": ["All", "Women's", "Men's"]
+  },
+
+  "demo11": {
+    "introBanners": [
+      {
+        "image": "/assets/images/demos/demo-11/slider/slide-1.jpg",
+        "subtitle": "SEASONAL PICKS",
+        "title": "Get All <br />The Good Stuff",
+        "btnText": "DISCOVER MORE"
+      },
+      {
+        "image": "/assets/images/demos/demo-11/slider/slide-2.jpg",
+        "subtitle": "all at 50% off",
+        "title": "The Most Beautiful <br />Novelties In Our Shop",
+        "adClass": "text-white",
+        "btnText": "SHOP NOW",
+        "btn_adClass": "min-width-sm"
+      }
+    ]
+  },
+
+  "demo12": {
+    "banners": [
+      {
+        "adClass": "banner-title-hidden",
+        "img": "assets/images/demos/demo-12/banners/banner-1.jpg",
+        "title": "This Week's Most Wanted"
+      },
+      {
+        "adClass": "banner-title-hidden",
+        "img": "assets/images/demos/demo-12/banners/banner-2.jpg",
+        "title": "Bags by Mood",
+        "btnText": "Discover Now"
+      },
+      {
+        "adClass": "banner-title-hidden",
+        "img": "assets/images/demos/demo-12/banners/banner-3.jpg",
+        "title": "The Trend Story"
+      },
+      {
+        "img": "assets/images/demos/demo-12/banners/banner-4.jpg",
+        "title": "TAccessories",
+        "subtitle": "16 Items"
+      },
+      {
+        "img": "assets/images/demos/demo-12/banners/banner-5.jpg",
+        "title": "Jewellery",
+        "subtitle": "8 Items"
+      },
+      {
+        "img": "assets/images/demos/demo-12/banners/banner-6.jpg",
+        "title": "Clothing",
+        "subtitle": "24 Items",
+        "btnText": "Discover Now"
+      },
+      {
+        "img": "assets/images/demos/demo-12/banners/banner-7.jpg",
+        "title": "Shoes",
+        "subtitle": "6 Items"
+      }
+    ]
+  },
+
+  "demo13": {
+    "categoryBanners": [
+      {
+        "image": "assets/images/demos/demo-13/banners/banner-1.jpg",
+        "subtitle": "Weekend Sale",
+        "title": "Lighting <br />& Accessories <br /><span>25% off</span>",
+        "btnText": "Shop Now "
+      },
+      {
+        "image": "assets/images/demos/demo-13/banners/banner-3.jpg",
+        "subtitle": "Smart Offer",
+        "title": "Anniversary <br />Special <br /><span>15% off</span>",
+        "btnText": "Shop Now "
+      },
+      {
+        "image": "assets/images/demos/demo-13/banners/banner-2.jpg",
+        "subtitle": "Amazing Value",
+        "title": "Clothes Trending <br />Spring Collection 2020 <br /><span>from $12,99</span>",
+        "btnText": "Discover Now "
+      },
+      {
+        "adClass": "banner-overlay-light",
+        "image": "assets/images/demos/demo-13/banners/banner-4.jpg",
+        "subtitle": "Spring Sale is Coming",
+        "title": "<Link to='#'>All Smart Watches <br />Discount <br /><span class='text-primary'>15% off</span></Link>",
+        "btnText": "Discover Now "
+      },
+      {
+        "image": "assets/images/demos/demo-13/banners/banner-5.png",
+        "subtitle": "Amazing Value",
+        "title": "<Link to='#'>Headphones Trending <br />JBL Harman <br /><span>from $59,99</span></Link>",
+        "btnText": "Discover Now "
+      }
+    ],
+
+    "categories": [
+      "Computer & Laptop",
+      "Lighting",
+      " Smart Phones",
+      "Televisions",
+      "Cooking",
+      "Furniture"
+    ],
+
+    "productCategories": [
+      "All",
+      "Electronics",
+      "Furniture",
+      "Clothes",
+      "Accessories"
+    ],
+
+    "introBanners": [
+      {
+        "image": "assets/images/demos/demo-13/slider/slide-1.png",
+        "subtitle": "Trade-In Offer",
+        "title": "MacBook Air <br />Latest Model<span><sup class='font-weight-light'>from</sup><span class='text-primary'>$999<sup>,99</sup></span></span>"
+      },
+      {
+        "image": "assets/images/demos/demo-13/slider/slide-2.jpg",
+        "subtitle": "Trevel & Outdoor",
+        "title": "Original Outdoor <br />Beanbag<span><sup class='font-weight-light line-through'>$89,99</sup><span class='text-primary'>$29<sup>,99</sup></span></span>"
+      },
+      {
+        "image": "assets/images/demos/demo-13/slider/slide-3.jpg",
+        "subtitle": "Fashion Promotions",
+        "title": "Tan Suede <br />Biker Jacket<span><sup class='font-weight-light line-through'>$240,00</sup><span class='text-primary'>$180<sup>,99</sup></span></span>"
+      }
+    ]
+  },
+
+  "demo14": {
+    "introBanners": [
+      {
+        "image": "assets/images/demos/demo-14/slider/slide-1.jpg",
+        "srcSet": "assets/images/demos/demo-14/slider/slide-1-480W.jpg",
+        "subtitle": "New Arrivals",
+        "title": "The New Way <br/>To Buy Furniture",
+        "text": "Spring Collections 2020",
+        "btnText": "Discover Now"
+      },
+      {
+        "image": "assets/images/demos/demo-14/slider/slide-2.jpg",
+        "srcSet": "assets/images/demos/demo-14/slider/slide-2-480W.jpg",
+        "subtitle": "Hottest Deals",
+        "title": "<span>Wherever You Go</span> <br/>DJI Mavic 2 Proe",
+        "price": "<sup>from</sup><span>$1,948<sup>.99</sup></span>",
+        "btnText": "Discover Here"
+      },
+      {
+        "image": "assets/images/demos/demo-14/slider/slide-3.jpg",
+        "srcSet": "assets/images/demos/demo-14/slider/slide-3-480W.jpg",
+        "subtitle": "Limited Quantities",
+        "title": "Refresh Your <br/>Wardrobe",
+        "text": "Summer Collection 2020",
+        "btnText": "Discover Now"
+      }
+    ],
+
+    "banners": [
+      {
+        "image": "assets/images/demos/demo-14/banners/banner-2.jpg",
+        "title": "Detox And Beautify <br/>For Spring <br/><span>Up To  20% Off</span>",
+        "subtitle": "Hottest Deals"
+      },
+      {
+        "image": "assets/images/demos/demo-14/banners/banner-3.png",
+        "title": "Headphones <br/><span>Up To 30% Off</span>",
+        "subtitle": "Deal of the Day"
+      },
+      {
+        "image": "assets/images/demos/demo-14/banners/banner-4.jpg",
+        "title": "Seating and Tables Clearance",
+        "subtitle": "Clearance"
+      },
+      {
+        "image": "assets/images/demos/demo-14/banners/banner-7.jpg",
+        "title": "Floral T-shirts and Vests  <br/><span>Spring Sale</span>",
+        "subtitle": "Spring Sale is Coming"
+      },
+      {
+        "image": "assets/images/demos/demo-14/banners/banner-8.jpg",
+        "title": "Upgrade and Save <br/><span>On The Latest Apple Devices</span>",
+        "subtitle": "Amazing Value"
+      },
+      {
+        "contentAdClass": "banner-content-top banner-content-right text-right",
+        "image": "assets/images/demos/demo-14/banners/banner-11.jpg",
+        "title": "Maximum Comfort <span>Sofas -20% Off</span>"
+      },
+      {
+        "contentAdClass": "banner-content-top",
+        "image": "assets/images/demos/demo-14/banners/banner-12.jpg",
+        "title": "Take Better Photos <br/><span>With</span> Canon EOS <br/><span>Up To 20% Off</span>"
+      },
+      {
+        "adClass": "banner-content-stretch",
+        "contentAdClass": "text-right",
+        "image": "assets/images/demos/demo-14/banners/banner-1.png",
+        "price": "<sup class='text-white'>from&nbsp;</sup><span class='text-white'><strong>$199</strong><sup class='text-white'>,99</sup></span>",
+        "btnText": "Discover Now "
+      }
+    ],
+
+    "categoryBanners": [
+      {
+        "categories": [
+          "Electronics",
+          [
+            "Cell Phones",
+            "Computers",
+            "TV & Video",
+            "Smart Home",
+            "Audi",
+            "Home Audio & Theater"
+          ]
+        ],
+        "background": "url(assets/images/demos/demo-14/banners/banner-bg-1.jpg)",
+        "image": "assets/images/demos/demo-14/banners/banner-5.jpg",
+        "title": "Canon EOS <br/>Mega Sale <br/><span>Up To 20% Off</span>",
+        "subtitle": "Best Deals"
+      },
+      {
+        "categories": [
+          "Furniture",
+          [
+            "Bedroom",
+            "Office",
+            "Living Room",
+            "Kitchen & Dining",
+            "Decoration",
+            "Outdoor"
+          ]
+        ],
+        "background": "url(assets/images/demos/demo-14/banners/banner-bg-2.jpg)",
+        "image": "assets/images/demos/demo-14/banners/banner-6.jpg",
+        "title": "Furniture Sets <br/><span>Up To 30% Off</span>",
+        "subtitle": "Best Deals"
+      },
+      {
+        "categories": [
+          "Clothing",
+          ["Best Sellers", "Trending", "Women", "Man", "Shoes", "Accessories"]
+        ],
+        "background": "url(assets/images/demos/demo-14/banners/banner-bg-3.jpg)",
+        "image": "assets/images/demos/demo-14/banners/banner-9.jpg",
+        "title": "Clearance <br/>Outerwear<br/><span>Up To 70% Off</span>",
+        "subtitle": "Best Deals"
+      },
+      {
+        "categories": [
+          "Cooking",
+          [
+            "Cookware",
+            "Dinnerware",
+            "Cups",
+            "Microwaves",
+            "Toasters",
+            "Coffee Makers"
+          ]
+        ],
+        "background": "url(assets/images/demos/demo-14/banners/banner-bg-4.jpg)",
+        "image": "assets/images/demos/demo-14/banners/banner-10.jpg",
+        "title": "Cooking <br/>Appliances <br/><span>Up To 30% Off</span>",
+        "subtitle": "Best Deals"
+      }
+    ],
+
+    "trendyCategories": [
+      "All",
+      "Electronics",
+      "Furniture",
+      "Clothes",
+      "Accessories"
+    ]
+  },
+
+  "demo15": {
+    "categoryBanners": [
+      {
+        "type": 1,
+        "image": "assets/images/demos/demo-15/banners/banner-1.jpg",
+        "title": "01. Get your <br />inspiration <br />in the street.",
+        "variety": ["Moto Jacket", "Henry Backpack"],
+        "text": "$98.00 - $1,298.00",
+        "product": [0, 1]
+      },
+      {
+        "type": 2,
+        "image": "assets/images/demos/demo-15/banners/banner-2.jpg",
+        "title": "02. Dresses for <br />every spring day.",
+        "variety": [
+          "Light grey linen shirt dress",
+          "Gold colour earrings",
+          "Brown heel mules"
+        ],
+        "text": "$20.00 - $96.00",
+        "product": [2, 3, 4]
+      },
+      {
+        "type": 1,
+        "image": "assets/images/demos/demo-15/banners/banner-3.jpg",
+        "title": "03. Beautiful <br />dresses perfect <br />for any occasion.",
+        "variety": [
+          "Botanical-Print Dress",
+          "Cece Shoulder Bag",
+          "Cunningham Leather Sandal"
+        ],
+        "text": "$130.00 - $358.00",
+        "product": [5, 6, 7]
+      },
+      {
+        "type": 2,
+        "image": "assets/images/demos/demo-15/banners/banner-4.jpg",
+        "title": "04. Complete your <br />look with the latest <br />accessories.",
+        "variety": [
+          "Black mini boxy cross body bag",
+          "Black zebra print leather heel mules"
+        ],
+        "text": "$36.00 - $120.00",
+        "product": [8, 9]
+      }
+    ]
+  },
+
+  "demo16": {
+    "banner": [
+      {
+        "img": "assets/images/demos/demo-16/banners/banner-1.jpg",
+        "title": "Dresses for all occasions.",
+        "text": "Nail your on and off duty style with our new season collection of women’s dresses.",
+        "contentAdClass": "left"
+      },
+      {
+        "img": "assets/images/demos/demo-16/banners/banner-2.jpg",
+        "title": "Coats & Jackets for effortless everyday looks.",
+        "text": "Whichever style you choose from our new season collection of women’s coats and jackets, cosy chic vibes are guaranteed.",
+        "adClass": "banner-main-reverse",
+        "contentAdClass": "right"
+      }
+    ],
+
+    "instagram": [
+      {
+        "img": "assets/images/demos/demo-16/instagram/1.jpg",
+        "likes": 456,
+        "comments": 65
+      },
+      {
+        "img": "assets/images/demos/demo-16/instagram/2.jpg",
+        "likes": 39,
+        "comments": 78
+      },
+      {
+        "img": "assets/images/demos/demo-16/instagram/3.jpg",
+        "likes": 691,
+        "comments": 87
+      },
+      {
+        "img": "assets/images/demos/demo-16/instagram/4.jpg",
+        "likes": 508,
+        "comments": 124
+      },
+      {
+        "img": "assets/images/demos/demo-16/instagram/5.jpg",
+        "likes": 433,
+        "comments": 27
+      }
+    ]
+  },
+
+  "demo17": {
+    "categoryBanners": [
+      {
+        "adClass": "banner-big",
+        "image": "assets/images/demos/demo-17/banners/banner-1.jpg",
+        "subtitle": "Trending now",
+        "title": "The Focus and Accent <br />On Your Spring Wardrobe",
+        "btnText": "Discover Now ",
+        "type": "bottom"
+      },
+      {
+        "image": "assets/images/demos/demo-17/banners/banner-2.jpg",
+        "subtitle": "clearance",
+        "title": "Clearance It’s On <br />Up To 50% Off",
+        "btnText": "Shop Now ",
+        "type": "right"
+      },
+      {
+        "image": "assets/images/demos/demo-17/banners/banner-3.jpg",
+        "subtitle": "you might love",
+        "title": "This Week's <br />Most Wanted",
+        "btnText": "Shop Now ",
+        "type": "top"
+      },
+      {
+        "image": "assets/images/demos/demo-17/banners/banner-4.jpg",
+        "subtitle": "The new pretty",
+        "title": "How To Dress<br />For Spring",
+        "btnText": "Discover Now ",
+        "type": "top banner-content-reverse"
+      }
+    ],
+
+    "instagram": [
+      {
+        "img": "assets/images/demos/demo-17/instagram/1.jpg",
+        "likes": 456,
+        "comments": 65
+      },
+      {
+        "img": "assets/images/demos/demo-17/instagram/2.jpg",
+        "likes": 39,
+        "comments": 78
+      },
+      {
+        "img": "assets/images/demos/demo-17/instagram/3.jpg",
+        "likes": 691,
+        "comments": 87
+      },
+      {
+        "img": "assets/images/demos/demo-17/instagram/4.jpg",
+        "likes": 508,
+        "comments": 124
+      },
+      {
+        "img": "assets/images/demos/demo-17/instagram/5.jpg",
+        "likes": 433,
+        "comments": 27
+      }
+    ]
+  },
+
+  "demo18": {
+    "banners": [
+      {
+        "img": "assets/images/demos/demo-18/banners/banner-1.jpg",
+        "width": 574,
+        "height": 560,
+        "title": "Sweatshirts & Hoodies"
+      },
+      {
+        "img": "assets/images/demos/demo-18/banners/banner-2.jpg",
+        "width": 277,
+        "height": 560,
+        "title": "Men’s Jacket"
+      },
+      {
+        "img": "assets/images/demos/demo-18/banners/banner-3.jpg",
+        "width": 277,
+        "height": 270,
+        "title": "Women’s jackets"
+      },
+      {
+        "img": "assets/images/demos/demo-18/banners/banner-4.jpg",
+        "width": 277,
+        "height": 270,
+        "title": "Accessories"
+      }
+    ]
+  },
+
+  "demo19": {
+    "banners": [
+      {
+        "img": "assets/images/demos/demo-19/banners/banner-1.jpg",
+        "width": 576,
+        "height": 414,
+        "adClass": "banner-lg content-left",
+        "subtitle": "Pre-order now",
+        "title": "Borderlands 3",
+        "btnText": "Pre-Order Now"
+      },
+      {
+        "img": "assets/images/demos/demo-19/banners/banner-2.jpg",
+        "width": 277,
+        "height": 260,
+        "adClass": "banner-sm content-right",
+        "contentAdClass": "text-right",
+        "subtitle": "Weekend Offer",
+        "titleImg": "assets/images/demos/demo-19/banners/banner-2-title.png",
+        "price": "Save<span class='price'>$19,99</span></h4>"
+      },
+      {
+        "img": "assets/images/demos/demo-19/banners/banner-3.jpg",
+        "width": 277,
+        "height": 134,
+        "adClass": "d-none d-lg-block banner-sm content-right align-center",
+        "contentAdClass": "text-right",
+        "titleImg": "assets/images/demos/demo-19/banners/banner-3-title.png",
+        "mystyle": "Yes"
+      },
+      {
+        "img": "assets/images/demos/demo-19/banners/banner-4.jpg",
+        "width": 277,
+        "height": 260,
+        "adClass": "banner-sm content-left",
+        "subtitle": "Weekend Sale",
+        "titleImg": "assets/images/demos/demo-19/banners/banner-4-title.png",
+        "price": "<span class='off'>25% off</span></h4>"
+      },
+      {
+        "img": "assets/images/demos/demo-19/banners/banner-5.jpg",
+        "width": 873,
+        "height": 260,
+        "adClass": "banner-lg content-right",
+        "contentAdClass": "text-right",
+        "subtitle": "Amazing Value",
+        "titleImg": "assets/images/demos/demo-19/banners/banner-5-title.png",
+        "btnText": "Pre-Order Now"
+      }
+    ],
+    "categoryBanners": [
+      {
+        "img": "assets/images/demos/demo-19/banners/banner-9.jpg",
+        "titleImg": "assets/images/demos/demo-19/banners/banner-9-title.png",
+        "price": 29.99,
+        "contentAdClass": "align-items-center center"
+      },
+      {
+        "img": "assets/images/demos/demo-19/banners/banner-10.jpg",
+        "titleImg": "assets/images/demos/demo-19/banners/banner-10-title.png",
+        "price": 79.99
+      },
+      {
+        "img": "assets/images/demos/demo-19/banners/banner-11.jpg",
+        "titleImg": "assets/images/demos/demo-19/banners/banner-11-title.png",
+        "subtitleImg": "assets/images/demos/demo-19/banners/banner-11-subtitle.png",
+        "price": 99.99,
+        "banner_txt": "Main Game & Kombat Pack",
+        "price_adClass": "mt-1",
+        "contentAdClass": "align-items-center center"
+      }
+    ]
+  },
+
+  "demo20": {
+    "banners": [
+      {
+        "img": "assets/images/demos/demo-20/banners/banner-1.jpg",
+        "width": 690,
+        "height": 420,
+        "adClass": "banner-big",
+        "subtitle": "Your Guide To The World",
+        "title": "Must-Read <br/>Travel Books",
+        "btnText": "Find out more"
+      },
+      {
+        "img": "assets/images/demos/demo-20/banners/banner-2.jpg",
+        "width": 335,
+        "height": 420,
+        "contentAdClass": "banner-content-stretch",
+        "subtitle": "New This Week",
+        "title": "Discover Our <br/>Best Romance <br/>Books"
+      },
+      {
+        "img": "assets/images/demos/demo-20/banners/banner-3.jpg",
+        "width": 335,
+        "height": 200,
+        "adClass": "banner-small",
+        "subtitle": "Deal Of The Day",
+        "title": "20% Off Use <br/>Code: <span>mybook</span>",
+        "btnText": "Shop Now"
+      },
+      {
+        "img": "assets/images/demos/demo-20/banners/banner-4.jpg",
+        "width": 335,
+        "height": 200,
+        "adClass": "banner-small",
+        "subtitle": "New Arrivals",
+        "title": "Business <br/>& Economics"
+      },
+      {
+        "img": "assets/images/demos/demo-20/banners/banner-6.jpg",
+        "width": 453,
+        "height": 240,
+        "subtitle": "A Perfect Choice For Your Children",
+        "title": "Children's <br/>Bestselling Books"
+      },
+      {
+        "img": "assets/images/demos/demo-20/banners/banner-7.jpg",
+        "width": 453,
+        "height": 240,
+        "subtitle": "Mental Health Awareness Week",
+        "title": "Self-Help For <br/>Your Future."
+      },
+      {
+        "img": "assets/images/demos/demo-20/banners/banner-8.jpg",
+        "width": 453,
+        "height": 240,
+        "subtitle": "New York Times Bestsellers",
+        "title": "Bestselling Food <br/>and Drink Books."
+      }
+    ]
+  },
+
+  "demo21": {
+    "introBanners": [
+      {
+        "img": "assets/images/demos/demo-21/slider/slide-1.png",
+        "title": "<h3>WOMEN'S</h3>",
+        "content": "<h3>RUNNING &</h3><h3>TRAINING SHIRTS</h3>",
+        "price": "<h3>SAVE UP TO 30%</h3>"
+      },
+      {
+        "img": "assets/images/demos/demo-21/slider/slide-2.jpg",
+        "title": "<h3 class='darkWhite'>DEAL OF THE DAY</h3>",
+        "content": "<h3>IT'S TIME TO UPGRADE<br />YOUR HIKING KIT</h3>",
+        "price": "<h3 class='darkWhite'>SAVE UP TO 15%</h3>"
+      }
+    ],
+
+    "categoryBanners": [
+      {
+        "img": "assets/images/demos/demo-21/banner/banner-1.jpg",
+        "title": "It's a lifestyle.",
+        "content": "<h3>Running Apparel</h3><h3>END OF SEASON SALE</h3>",
+        "btnText": "SHOP NOW"
+      },
+      {
+        "img": "assets/images/demos/demo-21/banner/banner-2.jpg",
+        "title": "Hike Your Next Trail ",
+        "content": "<h3>NEW SEASON</h3><h3>NEW GEAR</h3>",
+        "btnText": "DISCOVER NOW"
+      },
+      {
+        "img": "assets/images/demos/demo-21/banner/banner-3.jpg",
+        "title": "Summer Sale",
+        "content": "<h3>Swimwear sale</h3><h3>Save up to 30%</h3>",
+        "btnText": "SHOP NOW"
+      },
+      {
+        "img": "assets/images/demos/demo-21/banner/footware.jpg",
+        "title": "FOOTWEAR"
+      },
+      {
+        "img": "assets/images/demos/demo-21/banner/accessories.jpg",
+        "title": "ACCESSORIES"
+      },
+      {
+        "img": "assets/images/demos/demo-21/banner/mens.jpg",
+        "title": "MEN'S"
+      },
+      {
+        "img": "assets/images/demos/demo-21/banner/womens.jpg",
+        "title": "WOMEN'S"
+      }
+    ],
+
+    "categories": ["All", "Women", "Men", "Shoes", "Accessories"]
+  },
+
+  "demo22": {
+    "introBanners": [
+      {
+        "className": "intro-slide banner-lg",
+        "image": "assets/images/demos/demo-22/slider/slide-1.jpg",
+        "title": "<a href='shop/sidebar/list'>deal of the day</a>",
+        "text": "<h3><span>up to</span> 20% <span>off</span></h3><h4>heavy duty deals</h4>"
+      },
+      {
+        "className": "intro-slide banner-lg",
+        "image": "assets/images/demos/demo-22/slider/slide-2.jpg",
+        "title": "<a href='shop/sidebar/list' }>clearance</a>",
+        "text": "<h3>power tools<br/>up to <span>30% off</span></h3>"
+      },
+      {
+        "className": "col-12",
+        "image": "assets/images/demos/demo-22/slider/banner-1.jpg",
+        "title": "<h3>New arrivals</h3>",
+        "text": "<h3>up to </h3> <h3 className='highlight'>&nbsp;40% off</h3>",
+        "btnText": "shop now"
+      },
+      {
+        "className": "col-12",
+        "image": "assets/images/demos/demo-22/slider/banner-2.jpg",
+        "title": "<h2>outdoor</h2>",
+        "text": "<h4>power equipment</h4>",
+        "btnText": "shop now"
+      },
+      {
+        "className": "col-12",
+        "image": "assets/images/demos/demo-22/slider/banner-3.jpg",
+        "title": "<h3 class='highlight'>save 20%</h3><h3>&nbsp;or more</h3>",
+        "text": "<h3>deals & savings</h3>",
+        "btnText": "shop now"
+      }
+    ],
+
+    "banners": [
+      {
+        "img": "assets/images/demos/demo-22/banner/banner-1.jpg",
+        "title": "save up to 30%",
+        "content": "<h3 class='highlight'>Premium Brands</h3><h4>for the Toughest Jobs</h4>",
+        "btnText": "discover now"
+      },
+
+      {
+        "img": "assets/images/demos/demo-22/banner/banner-2.jpg",
+        "title": "best sellers in tools",
+        "content": "<h3>Pro-level tools</h3><h4 class='highlight'>Save on Bestsellers</h4>",
+        "btnText": "shop now"
+      }
+    ]
+  },
+
+  "demo23": {
+    "banners": [
+      {
+        "className": "banner-lg",
+        "img": "assets/images/demos/demo-23/new-women/banner.jpg",
+        "width": 690,
+        "height": 1142,
+        "title": "New arrivals",
+        "content": "<h4>New</h4><h4>for Women</h4>"
+      },
+      {
+        "className": "banner-lg",
+        "img": "assets/images/demos/demo-23/new-men/banner.jpg",
+        "width": 690,
+        "height": 1142,
+        "title": "New arrivals",
+        "content": "<h4>New</h4><h4>for Men</h4>"
+      },
+      {
+        "className": "banner-lg",
+        "img": "assets/images/demos/demo-23/banners/banner-1.jpg",
+        "width": 1480,
+        "height": 730,
+        "title": "our new collection",
+        "content": "<h4>Urban spirit<br />Collection 2020</h4>",
+        "text": "It started with a simple idea"
+      },
+      {
+        "className": "banner-sm",
+        "img": "assets/images/demos/demo-23/banners/banner-2.jpg",
+        "width": 730,
+        "height": 390,
+        "title": "FINAL DAYS OF SALE",
+        "content": "<h4>Sportswear & Outdoor Wear<br />UP TO 70% OFF</h4>"
+      },
+      {
+        "className": "banner-sm",
+        "img": "assets/images/demos/demo-23/banners/banner-3.jpg",
+        "width": 730,
+        "height": 390,
+        "title": "SUMMER CLEARANCE",
+        "content": "<h4>Shoes & Accessories<br />UP TO 30% OFF</h4>"
+      }
+    ],
+
+    "instagram": [
+      {
+        "img": "assets/images/demos/demo-23/instagram/img-1.jpg",
+        "likes": 280,
+        "comments": 22
+      },
+      {
+        "img": "assets/images/demos/demo-23/instagram/img-2.jpg",
+        "likes": 280,
+        "comments": 22
+      },
+      {
+        "img": "assets/images/demos/demo-23/instagram/img-3.jpg",
+        "likes": 280,
+        "comments": 22
+      },
+      {
+        "img": "assets/images/demos/demo-23/instagram/img-4.jpg",
+        "likes": 280,
+        "comments": 22
+      },
+      {
+        "img": "assets/images/demos/demo-23/instagram/img-5.jpg",
+        "likes": 280,
+        "comments": 22
+      }
+    ]
+  },
+
+  "demo24": {
+    "banners": [
+      {
+        "className": "banner col-lg-4 col-md-6 col-sm-6",
+        "img": "assets/images/demos/demo-24/banners/banner-1.jpg",
+        "width": 360,
+        "height": 500,
+        "title": "<h3>Online mega deal</h3>",
+        "content": "<h4>Camping Gear<br/>& Accessories</h4>"
+      },
+      {
+        "className": "banner percent col-lg-4 col-md-6 col-sm-6",
+        "img": "assets/images/demos/demo-24/banners/banner-2.jpg",
+        "width": 430,
+        "height": 540,
+        "title": "<h3>Summer</h3><h4>Clearance</h4>",
+        "imgPercent": "assets/images/demos/demo-24/banners/percent.png",
+        "content": "<h4>* Donec sit amet vulputate<br/> velit.Aenean tempus nisl</h4>",
+        "btnText": "Discover Now"
+      },
+      {
+        "className": "banner col-lg-4 col-md-6 col-sm-6",
+        "img": "assets/images/demos/demo-24/banners/banner-3.jpg",
+        "width": 360,
+        "height": 500,
+        "title": "<h3>Lightning Deals</h3>",
+        "content": "<h4>Sports &<br/>Outdoors</h4>"
+      },
+      {
+        "className": "col-lg-6 col-md-6 col-12 banner-lg",
+        "img": "assets/images/demos/demo-24/banners/banner-4.jpg",
+        "width": 960,
+        "height": 600,
+        "title": "<h3><i>Trending</i></h3>",
+        "content": "<h4>Camping & Hiking</h4><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.<br/>Donec odio. Quisque volutpat mattis eros.</p>",
+        "btnText": "Discover Now"
+      },
+      {
+        "className": "col-lg-6 col-md-6 col-sm-6 banner-sm font-black",
+        "img": "assets/images/demos/demo-24/banners/banner-5.jpg",
+        "width": 480,
+        "height": 300,
+        "title": "<h3>Women's</h3>",
+        "content": "<h4>Active &<br/> Fitness</h4>"
+      },
+      {
+        "className": "col-lg-6 col-md-6 col-sm-6 banner-sm font-white",
+        "img": "assets/images/demos/demo-24/banners/banner-6.jpg",
+        "width": 480,
+        "height": 300,
+        "title": "<h3>New Arrivals</h3>",
+        "content": "<h4>Deepest discount<br/> of the season</h4>"
+      },
+      {
+        "className": "col-lg-6 col-md-6 col-sm-6 banner-sm font-white",
+        "img": "assets/images/demos/demo-24/banners/banner-7.jpg",
+        "width": 480,
+        "height": 300,
+        "title": "<h3>men's</h3>",
+        "content": "<h4>Surf Gear &<br/>Accessories</h4>"
+      },
+      {
+        "className": "col-lg-6 col-md-6 col-sm-6 banner-sm font-black",
+        "img": "assets/images/demos/demo-24/banners/banner-8.jpg",
+        "width": 480,
+        "height": 300,
+        "title": "<h3>men's</h3>",
+        "content": "<h4>outerwear<br/>collection</h4>"
+      }
+    ],
+
+    "instagram": [
+      {
+        "img": "assets/images/demos/demo-24/instagram/back-1.jpg",
+        "likes": 280,
+        "comments": 22
+      },
+      {
+        "img": "assets/images/demos/demo-24/instagram/back-2.jpg",
+        "likes": 280,
+        "comments": 22
+      },
+      {
+        "img": "assets/images/demos/demo-24/instagram/back-3.jpg",
+        "likes": 280,
+        "comments": 22
+      },
+      {
+        "img": "assets/images/demos/demo-24/instagram/back-4.jpg",
+        "likes": 280,
+        "comments": 22
+      },
+      {
+        "img": "assets/images/demos/demo-24/instagram/back-5.jpg",
+        "likes": 280,
+        "comments": 22
+      }
+    ]
+  },
+
+  "documentation": [
+    {
+      "title": "General",
+      "list": [
+        {
+          "entry-title": "Getting Started",
+          "list": [
+            {
+              "entry-subtitle": "Welcome to Glass & Fusion Ltd",
+              "entry-content": "We are so glad you have chosen Glass & Fusion Ltd"            }
+          ]
+        },
+        {
+          "entry-title": "Main Features",
+          "list": [
+            {
+              "entry-subtitle": "Responsive Design",
+              "entry-content": "Looks great on desktops, laptops, tablets and mobiles."
+            },
+            {
+              "entry-subtitle": "Made with  Sass",
+              "entry-content": "Molla eCommerce React Template is made with sass. Every Shop demo page has its' own sass file."
+            },
+            {
+              "entry-subtitle": "Fully Customizable",
+              "entry-content": "You can fully customize. You can make your own pages, components."
+            },
+            {
+              "entry-subtitle": "W3 Validator",
+              "entry-content": "This theme has with beautiful and clean codes! Powerful HTML files are 100% valid W3 web standards."
+            },
+            {
+              "entry-subtitle": "Colors",
+              "entry-content": "Molla eCommerce React Template includes 19 color options, You can change color by importing skin scss.<br><code>@import 'assets/scss/skins/skin-default.css' for #fcb941</code><br><code>@import 'assets/scss/skins/skin-dcodeo-2.css' for #a6c76c, #92b25a</code><br>...<br>If you want to use another color, change $primary-color, $secondary-color variable in skin scss<br><code>$primary-color: #ff4c3b;</code><br><code>$secondary-color: #c3457a;</code>"
+            },
+            {
+              "entry-subtitle": "Amazing Mega-menu",
+              "entry-content": "A completely different mega-menu with powerful functionality and flexible layout."
+            },
+            {
+              "entry-subtitle": "Demoes ",
+              "entry-content": "This template has 32 shop demoes with different headers and footers, and other demoes will be expected. These demoes are of fashionable design."
+            },
+            {
+              "entry-subtitle": "Product Hover Variation",
+              "entry-content": "There are 5 different product hover variations in this theme."
+            },
+            {
+              "entry-subtitle": "Add to Cart",
+              "entry-content": "When click on add to cart button, the product will be added to cart page and also displayed in header cart menu."
+            },
+            {
+              "entry-subtitle": "Quick View",
+              "entry-content": "Every product has quick view modal popup."
+            },
+            {
+              "entry-subtitle": "Wishlist",
+              "entry-content": "Click on wishlist button, you can add or remove product to wishlist"
+            },
+            {
+              "entry-subtitle": "Product Compare",
+              "entry-content": "Click on compare button product will be added to compare list."
+            },
+            {
+              "entry-subtitle": "Product Details",
+              "entry-content": "Every product has individual detail pages of 8 different styles, so you can use any detail page."
+            },
+            {
+              "entry-subtitle": "One Page Checkout",
+              "entry-content": "Click on checkout button in header cart, you could see checkout page with selected product."
+            },
+            {
+              "entry-subtitle": "Shop Page",
+              "entry-content": "We've added 20 different shop pages, and you can use any shop page. This page includes full-width, boxed slider, boxed image, left sidebar, right sidebar, flex grid, horizontal filter. Especially it has infinite scroll, list item types and having 3 - 8 columns products per pages."
+            },
+            {
+              "entry-subtitle": "Filter",
+              "entry-content": "Different types of custom filters (tag, color, size, price, brand ) are available. It's customizable,  you can customize with your demand."
+            },
+            {
+              "entry-subtitle": "Multi-Browser Support",
+              "entry-content": "It looks great in IE, Edge, Chrome, Safari, Opera, Firefox."
+            }
+          ]
+        },
+        {
+          "entry-title": "Folder Structure",
+          "list": [
+            {
+              "entry-subtitle": "Well-organized and easily understandalble structure",
+              "entry-content": "<p>Molla eCommerce React Template has well-oragnized and easily understandable folder structure. Once you have it, you will be able to understand it at first sight! </p><ul class='folder-structure '><li><code>config</code></li><li><code>public</code><ul><li><code>index.html</code></li></ul></li><li><code>scripts</code></li><li><code>src</code><ul><li><code>Action</code></li><li><code>api</code></li><li><code>components</code> // Contains all Components</li><li><code>constants</code></li><li><code>mock_data</code> // Contains all data of products, banners and posts</li><li><code>reducers</code></li><li><code>services</code></li><li><code>store</code></li><li><code>index.js</code></li></ul></li><li><code>package.json</code></li></ul>"
+            }
+          ]
+        },
+        {
+          "entry-title": "Start Building",
+          "list": [
+            {
+              "entry-subtitle": "Start Building",
+              "entry-content": "To build, you need to take these following steps."
+            },
+            {
+              "entry-subtitle": "Installation",
+              "entry-content": "Before going further, you have to install Node.JS and NPM.<ul><li><strong>Install Node.js and NPM :</strong> You can download latest Node.js from <code>https://nodejs.org/en/download/</code> and install it on your system. NPM comes bundled with Node.js</li><li><strong>Install npm packages :</strong> In terminal go to your project root directory and run <em>npm install command</em>, it will download all the dependencies under node_modules folder.  </li></ul>"
+            },
+            {
+              "entry-subtitle": "Running Development server",
+              "entry-content": "<ul><li>Run <em>npm start</em> command to run dev server and access <code>http://localhost:3000/</code> to run your app/project on browser. The app will automatically reload if you change any of the source files.</li><li>As <em>npm start</em> runs watch command which detects any change in project files so it will automatically reload your app on browser if you make changes in files.</li></ul>"
+            },
+            {
+              "entry-subtitle": "Production Building",
+              "entry-content": "<ul><li>Run <em>npm run build</em>  to build the project. The build artifacts will be stored build/ directory.</li></ul>"
+            },
+            {
+              "entry-subtitle": "Further help",
+              "entry-content": "<ul><li>To get more help<br><code>https://reactjs.org/docs/getting-started.html</code></li></ul>"
+            }
+          ]
+        },
+        {
+          "entry-title": "Miscellaneous",
+          "list": [
+            {
+              "entry-subtitle": "Product Types",
+              "entry-content": "<div class='mars'><br>&nbsp;Products One<img src='assets/images/docs/miscellaneous/clothes1.jpg'></img><br>&nbsp;Products Two<img src='assets/images/docs/miscellaneous/clothes2.jpg'></img><br>&nbsp;Products Three<img src='assets/images/docs/miscellaneous/electronics.jpg'></img><br>&nbsp;Products Four<img src='assets/images/docs/miscellaneous/games.jpg'></img><br>&nbsp;Products Five<img src='assets/images/docs/miscellaneous/shoes.jpg'></img><br>&nbsp;Products Six<img src='assets/images/docs/miscellaneous/sports.jpg'></img><br>&nbsp;Products Seven<img src='assets/images/docs/miscellaneous/book.jpg'></img><br>&nbsp;Products Eight<img src='assets/images/docs/miscellaneous/countdown.jpg'></img></div>"
+            }
+          ]
+        },
+        {
+          "entry-title": "Dependencies",
+          "list": [
+            {
+              "entry-subtitle": "Modules used in the project",
+              "entry-content": "<p>Modules used in Molla eCommerce React Template  are following. </p><em>'react': '16.8.0'</em><br><em>'react-anchor-link-smooth-scroll': '^1.0.12'</em><br><em>'react-app-polyfill': '^0.1.3'</em><br><em>'react-helmet': '^5.2.1'</em><br><em>'react-image-lightbox': '^5.1.1'</em><br><em>'react-image-magnifiers': '^1.2.1'</em><br><em>'react-image-zoom': '^0.7.0'</em><br><em>'react-infinite-scroll-component': '^4.5.3'</em><br><em>'react-input-range': '^1.3.0'</em><br><em>'react-magnific-popup': '^1.0.1'</em><br><em>'react-redux': '^5.1.2'</em><br><em>'react-router-scroll-4': '^1.0.0-beta.2'</em><br><em>'react-slide-toggle': '^0.1.13'</em><br><em>'react-sticky-box': '^0.9.3'</em><br><em>'react-tabs': '^2.3.1'</em><br><em>'react-toastify': '^4.5.2'</em><br><em>'react-owl-carousel2': '^0.3.0'</em><br><em>'redux': '^4.0.4'</em><br><em>'react-infinite-scroll': '^1.0.9'</em><br><em>'redux-thunk': '^2.3.0'</em><br><em>'style-loader': '0.23.0'</em><br><em>'url-loader': '1.1.1'</em><br><em>'isotope-layout': '3.0.6'</em><br><em>'imagesloaded': '4.1.4'</em>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Advanced",
+      "list": [
+        {
+          "entry-title": "Customize Component",
+          "list": [
+            {
+              "entry-subtitle": "Customize Header",
+              "entry-content": "<div class='custom'><p>We have 24 different header types in <code>/src/components/common/header</code> directory, so you can change <code>header</code> so easily in each demo.</p><p>Just import it and use it for your demo.</p><p>Here are some examples.</p><code>import HeaderTwo from '../../common/header/header-2';</code><br><br><img src='assets/images/docs/custom/header/demo1.jpg'></img><br><br><br><code>import HeaderTwo from '../../common/header/header-4';</code><br><br><img src='assets/images/docs/custom/header/demo3.jpg'></img><br><br><br><code>import HeaderTwo from '../../common/header/header-16';</code><br><br><img src='assets/images/docs/custom/header/demo13.jpg'></img><br><br><br></div>"
+            },
+            {
+              "entry-subtitle": "Customize Product",
+              "entry-content": "<div class='custom'><p>Customizing products are so easy that you can get used to it once you get common sense of it. It has same logic to customize ie, <code>adClass</code>, <code>sub_class</code>, <code>type</code> etc. Therefore, you can just insert any props that help you change your product.</p><code>import Product from '../../features/product/product-three';<br><br></code><img src='assets/images/docs/custom/product/1.jpg'></img><br><br><br><code>import Product from '../../demoes/index9/product';<br><br></code><img src='assets/images/docs/custom/product/2.jpg'></img><br><br><br><code>import Product from '../../demoes/index10/product';<br><br></code><img src='assets/images/docs/custom/product/3.jpg'></img><br><br><br><code>import Product from '../../demoes/index15/product';<br><br></code><img src='assets/images/docs/custom/product/4.jpg'></img><br><br><br><code>import Product from '../../demoes/index24/product';<br><br></code><img src='assets/images/docs/custom/product/5.jpg'></img></div>"
+            },
+            {
+              "entry-subtitle": "Customize The Other Component",
+              "entry-content": "<div class='custom'><p>Customizing all other components are so easy that you can get used to it once you master above components.It has same logic to customize ie, <code>adClass</code>, <code>sub_class</code>, <code>type</code> etc. Therefore you can just insert any props that helps you change your component.</p><code>import Post from '../../features/post/post-two';</code><br><br><img src ='assets/images/docs/custom/com/blg-demo13.jpg'></img><br><br><br><code>import Post from '../../features/post/post-one';</code><br><br><img src ='assets/images/docs/custom/com/blg-demo17.jpg'></img><br><br><br><code>import Post from '../../features/post/post-one';<br>&lt;Post post = { post } adClass = '' btnText = '' key = {`blog_${index}`} /&gt;</code><br><br><img src='assets/images/docs/custom/com/blg-demo19.jpg'></img> <br><br><br><code>import Instagram from '../../features/instagram/instagram-one';</code><img src='assets/images/docs/custom/com/ins-demo8.jpg'></img><br><br><br><code>import Instagram from '../../features/instagram/instagram-two';</code><img src='assets/images/docs/custom/com/ins-demo18.jpg'></img></div>"
+            }
+          ]
+        },
+        {
+          "entry-title": "Change Data",
+          "list": [
+            {
+              "entry-subtitle": "Change Product Data",
+              "entry-content": "<<p>Mock-data in this project mimicks the client-sever data transfer.<br />You can change your product in product.json file</p><p>Product has id, price, salePrice, image, details, shortDestription featured, new, reviews, ratings properties and so on.</p><pre><code>{<br>&nbsp;&nbsp;'id': 1,<br>&nbsp;&nbsp;'name': 'Aliquam tincidunt mauris',<br>&nbsp;&nbsp;'price': 84,<br>&nbsp;&nbsp;'salePrice': 50,<br>&nbsp;&nbsp;'pictures': [<br>&nbsp;&nbsp;&nbsp;&nbsp;'/assets/images/products/elements/product-1.jpg'<br>&nbsp;&nbsp;],<br>&nbsp;&nbsp;'shortDesc': 'Sed ut perspiciatis, ...,',<br>&nbsp;&nbsp;'description': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ...',<br>&nbsp;&nbsp;'stock': 16,<br>&nbsp;&nbsp;'new': false,<br>&nbsp;&nbsp;'top': false,<br>&nbsp;&nbsp;'discount': 30,<br>&nbsp;&nbsp;'until': '2021-03-15',<br>&nbsp;&nbsp;'category': [<br>&nbsp;&nbsp;&nbsp;&nbsp;'Women'<br>&nbsp;&nbsp;],<br>&nbsp;&nbsp;'size': [<br>&nbsp;&nbsp;&nbsp;&nbsp;'S',<br>&nbsp;&nbsp;&nbsp;&nbsp;'M',<br>&nbsp;&nbsp;&nbsp;&nbsp;'L',<br>&nbsp;&nbsp;&nbsp;&nbsp;'XL'<br>&nbsp;&nbsp;],<br>&nbsp;&nbsp;'sizeStock': [<br>&nbsp;&nbsp;&nbsp;&nbsp;'0',<br>&nbsp;&nbsp;&nbsp;&nbsp;'2',<br>&nbsp;&nbsp;&nbsp;&nbsp;'10',<br>&nbsp;&nbsp;&nbsp;&nbsp;'4'<br>&nbsp;&nbsp;],<br>&nbsp;&nbsp;'brands': [<br>&nbsp;&nbsp;&nbsp;&nbsp;'Nike',<br>&nbsp;&nbsp;&nbsp;&nbsp;'caprese'<br>&nbsp;&nbsp;],<br>&nbsp;&nbsp;'ratings': 2,<br>&nbsp;&nbsp;'reviews': 4,<br>&nbsp;&nbsp;'variants': [<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'color': 'brown',<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'image': '/assets/images/products/elements/product-1-thumb.jpg',<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'model': '/assets/images/products/elements/product-thumb-1.jpg',<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'rgb': '#cc9966'<br>&nbsp;&nbsp;&nbsp;&nbsp;},<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'color': 'blue',<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'image': '/assets/images/products/elements/product-1-2-thumb.jpg',<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'model': '/assets/images/products/elements/product-thumb-2.jpg',<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'rgb': '#7fc5ed'<br>&nbsp;&nbsp;&nbsp;&nbsp;},<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'color': 'yellow',<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'image': '/assets/images/products/elements/product-1-3-thumb.jpg',<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'model': '/assets/images/products/elements/product-thumb-3.jpg',<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'rgb': '#e8c97a'<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;],<br>&nbsp;&nbsp;'demo': [<br>&nbsp;&nbsp;&nbsp;&nbsp;'demo2'<br>&nbsp;&nbsp;]<br>}</code></pre><p>If you want variation product, you can just add variation tag like <br /> <pre><code>  'variants': [<br />    {<br />      'name': 'color',<br />      'type':[<br />    {<br />      'price': 88.00,<br />      'pictures': ['assets/images/element/products/headphone-2.jpg'],<br />      'stock': 16<br />    },<br />    {<br />      'price': 90.00,<br />      'pictures': ['assets/images/element/products/headphone-1.jpg'],<br />      'stock': 16<br />    },<br />    {<br />      'price': 99.00,<br />      'pictures': ['assets/images/element/products/headphone-4.jpg'],<br />      'stock': 16<br />    }<br />  ] </code></pre></p> <p>If you want sale product, you need to code like <br /><pre><code>  'price': 55.00,<br />  'salePrice': 75.00,<br />  'discount': -20,<br /></code></pre></p>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "FAQs",
+      "list": [
+        {
+          "entry-title": "FAQs",
+          "list": [
+            {
+              "entry-subtitle": "What is layout component for?",
+              "entry-content": "Layout component is so useful when all page component have same component in common.<br>Here, we have init settings and some filters in common. So, we don't need to import and use those components in page component."
+            },
+            {
+              "entry-subtitle": "Can I use for eCommerce?",
+              "entry-content": "For sure. It is basically designed to support eCommerce."
+            },
+            {
+              "entry-subtitle": "How many shop demoes are here?",
+              "entry-content": "24 shop demoes"
+            },
+            {
+              "entry-subtitle": "Where can I add css?",
+              "entry-content": "In every page component, you can find scss file in same directory. You could add your own css in that scss file."
+            },
+            {
+              "entry-subtitle": "Is jQuery used in this template?",
+              "entry-content": "Not at all. Instead of jQuery, we used DOM functions for speed improvement."
+            },
+            {
+              "entry-subtitle": "How can we get own products ?",
+              "entry-content": "If you visit service/index.js file you can see like<br><code>getProducts: ( func, timeout ) => setTimeout( () => func( _products ), timeout )</code>"
+            },
+            {
+              "entry-subtitle": "How does this template import css?",
+              "entry-content": "Every page component has style.scss file in the same folder. In page component, it imports that scss file, and scss file imports css file in public/assets/css directory."
+            },
+            {
+              "entry-subtitle": "Can I use many sliders in one page?",
+              "entry-content": "Definetely. Molla React eCommerce template allows you to use many sliders by assigning auto-generated unique id to each slider when slider component is mounted."
+            },
+            {
+              "entry-subtitle": "Does this project have multi-brower support?",
+              "entry-content": "Sure, it deoes. It works perfectly in all browers including Chrome, IE, Firefox, Edge, Opera and so on"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Thank You",
+      "list": [
+        {
+          "entry-title": "Thank You",
+          "list": [
+            {
+              "entry-subtitle": "",
+              "entry-content": "<div class='comment'>We don't know how to thank you enough for using our Templates.<br>If you like, please rate us.<br>React Team, Molla</div>"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "mainMenuOne": [
+    {
+      "title": "Home",
+      "url": "",
+      "items": [
+        {
+          "title": "01 - furniture store",
+          "url": "demo-1"
+        },
+        {
+          "title": "02 - furniture store",
+          "url": "demo-2"
+        },
+        {
+          "title": "03 - electronic store",
+          "url": "demo-3"
+        },
+        {
+          "title": "04 - electronic store",
+          "url": "demo-4"
+        },
+        {
+          "title": "05 - fashion store",
+          "url": "demo-5"
+        },
+        {
+          "title": "06 - fashion store",
+          "url": "demo-6"
+        },
+        {
+          "title": "07 - fashion store",
+          "url": "demo-7"
+        },
+        {
+          "title": "08 - fashion store",
+          "url": "demo-8"
+        },
+        {
+          "title": "09 - fashion store",
+          "url": "demo-9"
+        },
+        {
+          "title": "10 - shoes store",
+          "url": "demo-10"
+        },
+        {
+          "title": "11 - furniture simple store",
+          "url": "demo-11"
+        },
+        {
+          "title": "12 - fashion simple store",
+          "url": "demo-12"
+        },
+        {
+          "title": "13 - market",
+          "url": "demo-13"
+        },
+        {
+          "title": "14 - market fullwidth",
+          "url": "demo-14"
+        },
+        {
+          "title": "15 - lookbook 1",
+          "url": "demo-15"
+        },
+        {
+          "title": "16 - lookbook 2",
+          "url": "demo-16"
+        },
+        {
+          "title": "17 - fashion store",
+          "url": "demo-17"
+        },
+        {
+          "title": "18 - fashion store (with sidebar)",
+          "url": "demo-18"
+        },
+        {
+          "title": "19 - games store",
+          "url": "demo-19"
+        },
+        {
+          "title": "20 - book store",
+          "url": "demo-20"
+        },
+        {
+          "title": "21 - sport store",
+          "url": "demo-21"
+        },
+        {
+          "title": "22 - tools store",
+          "url": "demo-22"
+        },
+        {
+          "title": "23 - fashion left navigation store",
+          "url": "demo-23"
+        },
+        {
+          "title": "24 - extreme sport store",
+          "url": "demo-24"
+        }
+      ]
+    },
+
+    {
+      "title": "Shop",
+      "url": "shop/sidebar/list",
+      "items": [
+        {
+          "title": "Shop List",
+          "url": "shop/sidebar/list"
+        },
+        {
+          "title": "Shop Grid 2 Columns",
+          "url": "shop/sidebar/2cols"
+        },
+        {
+          "title": "Shop Grid 3 Columns",
+          "url": "shop/sidebar/3cols"
+        },
+        {
+          "title": "Shop Market",
+          "url": "shop/market",
+          "tip": "New"
+        },
+        {
+          "title": "Shop Boxed No Sidebar",
+          "url": "shop/nosidebar/boxed",
+          "tip": "Hot"
+        },
+        {
+          "title": "Shop Fullwidth No Sidebar",
+          "url": "shop/nosidebar/fullwidth"
+        },
+        {
+          "title": "Product Category Boxed",
+          "url": "shop/category/boxed"
+        },
+        {
+          "title": "Product Category Fullwidth",
+          "url": "shop/category/fullwidth",
+          "tip": "New"
+        },
+        {
+          "title": "Cart",
+          "url": "shop/cart"
+        },
+        {
+          "title": "Checkout",
+          "url": "shop/checkout"
+        },
+        {
+          "title": "Wishlist",
+          "url": "shop/wishlist"
+        },
+        {
+          "title": "My Account",
+          "url": "shop/dashboard"
+        },
+        {
+          "title": "Lookbook",
+          "url": "#"
+        }
+      ]
+    },
+
+    {
+      "title": "Product",
+      "url": "product/default/27",
+      "items": [
+        {
+          "title": "Default",
+          "url": "product/default/27"
+        },
+        {
+          "title": "Centered",
+          "url": "product/centered/28"
+        },
+        {
+          "title": "Extended Info",
+          "url": "product/extended/29",
+          "tip": "New"
+        },
+        {
+          "title": "Gallery",
+          "url": "product/gallery/30"
+        },
+        {
+          "title": "Sticky Info",
+          "url": "product/sticky/34"
+        },
+        {
+          "title": "Boxed With Sidebar",
+          "url": "product/sidebar/32"
+        },
+        {
+          "title": "Full Width",
+          "url": "product/fullwidth/33"
+        },
+        {
+          "title": "Masonry Sticky Info",
+          "url": "product/masonry/35"
+        }
+      ]
+    },
+
+    {
+      "title": "Pages",
+      "url": "pages/about",
+      "items": [
+        {
+          "title": "About",
+          "url": "pages/about",
+          "subItems": [
+            {
+              "title": "About 01",
+              "url": "pages/about"
+            },
+            {
+              "title": "About 02",
+              "url": "pages/about-2"
+            }
+          ]
+        },
+        {
+          "title": "Contact",
+          "url": "pages/contact",
+          "subItems": [
+            {
+              "title": "Contact 01",
+              "url": "pages/contact"
+            },
+            {
+              "title": "Contact 02",
+              "url": "pages/contact-2"
+            }
+          ]
+        },
+        {
+          "title": "Login",
+          "url": "pages/login"
+        },
+        {
+          "title": "FAQs",
+          "url": "pages/faq"
+        },
+        {
+          "title": "Error 404",
+          "url": "pages/404"
+        },
+        {
+          "title": "Coming Soon",
+          "url": "pages/coming-soon"
+        }
+      ]
+    },
+
+    {
+      "title": "Blog",
+      "url": "blog/classic",
+      "items": [
+        {
+          "title": "Classic",
+          "url": "blog/classic"
+        },
+        {
+          "title": "blog/classic",
+          "url": "blog/listing"
+        },
+        {
+          "title": "Grid",
+          "url": "blog/grid/2cols",
+          "subItems": [
+            {
+              "title": "Grid 2 columns",
+              "url": "blog/grid/2cols"
+            },
+            {
+              "title": "Grid 3 columns",
+              "url": "blog/grid/3cols"
+            },
+            {
+              "title": "Grid 4 columns",
+              "url": "blog/grid/4cols"
+            },
+            {
+              "title": "Grid sidebar",
+              "url": "blog/grid/sidebar"
+            }
+          ]
+        },
+        {
+          "title": "Masonry",
+          "url": "blog/masonry/2cols",
+          "subItems": [
+            {
+              "title": "Masonry 2 columns",
+              "url": "blog/masonry/2cols"
+            },
+            {
+              "title": "Masonry 3 columns",
+              "url": "blog/masonry/3cols"
+            },
+            {
+              "title": "Masonry 4 columns",
+              "url": "blog/masonry/4cols"
+            },
+            {
+              "title": "Masonry sidebar",
+              "url": "blog/masonry/sidebar"
+            }
+          ]
+        },
+        {
+          "title": "Mask",
+          "url": "blog/mask/grid",
+          "subItems": [
+            {
+              "title": "Blog mask grid",
+              "url": "blog/mask/grid"
+            },
+            {
+              "title": "Blog mask masonry",
+              "url": "blog/mask/masonry"
+            }
+          ]
+        },
+        {
+          "title": "Single Post",
+          "url": "blog/single/100",
+          "subItems": [
+            {
+              "title": "Default with sidebar",
+              "url": "blog/single/100"
+            },
+            {
+              "title": "Fullwidth no sidebar",
+              "url": "blog/single-2/101"
+            },
+            {
+              "title": "Fullwidth with sidebar",
+              "url": "blog/single-3/102"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "title": "Elements",
+      "url": "elements/list",
+      "items": [
+        {
+          "title": "Typography",
+          "url": "elements/typography"
+        },
+        {
+          "title": "Titles",
+          "url": "elements/titles"
+        },
+        {
+          "title": "Banners",
+          "url": "elements/banners"
+        },
+        {
+          "title": "Category",
+          "url": "elements/categories"
+        },
+        {
+          "title": "Video Banners",
+          "url": "elements/video-banners"
+        },
+        {
+          "title": "Buttons",
+          "url": "elements/buttons"
+        },
+        {
+          "title": "Accordions",
+          "url": "elements/accordions"
+        },
+        {
+          "title": "Tabs",
+          "url": "elements/tabs"
+        },
+        {
+          "title": "Testimonials",
+          "url": "elements/testimonials"
+        },
+        {
+          "title": "Blog Posts",
+          "url": "elements/blog-posts"
+        },
+        {
+          "title": "Portfolio",
+          "url": "elements/portfolios"
+        },
+        {
+          "title": "Call to Action",
+          "url": "elements/cta"
+        },
+        {
+          "title": "Icon Boxes",
+          "url": "elements/icon-boxes"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+/* Font Icons */
+@import '../../public/assets/scss/demos/landing';
+
+.btn-primary {
+    background-color: transparent;
+    border-color: #cd9967;
+    
+    &:hover, &:active, &:focus{
+        background-color: #cd9967;
+        border-color: #cd9967;
+    } 
+
+    &:active {
+        background-color: #cd9967 !important;
+        border-color: #cd9967 !important;    
+    }
+
+    &:focus {
+        border-color: #cd9967 !important;
+        box-shadow: none;
+    }
+
+    &:not(:disabled):not(.disabled):active:focus {
+        box-shadow: none;
+    }
+}
+
+.icon-react{
+    font-size: 2rem;
+}
+
+@media screen and (max-width: 701px) {
+    .section-dark {
+        h1 {
+            font-size: 1.9rem;
+        }
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}
+
+.icon-clone-1:before { font-family: 'molla'; content: '\e81a'; } /* '' */
+.icon-react:before { font-family: 'molla'; content: '\f41b'; } /* '' */
+.icon-searchengin:before { font-family: 'molla'; content: '\f3eb'; } /* '' */
+.icon-delicious:before { font-family: 'molla'; content: '\f1a5'; } /* '' */
+.icon-facebook-f:before { font-family: 'molla'; content: '\f39e'; } /* '' */
+.icon-twitter:before { font-family: 'molla'; content: '\f099'; } /* '' */
+.icon-instagram:before { font-family: 'molla'; content: '\f16d'; } /* '' */
+.icon-youtube:before { font-family: 'molla'; content: '\f167'; } /* '' */
+.icon-pinterest:before { font-family: 'molla'; content: '\f0d2'; } /* '' */
