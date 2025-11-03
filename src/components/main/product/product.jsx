@@ -37,9 +37,7 @@ class ProductDetailClass extends SingleProductComponent {
       finish: "",
       video: "",
       color_shade: "",
-      redirect: false,
       loading: true,
-      redirect: false,
     };
   }
 
@@ -116,8 +114,6 @@ class ProductDetailClass extends SingleProductComponent {
       video: getVideo,
       loading: false,
       blockSize: 50,
-      finishes: null,
-      // finishes: filtered,
       finishes: resp.data.finishes,
       color_shade: getColour.data[0].color_shade,
     });

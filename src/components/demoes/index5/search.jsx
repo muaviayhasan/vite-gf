@@ -14,12 +14,9 @@ import "./search-bar.css";
 import { type } from "jquery";
 
 class Search extends Component {
-  componentDidMount() {
+  UNSAFE_componentWillMount() {
     initSettings();
     store.dispatch(changeDemo("5"));
-  }
-
-  UNSAFE_componentWillMount() {
     store.dispatch(outerLoading());
   }
 
@@ -574,9 +571,8 @@ class Search extends Component {
                   htmlFor="free-shipping-1"
                   style={{
                     fontSize: 19,
-                    color: "#333333",
-                    fontWeight: "600",
                     color: "white",
+                    fontWeight: "600",
                   }}
                 >
                   Search Glass Range
@@ -586,11 +582,10 @@ class Search extends Component {
                 class="custom-control-label custom-control-label-mobile ______pipe"
                 style={{
                   fontSize: 19,
-                  color: "#333333",
+                  color: "#cc9966",
                   fontWeight: "600",
                   marginTop: "1.1rem",
                   paddingLeft: "4%",
-                  color: "#cc9966",
                 }}
               >
                 ||
@@ -612,9 +607,8 @@ class Search extends Component {
                   htmlFor="free-shipping-2"
                   style={{
                     fontSize: 19,
-                    color: "#333333",
-                    fontWeight: "600",
                     color: "white",
+                    fontWeight: "600",
                   }}
                 >
                   Search Stones Range

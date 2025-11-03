@@ -18,7 +18,6 @@ class CustomPage extends Component {
       image: "",
       markup: "",
       isLoaded: false,
-      title: "",
       meta: "",
       tags: "",
     };

@@ -36,21 +36,10 @@ class GetAQuote extends Component {
       design_width: "",
       design_lenght: "",
       communication: "",
-      filter_thickness: [],
       filter_finishes: [],
-      newProduct: [],
-
       change: false,
       open: false,
       customers: [],
-      worktop_width: "",
-      worktop_lenght: "",
-      splashback_width: "",
-      splashback_lenght: "",
-      fabrication_quantity: "",
-      extra_services_quantity: "",
-      design_width: "",
-      design_lenght: "",
       design_pieces: "",
       design_cutouts: "",
       isRedirect: false,
@@ -83,7 +72,6 @@ class GetAQuote extends Component {
       Designoptions: [],
       survey_fit_options: [],
       cutouts: [],
-
       Extra_Services: [],
       Extra_ServicesStone: [],
       selectedServiceStoneIndex: 0,
@@ -966,7 +954,6 @@ products.splice(checkFinish, 1);
 
     this.setState({
       ...this.state,
-      AddExtraservicesGlass: variable,
       AddExtraservicesGlass: oldarray,
       change: true,
     });
@@ -991,7 +978,6 @@ products.splice(checkFinish, 1);
 
     this.setState({
       ...this.state,
-      AddExtraServices: variable,
       AddExtraServices: oldarray,
       change: true,
     });
