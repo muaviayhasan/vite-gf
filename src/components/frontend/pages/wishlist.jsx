@@ -513,9 +513,7 @@ class Wishlist extends Component {
                             className="custome_lable form-check-label"
                             htmlFor="check"
                             style={{
-                              fontSize: 12,
                               marginLeft: "1%",
-                              fontSize: "inherit",
                               color: "#333",
                             }}
                           >

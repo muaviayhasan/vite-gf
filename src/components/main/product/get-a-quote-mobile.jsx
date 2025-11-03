@@ -839,8 +839,7 @@ products.splice(checkFinish, 1);
 
     this.setState({
       ...this.state,
-      AddExtraservicesGlass: variable,
-      AddExtraservicesGlass: oldarray,
+      AddExtraServices: oldarray,
       change: true,
     });
   };
@@ -864,7 +863,6 @@ products.splice(checkFinish, 1);
 
     this.setState({
       ...this.state,
-      AddExtraServices: variable,
       AddExtraServices: oldarray,
       change: true,
     });
