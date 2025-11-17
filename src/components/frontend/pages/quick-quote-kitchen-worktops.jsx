@@ -256,7 +256,7 @@ export default class Kitchen_Worktops extends Component {
                           alt="..."
                         />
                         <Link
-                          to={`${import.meta.env.VITE_PUBLIC_URL}/search/material=Stone&material_type=Granite&effect=all&colour=all&brand=all&price_band=0`}
+                          to={`${import.meta.env.VITE_PUBLIC_URL}/search?material=Stone&material_type=Granite&effect=all&colour=all&brand=all&price_band=0`}
                         >
                           <button className="stone_btn">GRANITE</button>
                         </Link>
@@ -268,7 +268,7 @@ export default class Kitchen_Worktops extends Component {
                           alt="..."
                         />
                         <Link
-                          to={`${import.meta.env.VITE_PUBLIC_URL}/search/material=Stone&material_type=Quartz&effect=all&colour=all&brand=all&price_band=0`}
+                          to={`${import.meta.env.VITE_PUBLIC_URL}/search?material=Stone&material_type=Quartz&effect=all&colour=all&brand=all&price_band=0`}
                         >
                           <button className="stone_btn">QUARTZ</button>
                         </Link>
@@ -277,7 +277,7 @@ export default class Kitchen_Worktops extends Component {
                   </div>
                   <div className="col-6 img-stone-2">
                     <Link
-                      to={`${import.meta.env.VITE_PUBLIC_URL}/search/material=Stone&material_type=Marble&effect=all&colour=all&brand=all&price_band=0`}
+                      to={`${import.meta.env.VITE_PUBLIC_URL}/search?material=Stone&material_type=Marble&effect=all&colour=all&brand=all&price_band=0`}
                     >
                       <button className="stone_btn">MARBLE</button>
                     </Link>

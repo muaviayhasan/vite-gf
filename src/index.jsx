@@ -165,7 +165,7 @@ store.dispatch(getAllProducts());
 store.dispatch(getAllPosts());
 root.render(
   <Provider store={store}>
-    <Router basename={import.meta.env.VITE_BASE_URL || '/'}>
+    <Router basename={'/'}>
       <ScrollToTop>
         <Routes>
           {/* LandingPage */}
@@ -271,15 +271,8 @@ root.render(
             <Route path="/empty-short-list" element={<EmptyShortList />} />
             <Route path="/empty-wishlist" element={<EmptyWishList />} />
             <Route path="/no-record-found" element={<NoRecordFound />} />
-            <Route
-              path="/search/material=:material&category=:category&colour=:colour&product_name=:product_name&price_band=:price_band"
-              element={<Search title="Search Result" />}
-            />
+            <Route path="/search" element={<Search title="Search Result" />} />
             <Route path="/q=:productName" element={<SearchProduct title="Search Result" />} />
-            <Route
-              path="/search/material=:material&material_type=:material_type&effect=:effect&colour=:colour&brand=:brand&price_band=:price_band"
-              element={<Search title="Search Result" />}
-            />
             <Route path="/wishlist" element={<Wishlist title="Wishlist" />} />
             <Route path="/bespoke_glass_splashbacks_London" element={<BespokeGlassSplashbacksLondon />} />
             <Route path="/quick-enquiry-glass-splashback-thank-you-page" element={<BespokeGlassSplashbacksLondonThankYouPage />} />

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
-
 import Breadcrumb from "../../common/breadcrumb";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
@@ -20,286 +19,161 @@ class Page extends Component {
       phone: "",
       date: "",
       message: "",
+      isRedirect: false,
     };
-    this.termsandconditions = this.termsandconditions.bind(this);
   }
 
-  termsandconditions = (e) => {
-    if (e.target.checked === true) {
-      this.setState({
-        ...this.state,
-        checked: true,
-      });
-    } else {
-      this.setState({
-        ...this.state,
-        checked: false,
-      });
-    }
+  handleCheckboxChange = (e) => {
+    this.setState({ checked: e.target.checked });
   };
 
-  _handleChange = (evt) => {
-    const value = evt.target.value;
-    this.setState({
-      ...this.state,
-      [evt.target.name]: value,
-    });
+  handleInputChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
   };
 
-  formSubmitHandler = async (payload) => {
-    console.log(payload);
-    const res = await axios.post(
-      `${import.meta.env.VITE_API_URL}/book-showroom-visit`,
-      payload
-    );
-    this.props.history.push("/book-showroom-visit-thank-you-page");
-    console.log(res);
-    toast.success(`${res.data}`);
-    this.setState({
-      loading: false,
-      validForm: false,
-      name: "",
-      email: "",
-      phone: "",
-      date: "",
-      message: "",
-    });
-  };
+  handleSubmit = async () => {
+    const { name, email, phone, date, message, checked } = this.state;
 
-  submit = (e) => {
-    this.setState({ loading: true, validForm: true });
-    const { checked, name, email, date, phone, message } = this.state;
-    if (
-      checked &&
-      name !== "" &&
-      email !== "" &&
-      phone !== "" &&
-      date !== "" &&
-      message !== ""
-    ) {
-      const payload = {
-        name,
-        email,
-        phone,
-        date,
-        message,
-      };
-      console.log("valid form");
-
-      this.formSubmitHandler(payload);
-    } else {
-      console.log("invalid form");
-      console.log(this.state);
+    // Check if all required fields are filled and terms are accepted
+    if (!checked || !name || !email || !phone || !date || !message) {
       this.setState({ validForm: false });
-      toast.error(`Please fill all the fields`);
+      toast.error("Please fill all the fields and accept the terms.");
       return;
+    }
+
+    const payload = { name, email, phone, date, message };
+    try {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/book-showroom-visit`, payload);
+      toast.success(response.data);
+      this.setState({ isRedirect: true });
+    } catch (error) {
+      toast.error("Something went wrong, please try again later.");
     }
   };
 
   render() {
-    const {
-      loading,
-      validForm,
-      name,
-      email,
-      phone,
-      date,
-      message,
-    } = this.state;
-    TopBarProgress.config({
-      barColors: {
-        "0": "#253746",
-        "1.0": "#253746",
-      },
-      shadowBlur: 5,
-    });
+    const { name, email, phone, date, message, checked, isRedirect, loading } = this.state;
+
+    if (isRedirect) {
+      return <Navigate to="/book-showroom-visit-thank-you-page" replace={false} />;
+    }
+
     return (
       <div className="main">
         <Helmet>
           <title>GNF - Book Showroom Appointment</title>
         </Helmet>
 
-        <h1 className="d-none">GNF - Book Showroom Appointment</h1>
-
-        <Breadcrumb
-          title="Book Showroom Appointment
-"
-          adClass="border-0 mb-0"
-        />
+        <Breadcrumb title="Book Showroom Appointment" adClass="border-0 mb-0" />
 
         <div className="container">
-          <h1 className="page-title" style={{ fontSize: "25px" }}>
-            Book Showroom Appointment
-          </h1>
+          <h1 className="page-title" style={{ fontSize: "25px" }}>Book Showroom Appointment</h1>
         </div>
-        <br />
 
         <div className="page-content pb-0">
           <div className="container">
-            <div
-              className="row"
-              style={{ display: "flex", justifyContent: "center" }}
-            >
+            <div className="row justify-content-center">
               <div className="col-lg-6">
-                {/* <h2 className="title mb-1">Got Any Questions?</h2> */}
-                <p className="mb-2">
-                  Use the form below to book showroom appointment
-                </p>
+                <p className="mb-2">Use the form below to book a showroom appointment</p>
 
-                <form action="#" className="contact-form mb-3">
+                <form className="contact-form mb-3">
                   <div className="row">
                     <div className="col-sm-12">
-                      <label htmlFor="cname" className="sr-only">
-                        Name
-                      </label>
-                      <br />
-                      {name === "" && loading && (
-                        <span className="error text-danger">
-                          Name is required*
-                        </span>
-                      )}
+                      <label htmlFor="name" className="sr-only">Name</label>
                       <input
                         type="text"
                         className="form-control"
-                        id="cname"
+                        id="name"
                         placeholder="Name *"
-                        required
                         name="name"
                         value={name}
-                        onChange={this._handleChange}
+                        onChange={this.handleInputChange}
+                        required
                       />
                     </div>
 
                     <div className="col-sm-12">
-                      <label htmlFor="cemail" className="sr-only">
-                        Email
-                      </label>
-                      <br />
-                      {email === "" && loading && (
-                        <span className="error text-danger">
-                          Email is required*
-                        </span>
-                      )}
+                      <label htmlFor="email" className="sr-only">Email</label>
                       <input
                         type="email"
                         className="form-control"
-                        id="cemail"
+                        id="email"
                         placeholder="Email *"
-                        required
                         name="email"
                         value={email}
-                        onChange={this._handleChange}
+                        onChange={this.handleInputChange}
+                        required
                       />
                     </div>
                   </div>
 
                   <div className="row">
                     <div className="col-sm-12">
-                      <label htmlFor="cphone" className="sr-only">
-                        Phone
-                      </label>
-                      <br />
-                      {phone === "" && loading && (
-                        <span className="error text-danger">
-                          Phone is required*
-                        </span>
-                      )}
+                      <label htmlFor="phone" className="sr-only">Phone</label>
                       <input
                         type="tel"
                         className="form-control"
-                        id="cphone"
+                        id="phone"
                         placeholder="Phone *"
-                        required
                         name="phone"
                         value={phone}
-                        onChange={this._handleChange}
+                        onChange={this.handleInputChange}
+                        required
                       />
                     </div>
                   </div>
 
                   <div className="row">
                     <div className="col-sm-12">
-                      <label htmlFor="cphone" className="sr-only">
-                        Date
-                      </label>
-                      <br />
-                      {date === "" && loading && (
-                        <span className="error text-danger">
-                          Date is required*
-                        </span>
-                      )}
+                      <label htmlFor="date" className="sr-only">Date</label>
                       <input
                         type="text"
                         className="form-control"
                         id="date"
-                        placeholder="Date & Time*"
-                        required
+                        placeholder="Date & Time *"
                         name="date"
                         value={date}
-                        onChange={this._handleChange}
+                        onChange={this.handleInputChange}
+                        required
                       />
                     </div>
                   </div>
 
-                  <label htmlFor="cmessage" className="sr-only">
-                    Message
-                  </label>
-                  <br />
-                  {message === "" && loading && (
-                    <span className="error text-danger">
-                      Message is required*
-                    </span>
-                  )}
+                  <label htmlFor="message" className="sr-only">Message</label>
                   <textarea
                     className="form-control"
                     cols="30"
                     rows="4"
-                    id="cmessage"
-                    required
+                    id="message"
                     name="message"
                     value={message}
-                    onChange={this._handleChange}
+                    onChange={this.handleInputChange}
                     placeholder="Message *"
+                    required
                   ></textarea>
 
-                  <div className="col-md-12">
-                    <div
-                      className="form-group form-check"
-                      style={{ paddingLeft: "0.25rem" }}
-                    >
-                      <input
-                        style={{ marginTop: "0.6rem" }}
-                        name="check"
-                        type="checkbox"
-                        className="form-check-input"
-                        id="check"
-                        required=""
-                        onChange={(e) => this.termsandconditions(e)}
-                      />
-                      <label
-                        className="custome_lable form-check-label"
-                        htmlFor="check"
-                        style={{ fontSize: 12, marginLeft: "2%" }}
-                      >
-                        I accept the &nbsp;
-                        <Link
-                          to={`${import.meta.env.VITE_PUBLIC_URL}/terms-and-condition`}
-                        >
-                          Terms & Conditions
-                        </Link>
-                        &nbsp; and &nbsp;
-                        <Link to={`${import.meta.env.VITE_PUBLIC_URL}/privacy-policy`}>
-                          &nbsp; Privacy policy
-                        </Link>
-                      </label>
-                    </div>
+                  <div className="col-md-12 form-check" style={{ paddingLeft: "0.25rem" }}>
+                    <input
+                      style={{ marginTop: "0.6rem" }}
+                      name="check"
+                      type="checkbox"
+                      className="form-check-input"
+                      id="check"
+                      required
+                      onChange={this.handleCheckboxChange}
+                    />
+                    <label className="custome_lable form-check-label" htmlFor="check" style={{ fontSize: 12, marginLeft: "2%" }}>
+                      I accept the &nbsp;
+                      <Link to={`${import.meta.env.VITE_PUBLIC_URL}/terms-and-condition`}>Terms & Conditions</Link> &nbsp; and &nbsp;
+                      <Link to={`${import.meta.env.VITE_PUBLIC_URL}/privacy-policy`}>Privacy policy</Link>
+                    </label>
                   </div>
 
                   <button
                     type="button"
-                    disabled={!this.state.checked}
-                    onClick={this.submit}
                     className="btn btn-outline-primary-2 btn-minwidth-sm"
+                    onClick={this.handleSubmit}
+                    disabled={!checked}
                   >
                     <span>SUBMIT</span>
                     <i className="icon-long-arrow-right"></i>

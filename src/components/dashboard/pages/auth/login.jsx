@@ -45,7 +45,7 @@ class adminLogin extends Component {
       window.location.reload();
       document.body.setAttribute("style", " background : #fff !important");
       setTimeout(() => {
-        this.props.history.push(`${import.meta.env.VITE_PUBLIC_URL}/admin/dashboard`);
+        this.props.history?.push(`${import.meta.env.VITE_PUBLIC_URL}/admin/dashboard`);
     }, 2000);
       
     }
@@ -53,7 +53,7 @@ class adminLogin extends Component {
 
   componentDidMount() {
     if (this.props.isAuthenticated === true) {
-      this.props.history.push(`${import.meta.env.VITE_PUBLIC_URL}/admin/dashboard`);
+      this.props.history?.push(`${import.meta.env.VITE_PUBLIC_URL}/admin/dashboard`);
     }
 
     this.props.clearErrors();

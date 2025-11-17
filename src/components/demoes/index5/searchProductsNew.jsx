@@ -323,7 +323,7 @@ class SearchProduct extends Component {
         currentMaterial: "Glass",
       };
       this.props.history.push(
-        `${import.meta.env.VITE_PUBLIC_URL}/search/material=${searchData.currentMaterial}&category=${searchData.glass_category_name}&colour=${searchData.base_color_name}&product_name=${searchData.product_name}&price_band=${searchData.price_band}`
+        `${import.meta.env.VITE_PUBLIC_URL}/search?material=${searchData.currentMaterial}&category=${searchData.glass_category_name}&colour=${searchData.base_color_name}&product_name=${searchData.product_name}&price_band=${searchData.price_band}`
       );
     } else {
       searchData = {
@@ -339,7 +339,7 @@ class SearchProduct extends Component {
         currentMaterial: "Stone",
       };
       this.props.history.push(
-        `${import.meta.env.VITE_PUBLIC_URL}/search/material=${searchData.currentMaterial}&material_type=${searchData.stone_material}&effect=${searchData.effect_name}&colour=${searchData.base_color_name}&brand=${searchData.brand_name}&price_band=${searchData.price_band}`
+        `${import.meta.env.VITE_PUBLIC_URL}/search?material=${searchData.currentMaterial}&material_type=${searchData.stone_material}&effect=${searchData.effect_name}&colour=${searchData.base_color_name}&brand=${searchData.brand_name}&price_band=${searchData.price_band}`
       );
     }
 

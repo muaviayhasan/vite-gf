@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 import Breadcrumb from "../../common/breadcrumb";
@@ -19,93 +19,102 @@ class ContactOne extends Component {
       email: "",
       phone: "",
       message: "",
+      isRedirect: false,
     };
     this.termsandconditions = this.termsandconditions.bind(this);
+    this._handleChange = this._handleChange.bind(this);
+    this.submit = this.submit.bind(this);
   }
 
   termsandconditions = (e) => {
-    if (e.target.checked === true) {
-      this.setState({
-        ...this.state,
-        checked: true,
-      });
-    } else {
-      this.setState({
-        ...this.state,
-        checked: false,
-      });
-    }
+    this.setState({ checked: e.target.checked === true });
   };
 
   _handleChange = (evt) => {
-    const value = evt.target.value;
-    this.setState({
-      ...this.state,
-      [evt.target.name]: value,
-    });
+    const { name, value } = evt.target;
+    this.setState({ [name]: value });
   };
 
-  formSubmitHandler = async (payload) => {
-    console.log(payload);
-    const res = await axios.post(
-      `${import.meta.env.VITE_API_URL}/contact-request`,
-      payload
-    );
-    this.props.history.push("/contact-thank-you-page");
-    console.log(res);
-    toast.success(`${res.data}`);
-    this.setState({
-      loading: false,
-      validForm: false,
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    });
-  };
-
-  submit = (e) => {
-    this.setState({ loading: true, validForm: true });
-    const { checked, name, email, phone, message } = this.state;
-    if (
-      checked &&
-      name !== "" &&
-      email !== "" &&
-      phone !== "" &&
-      message !== ""
-    ) {
-      const payload = {
-        name,
-        email,
-        phone,
-        message,
-      };
-      console.log("valid form");
-
-      this.formSubmitHandler(payload);
-    } else {
-      console.log("invalid form");
-      console.log(this.state);
-      this.setState({ validForm: false });
-      toast.error(`Please fill all the fields`);
-      return;
+  async formSubmitHandler(payload) {
+    try {
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_URL}/contact-request`,
+        payload
+      );
+      toast.success(`${res.data}`);
+      this.setState({
+        loading: false,
+        validForm: false,
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+        isRedirect: true,
+      });
+    } catch (err) {
+      const msg =
+        err?.response?.data?.message ||
+        err?.response?.data ||
+        "Something went wrong, please try again";
+      toast.error(msg);
+      this.setState({ loading: false, validForm: false });
     }
-  };
+  }
+
+  submit(e) {
+    e.preventDefault();
+    this.setState({ loading: true, validForm: true });
+
+    const { checked, name, email, phone, message } = this.state;
+
+    const trimmed = {
+      name: name.trim(),
+      email: email.trim(),
+      phone: phone.trim(),
+      message: message.trim(),
+    };
+
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed.email);
+    const phoneOk = trimmed.phone.length >= 7;
+
+    if (!checked) {
+      toast.error("Please accept the terms and privacy policy");
+      return this.setState({ loading: false, validForm: false });
+    }
+    if (!trimmed.name || !trimmed.email || !trimmed.phone || !trimmed.message) {
+      toast.error("Please fill all the fields");
+      return this.setState({ loading: false, validForm: false });
+    }
+    if (!emailOk) {
+      toast.error("Please enter a valid email");
+      return this.setState({ loading: false, validForm: false });
+    }
+    if (!phoneOk) {
+      toast.error("Please enter a valid phone");
+      return this.setState({ loading: false, validForm: false });
+    }
+
+    const payload = { ...trimmed };
+    this.formSubmitHandler(payload);
+  }
 
   render() {
-    const { loading, validForm, name, email, phone, message } = this.state;
+    const { loading, name, email, phone, message, isRedirect } = this.state;
+
     TopBarProgress.config({
-      barColors: {
-        "0": "#253746",
-        "1.0": "#253746",
-      },
+      barColors: { "0": "#253746", "1.0": "#253746" },
       shadowBlur: 5,
     });
+
+    if (isRedirect) {
+      return <Navigate to="/contact-thank-you-page" replace={false} />;
+    }
+
     return (
       <div className="main">
+        {loading && <TopBarProgress />}
         <Helmet>
           <title>Contact Us</title>
-
           <meta
             name="description"
             content="Contact us to get the kitchen of your dreams crafted!"
@@ -116,7 +125,7 @@ class ContactOne extends Component {
           />
         </Helmet>
 
-        <h1 className="d-none">GNF - Contact Us</h1>
+        <h1 className="d-none">GNF, Contact Us</h1>
 
         <Breadcrumb title="Contact Us" adclassName="border-0 mb-0" />
 
@@ -130,23 +139,10 @@ class ContactOne extends Component {
           <h6 className="font-weight-bold">
             <a href="tel:07823345500">07823345500</a>
           </h6>
-          {/* <div className="row">
-            <div className="col-lg-2">
-              <h6>Phone No 1: </h6>
-            </div>
-            <div className="col-lg-2 d-flex">
-              <div className="col-lg-12">
-                <a href="tel:02039359199">02039359199</a>
-                <h3 className="font-weight-bold">02039359199</h3>
-              </div>
-              <div className="col-lg-12">
-                <a href="tel:07823345500">07823345500</a>
-                <h3 className="font-weight-bold">07823345500</h3>
-              </div>
-            </div>
-          </div> */}
         </div>
+
         <br />
+
         <div className="page-content pb-0">
           <div className="container">
             <div className="row">
@@ -158,17 +154,17 @@ class ContactOne extends Component {
                     <iframe
                       style={{ width: "100%", height: "100%" }}
                       src="https://maps.google.com/maps?q=10+Chesterfield+Way%2C+Hayes+UB3+3NW%2C+UK&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                      title="location"
                     ></iframe>
                   </div>
                 </div>
               </div>
+
               <div className="col-lg-6 mb-2 mb-lg-0 order-first order-md-last">
                 <h2 className="title mb-1">Got Any Questions?</h2>
-                <p className="mb-2">
-                  Use the form below to get in touch with the sales team
-                </p>
+                <p className="mb-2">Use the form below to get in touch with the sales team</p>
 
-                <form action="#" className="contact-form mb-3">
+                <form className="contact-form mb-3" onSubmit={this.submit}>
                   <div className="row">
                     <div className="col-sm-12">
                       <label htmlFor="cname" className="sr-only">
@@ -176,9 +172,7 @@ class ContactOne extends Component {
                       </label>
                       <br />
                       {name === "" && loading && (
-                        <span className="error text-danger">
-                          Name is required*
-                        </span>
+                        <span className="error text-danger">Name is required*</span>
                       )}
                       <input
                         type="text"
@@ -198,9 +192,7 @@ class ContactOne extends Component {
                       </label>
                       <br />
                       {email === "" && loading && (
-                        <span className="error text-danger">
-                          Email is required*
-                        </span>
+                        <span className="error text-danger">Email is required*</span>
                       )}
                       <input
                         type="email"
@@ -222,9 +214,7 @@ class ContactOne extends Component {
                       </label>
                       <br />
                       {phone === "" && loading && (
-                        <span className="error text-danger">
-                          Phone is required*
-                        </span>
+                        <span className="error text-danger">Phone is required*</span>
                       )}
                       <input
                         type="tel"
@@ -244,9 +234,7 @@ class ContactOne extends Component {
                   </label>
                   <br />
                   {message === "" && loading && (
-                    <span className="error text-danger">
-                      Message is required*
-                    </span>
+                    <span className="error text-danger">Message is required*</span>
                   )}
                   <textarea
                     className="form-control"
@@ -261,10 +249,7 @@ class ContactOne extends Component {
                   ></textarea>
 
                   <div className="col-md-12">
-                    <div
-                      className="form-group form-check"
-                      style={{ paddingLeft: "0.25rem" }}
-                    >
+                    <div className="form-group form-check" style={{ paddingLeft: "0.25rem" }}>
                       <input
                         style={{ marginTop: "0.6rem" }}
                         name="check"
@@ -272,34 +257,31 @@ class ContactOne extends Component {
                         className="form-check-input"
                         id="check"
                         required=""
-                        onChange={(e) => this.termsandconditions(e)}
+                        onChange={this.termsandconditions}
                       />
                       <label
                         className="custome_lable form-check-label"
                         htmlFor="check"
                         style={{ fontSize: 12, marginLeft: "2%" }}
                       >
-                        I accept the &nbsp;
-                        <Link
-                          to={`${import.meta.env.VITE_PUBLIC_URL}/terms-and-condition`}
-                        >
+                        I accept the{" "}
+                        <Link to={`${import.meta.env.VITE_PUBLIC_URL}/terms-and-condition`}>
                           Terms & Conditions
                         </Link>
-                        &nbsp; and &nbsp;
+                        {" "}and{" "}
                         <Link to={`${import.meta.env.VITE_PUBLIC_URL}/privacy-policy`}>
-                          &nbsp; Privacy policy
+                          Privacy policy
                         </Link>
                       </label>
                     </div>
                   </div>
 
                   <button
-                    type="button"
-                    disabled={!this.state.checked}
-                    onClick={this.submit}
+                    type="submit"
+                    disabled={!this.state.checked || loading}
                     className="btn btn-outline-primary-2 btn-minwidth-sm"
                   >
-                    <span>SUBMIT</span>
+                    <span>{loading ? "SUBMITTING..." : "SUBMIT"}</span>
                     <i className="icon-long-arrow-right"></i>
                   </button>
                 </form>
@@ -313,23 +295,14 @@ class ContactOne extends Component {
           >
             <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12 contact_border _custom_padding">
               <p className="contact_paragraphs">
-                <Link
-                  to="/request-a-callback"
-                  style={{ color: "rgb(0, 0, 0)", fontSize: "16px" }}
-                >
+                <Link to="/request-a-callback" style={{ color: "rgb(0, 0, 0)", fontSize: "16px" }}>
                   Request a call back
                 </Link>
               </p>
             </div>
             <div className="col-lg-3  col-md-4 col-sm-6 col-xs-12 contact_border _custom_padding">
-              <p
-                className="contact_paragraphs"
-                style={{ color: "rgb(0, 0, 0)", fontSize: "16px" }}
-              >
-                <Link
-                  to="/contact"
-                  style={{ color: "rgb(0, 0, 0)", fontSize: "16px" }}
-                >
+              <p className="contact_paragraphs" style={{ color: "rgb(0, 0, 0)", fontSize: "16px" }}>
+                <Link to="/contact" style={{ color: "rgb(0, 0, 0)", fontSize: "16px" }}>
                   Send us a message
                 </Link>
               </p>
@@ -346,20 +319,12 @@ class ContactOne extends Component {
             </div>
             <div className="col-lg-3 col-md-4 col-sm-6 col-xs-12 contact_border _custom_padding">
               <p className="contact_paragraphs">
-                <Link
-                  to="/get-a-quote"
-                  style={{ color: "rgb(0, 0, 0)", fontSize: "16px" }}
-                >
+                <Link to="/get-a-quote" style={{ color: "rgb(0, 0, 0)", fontSize: "16px" }}>
                   Get FREE Online Quote
                 </Link>
               </p>
             </div>
           </div>
-
-          {/* <div id="map"><iframe
-                    style={{width: '100%', height: '100%'}}
-                  src="https://maps.google.com/maps?q=10+Chesterfield+Way%2C+Hayes+UB3+3NW%2C+UK&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                ></iframe></div> */}
         </div>
       </div>
     );

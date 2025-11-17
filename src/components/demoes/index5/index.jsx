@@ -222,20 +222,42 @@ class IndexFive extends Component {
           <HeaderFive />
 
           <div className="main">
-            <div className="intro-slider-container mb-0">
-              <OwlCarousels
-                adClassName="intro-slider owl-carousel owl-theme owl-nav-inside owl-light"
-                carouselOptions={introSlider}
+            <div className="video-hero-container">
+              <video
+                className="video-background"
+                autoPlay
+                loop
+                muted
+                playsInline
               >
-                {_data.demo5.introBanners.map((item, index) => (
-                  <IntroSlide slide={item} key={index} />
-                ))}
-              </OwlCarousels>
-
-              <span
-                className="slider-loader "
-                style={{ color: "black" }}
-              ></span>
+                <source
+                  src={`${import.meta.env.VITE_PUBLIC_URL}/assets/intro-video/Glass-and-fusion-london-stones-marble-kitchen.mp4`}
+                  type="video/mp4"
+                />
+                
+              </video>
+              
+              <div className="video-overlay"></div>
+              
+              <div className="video-hero-content">
+                <h1 className="hero-title">
+                   Premium Granite, <span className="hero-highlight">Quartz & Marble Worktops</span>
+                </h1>
+                <p className="hero-quote">
+                  "Measure, fabricate and fit with a fast 5‑day turnaround and 10+ year warranty."
+                </p>
+                <p className="hero-author">Get a Free Quote</p>
+                <Link 
+                  to="#quick-enquiry" 
+                  className="btn btn-hero"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.querySelector('.contact-map-selected')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  Get a Free Quote →
+                </Link>
+              </div>
             </div>
 
             <BrandTwo adClassName="brands-border owl-simple mb-1" />

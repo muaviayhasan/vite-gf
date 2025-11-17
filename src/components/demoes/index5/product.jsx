@@ -56,7 +56,7 @@ class Product extends BaseProduct {
           >
             {product.images && product.images[0] ? (
               <img
-                src={`${import.meta.env.VITE_VITE_API_URL}/${product.name === "White Macaubas"
+                src={`${import.meta.env.VITE_API_URL}/${product.name === "White Macaubas"
                     ? product.images[1].path
                     : product.images[0].path
                   }`}

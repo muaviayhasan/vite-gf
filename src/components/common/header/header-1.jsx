@@ -22,7 +22,7 @@ class HeaderOne extends Component {
 
   // componentDidMount() {
   //   window.addEventListener("scroll", stickyHeaderHandler);
-  //   if (window.location.href.indexOf("https://glassfusionltd.co.uk") > -1) {
+  //   if (window.location.href.indexOf(import.meta.env.VITE_BASE_URL) > -1) {
   //     const s = document.createElement("script");
   //     s.type = "text/javascript";
   //     s.async = true;

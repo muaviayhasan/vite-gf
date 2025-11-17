@@ -5,7 +5,7 @@ import { SocialLink } from "../../features/social-link";
 
 class FooterTwo extends Component {
   componentDidMount() {
-    if (window.location.href.indexOf("https://glassfusionltd.co.uk/") > -1) {
+    if (window.location.href.indexOf(import.meta.env.VITE_BASE_URL) > -1) {
       const s = document.createElement("script");
       s.type = "text/javascript";
       s.async = true;
@@ -214,13 +214,12 @@ class FooterTwo extends Component {
                   {/* Payment Method */}
                 </span>
                 <figure
-                  className="footer-payments"
-                  style={{ display: "flex" }}
+                  className="footer-payments d-flex flex-wrap"
                 >
                   <a
                     href="https://www.houzz.co.uk/pro/glassandfusionltd"
                     target="blank"
-                    style={{ display: "flex" }}
+                    className="d-flex flex-wrap"
                   >
                     <img
                       src={`${import.meta.env.VITE_PUBLIC_URL}/assets/images/houze1.png`}
@@ -240,6 +239,7 @@ class FooterTwo extends Component {
                       width="52"
                       style={{ marginLeft: 5, width: 80, height: 80 }}
                     />
+                    <div className="w-100 d-block d-md-none" />
                     <img
                       src={`${import.meta.env.VITE_PUBLIC_URL}/assets/images/2024.png`}
                       alt="Payment methods"

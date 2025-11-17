@@ -1,25 +1,11 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { Tabs, Tab, TabList, TabPanel } from "react-tabs";
 import { connect } from "react-redux";
-
 import Product from "./product";
-
-import {
-  getProductsByCategory,
-  getProductsByDemo,
-  getNewProducts,
-} from "../../../../services";
-import {
-  addToCart,
-  toggleWishlist,
-  addToCompare,
-  showQuickViewModal,
-} from "../../../../actions";
-import _data from "../../../../mock_data/data.json";
-
+import { addToCart, toggleWishlist, addToCompare, showQuickViewModal } from "../../../../actions";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import SearchBar from '../../../demoes/index5/search-bar';
+import SearchBar from "../../../demoes/index5/search-bar";
 
 class StoneCatalogue extends Component {
   constructor(props) {
@@ -33,223 +19,114 @@ class StoneCatalogue extends Component {
       marble: [],
       quartz: [],
       compactWorktops: [],
-      cat: "Granite",
-      data: [],
       sections: [],
     };
   }
 
-  async componentDidMount() {
-    await axios
-      .post(`${import.meta.env.VITE_API_URL + "/sku/category/per_page/page_num"}`, {
-        category: "Granite",
+  async fetchCategoryData(category) {
+    try {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL + "/sku/category/per_page/page_num"}`, {
+        category,
         page_num: 1,
         per_page: "8",
-      })
-      .then((response) => {
-        console.log("Granite: ", response.data[0]);
-        this.setState({ granite: response.data, data: response.data });
-      })
-      .catch((error) => {
-        console.log(error);
       });
-
-    await axios
-      .post(`${import.meta.env.VITE_API_URL + "/sku/category/per_page/page_num"}`, {
-        category: "Marble",
-        page_num: 1,
-        per_page: "8",
-      })
-      .then((response) => {
-        console.log("Marble: ", response.data);
-        this.setState({ marble: response.data });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-
-    await axios
-      .post(`${import.meta.env.VITE_API_URL + "/sku/category/per_page/page_num"}`, {
-        category: "Quartz",
-        page_num: 1,
-        per_page: "8",
-      })
-      .then((response) => {
-        console.log("Quartz: ", response.data);
-        this.setState({ quartz: response.data });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-
-    await axios
-      .post(`${import.meta.env.VITE_API_URL + "/sku/category/per_page/page_num"}`, {
-        category: "Compact Worktops",
-        page_num: 1,
-        per_page: "8",
-      })
-      .then((response) => {
-        console.log("Compact Worktops: ", response.data);
-        this.setState({ compactWorktops: response.data });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-
-    var temp = [
-      { type: "Granite", data: this.state.granite, route: "granite" },
-      { type: "Marble", data: this.state.marble, route: "marble" },
-      { type: "Quartz", data: this.state.quartz, route: "quartz" },
-      {
-        type: "Compact Worktops",
-        data: this.state.compactWorktops,
-        route: "Compact Worktops",
-      }
-    ];
-    this.setState({ sections: temp });
+      return response.data;
+    } catch (error) {
+      console.error(`${category} fetch error:`, error);
+      return [];
+    }
   }
 
-  getProducts()
-  {
-    const { data, sections } = this.state;
-    return (
-      sections &&
-      sections.length > 0 &&
-      sections.map((_item, index) => (
-        
-        <div className="container pt-6 new-arrivals" key={index}>
-          <Tabs selectedTabClassName="show" defaultIndex={0}>
-            <div className="heading heading-center mb-3">
-              <TabList
-                className="nav nav-pills justify-content-center"
-                role="tablist"
-              >
-                <div className="container">
-          <br />
-          <h3
-            style={{
-              "border-bottom": "1px solid #c96",
-              width: "100%",
-              display: "flex",
-            }}
-          >
-       <span className="nav-link" style={{
-             fontSize: '22px',
-             fontWeight: 'bold',
-             color:' #c96'
-       }}>{_item && _item.type}</span>
+  async componentDidMount() {
+    const categories = ["Granite", "Marble", "Quartz", "Compact Worktops"];
+    const sectionData = [];
 
-            <h5
-              style={{
-                marginRight: "6% !important",
-               fontSize:"1.4rem",
-                marginLeft: "2%",
-                textAlign: 'left'
-              }}
-            >
-              {_item.type == "Granite" &&
-                `Hard wearing granite kitchen worktop is a popular choice for its unique natural look, identify the style best suits your project, “View All” and shortlist the thickness and textures for pricing…
-  `}
+    for (let category of categories) {
+      const data = await this.fetchCategoryData(category);
+      sectionData.push({ type: category, data, route: category.toLowerCase().replace(" ", "-") });
+    }
 
-              {_item.type == "Marble" &&
-                `Huge selection of marble, you an “View All” and browse to choose the right colour for marble worktops, marble vanity, bespoke marble tiles and more…
-  `}
+    this.setState({ sections: sectionData });
+  }
 
-              {_item.type == "Quartz" &&
-                `A popular choice for a kitchen worktop, 1000 ‘s of colours, pattern and marble effects. Quartz worktops, factory direct made to measure. “View all” and use the search functionality to find your desired colour shade…
-`}
+  getProducts() {
+    const { sections } = this.state;
 
-              {_item.type == "Compact Worktops" &&
-                `Most hard-wearing material in the market, compact, sleek, heat proof, scratch resistant, various thickness and textures. We have it all and we can craft it as you wish, browse our collection…
-  `}
-
-            </h5>
-          </h3>
-        </div>
-              </TabList>
-            </div>
-
-            <div className="tab-content">
-              <TabPanel key={`arrival_tabpanel_${index}`}>
-                <div className="row justify-content-center">
-                  {_item &&
-                    _item.data.length > 0 &&
-                    _item.data.map((item, index1) => (
-                      <div
-                        className="col-6 col-md-4 col-lg-3"
-                        key={index1 + item.name}
-                      >
-                        <Product
-                          product={item}
-                          key={index1 + item.name}
-                          onAddToCompareClick={addToCompare}
-                          showQuickViewModal={showQuickViewModal}
-                        />
-                      </div>
-                    ))}
-                </div>
-              </TabPanel>
-            </div>
-
-            {_item.type !== "Glass" && (
-              <div className="more-container text-center col-12 col-md-12 col-lg-12 mt-1 mb-3">
-                {this.state.hasMore ? (
-                  <Link
-                    className="btn btn-outline-primary-2 btn-round btn-more"
-                    to={`/stone/${_item.route.toLocaleLowerCase()}`}
-                  >
-                    <span>Load more</span>
-                    {this.state.loading ? (
-                      <i className="icon-refresh load-more-rotating"></i>
-                    ) : (
-                      ""
-                    )}
-                  </Link>
-                ) : (
-                  ""
-                )}
+    return sections.map((_item, index) => (
+      <div className="container pt-6 new-arrivals" key={index}>
+        <Tabs selectedTabClassName="show" defaultIndex={0}>
+          <div className="heading heading-center mb-3">
+            <TabList className="nav nav-pills justify-content-center" role="tablist">
+              <div className="container">
+                <br />
+                <h3 style={{ borderBottom: "1px solid #c96", width: "100%", display: "flex" }}>
+                  <span className="nav-link" style={{ fontSize: '22px', fontWeight: 'bold', color: '#c96' }}>
+                    {_item && _item.type}
+                  </span>
+                  <h5 style={{ marginRight: "6%", fontSize: "1.4rem", marginLeft: "2%", textAlign: 'left' }}>
+                    {this.getCategoryDescription(_item.type)}
+                  </h5>
+                </h3>
               </div>
-            )}
-          </Tabs>
-        </div>
-      ))
-    );
-    
+            </TabList>
+          </div>
+
+          <div className="tab-content">
+            <TabPanel key={`arrival_tabpanel_${index}`}>
+              <div className="row justify-content-center">
+                {_item && _item.data.length > 0 && _item.data.map((item, index1) => (
+                  <div className="col-6 col-md-4 col-lg-3" key={index1 + item.name}>
+                    <Product product={item} key={index1 + item.name} onAddToCompareClick={this.props.addToCompare} showQuickViewModal={this.props.showQuickViewModal} />
+                  </div>
+                ))}
+              </div>
+            </TabPanel>
+          </div>
+
+          {_item.type !== "Glass" && (
+            <div className="more-container text-center col-12 col-md-12 col-lg-12 mt-1 mb-3">
+              {this.state.hasMore && (
+                <Link
+                  className="btn btn-outline-primary-2 btn-round btn-more"
+                  to={`/stone/${_item.route}`}
+                >
+                  <span>Load more</span>
+                  {this.state.loading && <i className="icon-refresh load-more-rotating"></i>}
+                </Link>
+              )}
+            </div>
+          )}
+        </Tabs>
+      </div>
+    ));
+  }
+
+  getCategoryDescription(type) {
+    const descriptions = {
+      "Granite": "Hard wearing granite kitchen worktop is a popular choice for its unique natural look...",
+      "Marble": "Huge selection of marble, you can browse to choose the right colour for marble worktops...",
+      "Quartz": "A popular choice for a kitchen worktop, 1000’s of colours, pattern and marble effects...",
+      "Compact Worktops": "Most hard-wearing material in the market, compact, sleek, heat proof, scratch resistant...",
+    };
+    return descriptions[type] || "";
   }
 
   render() {
-    const { addToCompare, showQuickViewModal } = this.props;
-
-    const { data, sections } = this.state;
-
-    let products = getProductsByCategory(
-      getNewProducts(getProductsByDemo(this.props.products, "demo5")),
-      ["Clothing", "Handbags", "Bags", "Shoes", "Boots", "Accessories"]
-    );
-
-
     return (
       <Fragment>
-          <div>
-            <br/>
-    <SearchBar/>
-    </div>
-    {this.getProducts()}
-    </Fragment>          
-    )
-     
+        <div>
+          <SearchBar />
+        </div>
+        {this.getProducts()}
+      </Fragment>
+    );
   }
 }
 
-const mapStateToProps = (state, props) => {
+const mapStateToProps = (state) => {
   return {
-    products: state.data.products ? state.data.products : [],
+    products: state.data.products || [],
   };
 };
 
-export default connect(mapStateToProps, {
-  addToCart,
-  toggleWishlist,
-  addToCompare,
-  showQuickViewModal,
-})(StoneCatalogue);
+export default connect(mapStateToProps, { addToCart, toggleWishlist, addToCompare, showQuickViewModal })(StoneCatalogue);

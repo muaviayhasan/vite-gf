@@ -122,12 +122,12 @@ class SearchBar extends Component {
 
     material_types.data.map((material_type) => {
       if (material_type.materials.name === "Stone") {
-        stone_materials.push({
+        stone_materials?.push({
           value: material_type.id,
           label: material_type.name,
         });
       } else {
-        glass_materials.push({
+        glass_materials?.push({
           value: material_type.id,
           label: material_type.name,
         });
@@ -155,7 +155,7 @@ class SearchBar extends Component {
 
     effects.data.map((effect) => {
       if (effect.materialType.name === "Stone") {
-        stone_effects.push({ value: effect.id, label: effect.name });
+        stone_effects?.push({ value: effect.id, label: effect.name });
       }
     });
     stone_effects = [{ value: 0, label: "All Effects" }, ...stone_effects];

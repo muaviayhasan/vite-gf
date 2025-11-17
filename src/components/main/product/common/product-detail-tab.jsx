@@ -13,7 +13,9 @@ export default class ProductDetailTab extends Component {
   }
 
   getFinishes() {
-    let finishes = this.props.product.finishes;
+    let finishes = Array.isArray(this.props.product?.finishes)
+      ? this.props.product.finishes
+      : [];
 
     let distinctFinishes = finishes.filter((value, index, self) => {
       let i = self.findIndex((item) => {
@@ -33,7 +35,9 @@ export default class ProductDetailTab extends Component {
   }
 
   getThicknesses() {
-    let thicknesses = this.props.product.thicknesses;
+    let thicknesses = Array.isArray(this.props.product?.thicknesses)
+      ? this.props.product.thicknesses
+      : [];
     let distinctthicknesses = thicknesses.filter((value, index, self) => {
       let i = self.findIndex((item) => {
         return item.name === value.name;
@@ -52,7 +56,9 @@ export default class ProductDetailTab extends Component {
   }
 
   getApplications() {
-    let applications = this.props.product.applications;
+    let applications = Array.isArray(this.props.product?.applications)
+      ? this.props.product.applications
+      : [];
     let distinctapplications = applications.filter((value, index, self) => {
       let i = self.findIndex((item) => {
         return item.name === value.name;
@@ -71,7 +77,9 @@ export default class ProductDetailTab extends Component {
   }
 
   getEffects() {
-    let effects = this.props.product.effects;
+    let effects = Array.isArray(this.props.product?.effects)
+      ? this.props.product.effects
+      : [];
     let distincteffects = effects.filter((value, index, self) => {
       let i = self.findIndex((item) => {
         return item.name === value.name;
@@ -141,7 +149,7 @@ export default class ProductDetailTab extends Component {
           <div className="tab-content">
             <TabPanel className="tab-pane" id="description">
               <div className="product-desc-content">
-                {parse(this.props.product.sku.description)}
+                {parse(String(this.props.product?.sku?.description || ""))}
               </div>
             </TabPanel>
 
@@ -186,7 +194,8 @@ export default class ProductDetailTab extends Component {
                     className="col-7 border table-border-right-left-bottom-none ft-10"
                     style={{ fontSize: 13 }}
                   >
-                    {this.props.product.slabSizes.map(function(item, index) {
+                    {Array.isArray(this.props.product?.slabSizes) &&
+                      this.props.product.slabSizes.map(function(item, index) {
                       return (
                         <Fragment>
                           <span className="mr-0" key={index}>
@@ -213,7 +222,8 @@ export default class ProductDetailTab extends Component {
                     className="col-7 border table-border-right-left-bottom-none ft-10"
                     style={{ fontSize: 13 }}
                   >
-                    {this.props.product.tileSizes.map(function(item, index) {
+                    {Array.isArray(this.props.product?.tileSizes) &&
+                      this.props.product.tileSizes.map(function(item, index) {
                       return (
                         <Fragment>
                           <span className="mr-0" key={index}>
@@ -327,7 +337,9 @@ export default class ProductDetailTab extends Component {
                     className="col-7 border table-border-right-left-bottom-none ft-10 align-center"
                     style={{ fontSize: 13 }}
                   >
-                    {`${this.props.product.sku.warranty} years`}
+                    {this.props.product?.sku?.warranty
+                      ? `${this.props.product.sku.warranty} years`
+                      : ""}
                   </div>
                 </div>
                 <div className="row">
@@ -349,8 +361,9 @@ export default class ProductDetailTab extends Component {
 
             <TabPanel className="tab-pane">
               <div className="product-desc-content">
-                {this.props.product.sku.additional_info !== "<p>null</p>" &&
-                this.props.product.sku.additional_info !== null
+                {typeof this.props.product?.sku?.additional_info === 'string' &&
+                this.props.product.sku.additional_info !== "<p>null</p>" &&
+                this.props.product.sku.additional_info.trim() !== ""
                   ? parse(this.props.product.sku.additional_info)
                   : "No Additional Information"}
               </div>
@@ -358,8 +371,9 @@ export default class ProductDetailTab extends Component {
 
             <TabPanel className="tab-pane">
               <div className="product-desc-content">
-                {this.props.product.sku.technical_info !== "<p>null</p>" &&
-                this.props.product.sku.technical_info !== null
+                {typeof this.props.product?.sku?.technical_info === 'string' &&
+                this.props.product.sku.technical_info !== "<p>null</p>" &&
+                this.props.product.sku.technical_info.trim() !== ""
                   ? parse(this.props.product.sku.technical_info)
                   : "No Technical Information"}
               </div>
@@ -367,15 +381,15 @@ export default class ProductDetailTab extends Component {
 
             <TabPanel className="tab-pane">
               <div className="reviews">
-                {this.props.product.sku.video !== "<p>null</p>" &&
+                {this.props.product?.sku?.video !== "<p>null</p>" &&
                 this.props.video !== null ? (
                   <iframe
                     id="video"
                     width="654"
                     height="300"
                     src={`//www.youtube.com/embed/${this.props.video}?rel=0`}
-                    frameborder="0"
-                    allowfullscreen
+                    frameBorder="0"
+                    allowFullScreen
                   ></iframe>
                 ) : (
                   "No Video"

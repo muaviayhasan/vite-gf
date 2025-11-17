@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL;
+const MOCK_URL = import.meta.env.VITE_BASE_URL;
 
 // API to get products from mock server
 export const getProducts = function() {
-    return axios.get(API_URL + '/mock-server/products.json')
+    return axios.get(MOCK_URL + '/mock-server/products.json')
         .then(function (response) {
             return response.data;
         })
@@ -17,7 +17,7 @@ export const getProducts = function() {
 
 // API to get posts from mock server
 export const getPosts = function() {
-    return axios.get(API_URL + '/mock-server/posts.json')
+    return axios.get(MOCK_URL + '/mock-server/posts.json')
         .then(function(response) {
             return response.data;
         })

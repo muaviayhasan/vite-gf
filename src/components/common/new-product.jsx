@@ -12,7 +12,7 @@ class NewProduct extends Component {
 
         var arrays = [];
         while (items.length > 0) {
-            arrays.push(items.splice(0, 3));
+            arrays?.push(items.splice(0, 3));
         }
 
         return (

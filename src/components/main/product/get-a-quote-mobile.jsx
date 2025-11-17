@@ -1,17 +1,12 @@
 import React, { Component, Fragment } from "react";
-import { renderToString } from "react-dom/server";
 import moment from "moment";
 import { Helmet } from "react-helmet";
 import Select from "react-select";
 import axios from "axios";
-import { Link } from "react-router-dom";
-import $ from "jquery";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import auth from "../../../auth/auth";
-// import Select from "react-select";
-// import makeAnimated from "react-select/animated";
 import "./get-a-quote.css";
 import InnerOverlay from "../../common/overlay/inner-overlay";
 import { isMobile } from "react-device-detect";
@@ -77,6 +72,8 @@ class GetAQuoteMobile extends Component {
       Extra_Services: [],
       Extra_ServicesStone: [],
       selectedServiceStoneIndex: 0,
+
+      // single source of truth for Fabrications
       addfabrications: [
         {
           item: 0,
@@ -86,6 +83,7 @@ class GetAQuoteMobile extends Component {
           unit_price: 0,
         },
       ],
+
       addWorktopDimensions: [
         {
           item: 0,
@@ -105,12 +103,7 @@ class GetAQuoteMobile extends Component {
           area: 0,
         },
       ],
-      addFabrication: [
-        {
-          item: "",
-          fabrication_quantity: "",
-        },
-      ],
+
       addCutouts: [
         {
           item: 0,
@@ -160,8 +153,8 @@ class GetAQuoteMobile extends Component {
         },
       ],
     };
-    this.addWorktopDimension = this.addWorktopDimension.bind(this);
 
+    this.addWorktopDimension = this.addWorktopDimension.bind(this);
     this.addSplashbackDimension = this.addSplashbackDimension.bind(this);
     this.addFabricationOption = this.addFabricationOption.bind(this);
     this.addExtraServices = this.addExtraServices.bind(this);
@@ -268,19 +261,7 @@ class GetAQuoteMobile extends Component {
     let products = this.state.products;
     let Sku = localStorage.getItem("sku");
     Sku = JSON.parse(Sku);
-    //before change on 2/18/2020 its search on products and remove like this
-    /*
-     let checkFinish = products.findIndex(function (finish) {
-      return (
-        parseInt(Sku[index].finish_id) == finish.finish_id &&
-        parseInt(Sku[index].thickness_id) == finish.thickness_id && 
-        parseInt(Sku[index].product_id) == finish. sku_id
-      );
-    })   
-Sku.splice(index, 1);
-products.splice(checkFinish, 1);
 
-    */
     let checkFinish = Sku.findIndex(function (finish) {
       return (
         parseInt(products[index].finish_id) == finish.finish_id &&
@@ -322,7 +303,7 @@ products.splice(checkFinish, 1);
   };
 
   termsandconditions = (e) => {
-    if (e.target.checked == true) {
+    if (e.target.checked === true) {
       this.setState({
         ...this.state,
         checked: true,
@@ -340,7 +321,6 @@ products.splice(checkFinish, 1);
   };
 
   selectOptionOnChange = (e) => {
-    console.log(e);
     if (e) {
       this.setState({
         userInfo: {
@@ -488,28 +468,17 @@ products.splice(checkFinish, 1);
     ) {
       axios
         .post(`${import.meta.env.VITE_API_URL}/quote`, data)
-        .then((res) => {
+        .then(() => {
           this.setState({
             isRedirect: true,
           });
         })
         .catch((error) => {
-          console.log(error.response.data);
+          console.log(error?.response?.data || error?.message);
         });
       let Sku = [];
       localStorage.setItem("sku", JSON.stringify(Sku));
     }
-
-    // axios
-    //   .post(`${import.meta.env.VITE_API_URL}/get-pdf`, data)
-    //   .then(() =>
-    //     setTimeout(() => {
-    //       axios.get(`${import.meta.env.VITE_API_URL}/get-pdf`, { responseType: "blob" })
-    //         .then(res => {
-    //           const pdfBlob = new Blob([res.data], { type: "application/pdf" });
-    //           saveAs(pdfBlob, "get-a-quote.pdf");
-    //         });
-    //     }, 5000))
   }
 
   sparkleGet = (e) => {
@@ -521,7 +490,6 @@ products.splice(checkFinish, 1);
   };
 
   printRadioVal = (e) => {
-    console.log(e.target.value);
     this.setState({
       surveyCheck: e.target.value,
     });
@@ -541,9 +509,6 @@ products.splice(checkFinish, 1);
       (oldArray[index]["worktop_width"] * oldArray[index]["worktop_lenght"]) /
       1000000
     ).toFixed(3);
-    // oldArray.forEach(element => {
-    //   totalArea = this.state.total_area + element["area"]
-    // });
 
     this.setState({
       ...this.state,
@@ -552,7 +517,7 @@ products.splice(checkFinish, 1);
     let totalArea = 0;
     let items = this.state.addWorktopDimensions;
     for (var k in items) {
-      totalArea += parseFloat(items[k].area);
+      totalArea += parseFloat(items[k].area || 0);
     }
     this.setState({
       ...this.state,
@@ -588,15 +553,14 @@ products.splice(checkFinish, 1);
 
   handleFabrication = (e, property, index) => {
     let oldArray = this.state.addfabrications;
-    let price;
     oldArray[index][property] = parseInt(e.target.value);
-    oldArray[index]["price"] = e.target.value * oldArray[index]["unit_price"];
+    oldArray[index]["price"] =
+      (parseInt(e.target.value) || 0) * (parseFloat(oldArray[index]["unit_price"]) || 0);
 
     this.setState({
       ...this.state,
       addfabrications: oldArray,
     });
-    console.log(oldArray);
   };
 
   handleFabricationPrice = (e, property, index) => {
@@ -608,21 +572,20 @@ products.splice(checkFinish, 1);
     oldArray[index]["unit_price"] = price[1];
     oldArray[index]["item"] = parseInt(value);
     oldArray[index]["item_name"] = label;
-    document.getElementById(`fabrication_quantity_${index}`).value = null;
+    const qtyInput = document.getElementById(`fabrication_quantity_${index}`);
+    if (qtyInput) qtyInput.value = null;
 
     this.setState({
       ...this.state,
       addfabrications: oldArray,
     });
-
-    console.log(oldArray);
   };
 
   handleCutouts = (e, property, index) => {
     let oldArray = this.state.addCutouts;
-    let price;
     oldArray[index][property] = parseInt(e.target.value);
-    oldArray[index]["price"] = e.target.value * oldArray[index]["unit_price"];
+    oldArray[index]["price"] =
+      (parseInt(e.target.value) || 0) * (parseFloat(oldArray[index]["unit_price"]) || 0);
 
     this.setState({
       ...this.state,
@@ -639,7 +602,8 @@ products.splice(checkFinish, 1);
     oldArray[index]["unit_price"] = price[1];
     oldArray[index]["item"] = parseInt(value);
     oldArray[index]["item_name"] = label;
-    document.getElementById(`checkout_quantity_${index}`).value = null;
+    const q = document.getElementById(`checkout_quantity_${index}`);
+    if (q) q.value = null;
 
     this.setState({
       ...this.state,
@@ -678,7 +642,7 @@ products.splice(checkFinish, 1);
     if (property === "quantity") {
       oldArray[index][property] = parseInt(e.target.value);
       oldArray[index]["price"] = parseInt(
-        oldArray[index]["quantity"] * oldArray[index]["unit_price"]
+        (oldArray[index]["quantity"] || 0) * (oldArray[index]["unit_price"] || 0)
       );
     } else if (property === "item") {
       let index1 = e.nativeEvent.target.selectedIndex;
@@ -692,17 +656,14 @@ products.splice(checkFinish, 1);
       ...this.state,
       AddExtraServices: oldArray,
     });
-
-    console.log(oldArray);
   };
 
   calculateCutoutsService = (e, property, index) => {
     let oldArray = this.state.AddExtraservicesGlass;
-    console.log(oldArray);
     if (property === "quantity") {
       oldArray[index][property] = parseInt(e.target.value);
       oldArray[index]["price"] = parseInt(
-        oldArray[index]["quantity"] * oldArray[index]["unit_price"]
+        (oldArray[index]["quantity"] || 0) * (oldArray[index]["unit_price"] || 0)
       );
     } else if (property === "item") {
       let index1 = e.nativeEvent.target.selectedIndex;
@@ -717,13 +678,10 @@ products.splice(checkFinish, 1);
       AddExtraservicesGlass: oldArray,
       change: true,
     });
-
-    console.log(oldArray);
   };
 
   calculateGlassService = (e, property, index) => {
     let oldArray = this.state.AddExtraservicesGlass;
-    let Price = 0;
     oldArray[index][property] = e.target.value;
     oldArray[index]["Price"] = (
       (oldArray[index]["extra_services2_quantity"] *
@@ -739,18 +697,13 @@ products.splice(checkFinish, 1);
 
   calculateSplashBackArea = (e, proptery, indexofSplash) => {
     let oldArray = this.state.addSplashbackDimensions;
-
     oldArray[indexofSplash][proptery] = e.target.value;
-
     oldArray[indexofSplash]["area"] = (
       (oldArray[indexofSplash]["splashback_width"] *
         oldArray[indexofSplash]["splashback_lenght"]) /
       1000000
     ).toFixed(3);
 
-    oldArray.forEach((element) => {
-      totalArea = this.state.total_area + element["area"];
-    });
     this.setState({
       ...this.state,
       addSplashbackDimensions: oldArray,
@@ -758,36 +711,28 @@ products.splice(checkFinish, 1);
     let totalArea = 0;
     let items = this.state.addSplashbackDimensions;
     for (var k in items) {
-      totalArea += parseFloat(items[k].area);
+      totalArea += parseFloat(items[k].area || 0);
     }
     this.setState({
       total_splashback_area: totalArea,
     });
   };
+
   CalculateGlassArea = (e, property, designPanelIndex, designIndex) => {
     let oldArray = this.state.AddDesignPanel;
-    let TotalGlassArea = 0;
     oldArray[designPanelIndex]["adddesignglass"][designIndex][property] =
       e.target.value;
     oldArray[designPanelIndex]["adddesignglass"][designIndex]["area"] = (
-      (oldArray[designPanelIndex]["adddesignglass"][designIndex][
-        "design_width"
-      ] *
-        oldArray[designPanelIndex]["adddesignglass"][designIndex][
-        "design_lenght"
-        ] *
-        oldArray[designPanelIndex]["adddesignglass"][designIndex][
-        "design_pieces"
-        ]) /
+      (oldArray[designPanelIndex]["adddesignglass"][designIndex]["design_width"] *
+        oldArray[designPanelIndex]["adddesignglass"][designIndex]["design_lenght"] *
+        oldArray[designPanelIndex]["adddesignglass"][designIndex]["design_pieces"]) /
       1000000
     ).toFixed(3);
-    if (property == "shaped" && e.target.checked == true) {
+    if (property === "shaped" && e.target.checked === true) {
       oldArray[designPanelIndex]["adddesignglass"][designIndex][property] = 1;
-    } else if (property == "shaped" && e.target.checked == false) {
+    } else if (property === "shaped" && e.target.checked === false) {
       oldArray[designPanelIndex]["adddesignglass"][designIndex][property] = 0;
     }
-
-    console.log(oldArray);
 
     this.setState({
       ...this.state,
@@ -797,10 +742,9 @@ products.splice(checkFinish, 1);
     let items = this.state.AddDesignPanel;
     for (var i in items) {
       for (var j in items[i].adddesignglass) {
-        toatlArea += parseFloat(items[i].adddesignglass[j].area);
+        toatlArea += parseFloat(items[i].adddesignglass[j].area || 0);
       }
     }
-    // console.log(toatlArea)
     this.setState({
       ...this.state,
       total_glass_area: toatlArea,
@@ -840,7 +784,6 @@ products.splice(checkFinish, 1);
     this.setState({
       ...this.state,
       AddExtraservicesGlass: variable,
-      AddExtraservicesGlass: oldarray,
       change: true,
     });
   };
@@ -865,7 +808,6 @@ products.splice(checkFinish, 1);
     this.setState({
       ...this.state,
       AddExtraServices: variable,
-      AddExtraServices: oldarray,
       change: true,
     });
   };
@@ -884,11 +826,6 @@ products.splice(checkFinish, 1);
       AddExtraservicesGlass: variable,
     });
   };
-  handleChanges(i, event) {
-    let values = [...this.state.values];
-    values[i] = event.target.value;
-    this.setState({ values });
-  }
 
   handleChange = (event) => {
     this.setState({
@@ -896,18 +833,6 @@ products.splice(checkFinish, 1);
     });
   };
 
-  removeRow = () => {
-    console.log("deleteRow");
-    $(document).on("click", ".delete-row", function () {
-      //  alert("deleting row#"+row);
-
-      $(this)
-        .closest("tr")
-        .remove();
-
-      return false;
-    });
-  };
   toDataURL(url, callback) {
     var xhr = new XMLHttpRequest();
     xhr.onload = function () {
@@ -927,7 +852,8 @@ products.splice(checkFinish, 1);
       localStorage.getItem("sku") !== null &&
       JSON.parse(localStorage.getItem("sku")).length === 0
     ) {
-      this.props.history.push("/empty-short-list");
+      // React Router v6, trigger redirect via state flag
+      this.setState({ inNull: true });
     }
 
     let getProducts = localStorage.getItem("sku");
@@ -941,12 +867,9 @@ products.splice(checkFinish, 1);
         products: getProducts,
       };
       if (getProducts) {
-        console.log(products);
-
         axios
           .post(`${import.meta.env.VITE_API_URL}/quote-products`, products)
           .then((res) => {
-            console.log(res.data);
             let stoneProduct = false;
             let glassProduct = false;
             res.data.map((product) => {
@@ -976,55 +899,51 @@ products.splice(checkFinish, 1);
             .get(`${import.meta.env.VITE_API_URL}/splashback-dimensions`)
             .then((splashB) => {
               let splashback_dimensions = splashB.data.map((splashB) => {
-                console.log(splashB);
                 return {
                   label: splashB.name,
                   value: splashB.id,
                 };
               });
               let worktop = worktopD.data.map((worktop_dimensions) => {
-                //mapping
                 return {
                   label: worktop_dimensions.name,
                   value: worktop_dimensions.id,
                 };
               });
               this.setState({
-                // using spread operator, you will need transform-object-rest-spread from babel or
-                // another transpiler to use this
-                ...this.state, // spreading in state for future proofing
+                ...this.state,
                 isLoaded: true,
                 worktop_options: worktop,
                 splashback_dimensions: splashback_dimensions,
               });
             });
         });
-      axios.get(`${import.meta.env.VITE_API_URL}/edge-details`).then((edge_details) => {
-        axios
-          .get(`${import.meta.env.VITE_API_URL}/fabrication_options`)
-          .then((fabrication) => {
-            let fabricationss = fabrication.data.map((fab) => {
-              return {
-                label: `${fab.name} - £${fab.price}`,
-                value: fab.id,
-              };
+      axios
+        .get(`${import.meta.env.VITE_API_URL}/edge-details`)
+        .then((edge_details) => {
+          axios
+            .get(`${import.meta.env.VITE_API_URL}/fabrication_options`)
+            .then((fabrication) => {
+              let fabricationss = fabrication.data.map((fab) => {
+                return {
+                  label: `${fab.name} - £${fab.price}`,
+                  value: fab.id,
+                };
+              });
+              let edge_d = edge_details.data.map((edge_d) => {
+                return {
+                  label: edge_d.name,
+                  value: edge_d.id,
+                };
+              });
+              this.setState({
+                ...this.state,
+                isLoaded: true,
+                Edge_Details: edge_d,
+                fabrications: fabricationss,
+              });
             });
-            let edge_d = edge_details.data.map((edge_d) => {
-              return {
-                label: edge_d.name,
-                value: edge_d.id,
-              };
-            });
-            this.setState({
-              // using spread operator, you will need transform-object-rest-spread from babel or
-              // another transpiler to use this
-              ...this.state, // spreading in state for future proofing
-              isLoaded: true,
-              Edge_Details: edge_d,
-              fabrications: fabricationss,
-            });
-          });
-      });
+        });
       axios
         .get(`${import.meta.env.VITE_API_URL}/design_options`)
         .then((design_options) => {
@@ -1035,9 +954,7 @@ products.splice(checkFinish, 1);
             };
           });
           this.setState({
-            // using spread operator, you will need transform-object-rest-spread from babel or
-            // another transpiler to use this
-            ...this.state, // spreading in state for future proofing
+            ...this.state,
             isLoaded: true,
             Designoptions: designOp,
           });
@@ -1052,9 +969,7 @@ products.splice(checkFinish, 1);
             };
           });
           this.setState({
-            // using spread operator, you will need transform-object-rest-spread from babel or
-            // another transpiler to use this
-            ...this.state, // spreading in state for future proofing
+            ...this.state,
             isLoaded: true,
             survey_fit_options: survey_fit,
           });
@@ -1067,9 +982,7 @@ products.splice(checkFinish, 1);
           };
         });
         this.setState({
-          // using spread operator, you will need transform-object-rest-spread from babel or
-          // another transpiler to use this
-          ...this.state, // spreading in state for future proofing
+          ...this.state,
           isLoaded: true,
           cutouts: _cutout,
         });
@@ -1087,13 +1000,10 @@ products.splice(checkFinish, 1);
             };
           });
           this.setState({
-            // using spread operator, you will need transform-object-rest-spread from babel or
-            // another transpiler to use this
-            ...this.state, // spreading in state for future proofing
+            ...this.state,
             isLoaded: true,
             Extra_Services: _extra_services,
           });
-          console.log(_extra_services);
         });
       axios
         .get(`${import.meta.env.VITE_API_URL}/extra_services`)
@@ -1109,9 +1019,7 @@ products.splice(checkFinish, 1);
             }
           );
           this.setState({
-            // using spread operator, you will need transform-object-rest-spread from babel or
-            // another transpiler to use this
-            ...this.state, // spreading in state for future proofing
+            ...this.state,
             isLoaded: true,
             Extra_ServicesStone: extraServices_stone,
           });
@@ -1141,6 +1049,7 @@ products.splice(checkFinish, 1);
       AddDesignPanel: OldDesignPanel,
     });
   }
+
   RemoveDesignPanel = (event) => {
     let panelIndex = event.target.getAttribute("data-design-panel-index");
     let removeFromDesignpanel = this.state.AddDesignPanel;
@@ -1150,6 +1059,7 @@ products.splice(checkFinish, 1);
       AddDesignPanel: removeFromDesignpanel,
     });
   };
+
   addWorktopDimension() {
     let oldWorktopDimension = this.state.addWorktopDimensions;
     let newWorktopDimension = {
@@ -1165,21 +1075,12 @@ products.splice(checkFinish, 1);
       addWorktopDimensions: oldWorktopDimension,
     });
   }
+
   addMainGlassPanel() {
-    let oldGlassPanel = this.state.AddGlassMainPanel;
-    let newGlassPanel = {
-      item: "",
-      design_width: "",
-      design_lenght: "",
-      design_pieces: "",
-      design_cutouts: "",
-    };
-    oldGlassPanel.push(newGlassPanel);
-    this.setState({
-      ...this.state,
-      AddGlassMainPanel: oldGlassPanel,
-    });
+    // not used in UI, kept for compatibility
+    this.setState((prev) => ({ ...prev }));
   }
+
   addSplashbackDimension() {
     let oldSplashbackDimension = this.state.addSplashbackDimensions;
     let newSplashbackDimension = {
@@ -1194,6 +1095,7 @@ products.splice(checkFinish, 1);
       addSplashbackDimensions: oldSplashbackDimension,
     });
   }
+
   addFabricationOption() {
     let oldFabricationOption = this.state.addfabrications;
     let newFabricationOption = {
@@ -1206,9 +1108,10 @@ products.splice(checkFinish, 1);
     oldFabricationOption.push(newFabricationOption);
     this.setState({
       ...this.state,
-      addFabrication: oldFabricationOption,
+      addfabrications: oldFabricationOption,
     });
   }
+
   addCutouts() {
     let oldCutouts = this.state.addCutouts;
     let newCutuouts = {
@@ -1219,10 +1122,11 @@ products.splice(checkFinish, 1);
     };
     oldCutouts.push(newCutuouts);
     this.setState({
-      ...this.setState,
+      ...this.state,
       addCutouts: oldCutouts,
     });
   }
+
   addExtraServices() {
     let oldExtraServices = this.state.AddExtraServices;
     let newExtraServices = {
@@ -1238,6 +1142,7 @@ products.splice(checkFinish, 1);
       AddExtraServices: oldExtraServices,
     });
   }
+
   addExtraServicesGlass() {
     let oldExtraServiceGlass = this.state.AddExtraservicesGlass;
     let newExtraServiceGlass = {
@@ -1250,9 +1155,10 @@ products.splice(checkFinish, 1);
     oldExtraServiceGlass.push(newExtraServiceGlass);
     this.setState({
       ...this.state,
-      addExtraServicesGlass: oldExtraServiceGlass,
+      AddExtraservicesGlass: oldExtraServiceGlass,
     });
   }
+
   addDesignGlass(event) {
     let panelIndex = event.target.getAttribute("data-design-panel-index");
     let newDesignGlass = {
@@ -1273,18 +1179,6 @@ products.splice(checkFinish, 1);
       AddDesignPanel: designPanels,
     });
   }
-  removeDesignPanel = (event) => {
-    let panelIndex = event.target.getAttribute("data-design-panel-index");
-    let index = event.target.getAttribute("data-index");
-
-    let designPanels = this.state.AddDesignPanel;
-    let requiredPanel = designPanels[panelIndex];
-    requiredPanel.adddesignglass.splice(index, 1);
-    designPanels.splice(panelIndex, 1, requiredPanel);
-    this.setState({
-      AddDesignPanel: designPanels,
-    });
-  };
 
   removeDesignGlass = (event) => {
     let panelIndex = event.target.getAttribute("data-design-panel-index");
@@ -1298,6 +1192,7 @@ products.splice(checkFinish, 1);
       AddDesignPanel: designPanels,
     });
   };
+
   removeWorktopDimension = (e) => {
     let index = e.target.getAttribute("data-index");
     let removeFromWorktopDimension = this.state.addWorktopDimensions;
@@ -1307,6 +1202,7 @@ products.splice(checkFinish, 1);
       addWorktopDimensions: removeFromWorktopDimension,
     });
   };
+
   removeExtraServices = (e) => {
     let index = e.target.getAttribute("data-index");
     let removeFromExtraServices = this.state.AddExtraServices;
@@ -1316,6 +1212,7 @@ products.splice(checkFinish, 1);
       AddExtraServices: removeFromExtraServices,
     });
   };
+
   removeExtraServicesGlass = (e) => {
     let index = e.target.getAttribute("data-index");
     let removeFromExtraServices = this.state.AddExtraservicesGlass;
@@ -1325,6 +1222,7 @@ products.splice(checkFinish, 1);
       AddExtraservicesGlass: removeFromExtraServices,
     });
   };
+
   removeSplashbackDimension = (e) => {
     let indexofSplash = e.target.getAttribute("data-index");
     let removeFromSplashDimension = this.state.addSplashbackDimensions;
@@ -1334,15 +1232,17 @@ products.splice(checkFinish, 1);
       addSplashbackDimensions: removeFromSplashDimension,
     });
   };
+
   removeFabricationOption = (e) => {
     let index = e.target.getAttribute("data-index");
-    let removeFromFabrication = this.state.addFabrication;
+    let removeFromFabrication = this.state.addfabrications;
     removeFromFabrication.splice(index, 1);
     this.setState({
       ...this.state,
-      addFabrication: removeFromFabrication,
+      addfabrications: removeFromFabrication,
     });
   };
+
   removeCutout = (e) => {
     let index = e.target.getAttribute("data-index");
     let removeFromCutouts = this.state.addCutouts;
@@ -1355,35 +1255,25 @@ products.splice(checkFinish, 1);
 
   render() {
     if (!isMobile) {
-      return (
-        <Navigate to="/get-a-quote" replace={false} />
-      );
+      return <Navigate to="/get-a-quote" replace={false} />;
     }
     if (this.state.isRedirect && auth.isAuthenticatedAdmin()) {
-      return (
-        <Navigate to="/admin/quote-list" replace={false} />
-      );
+      return <Navigate to="/admin/quote-list" replace={false} />;
     }
     if (this.state.isRedirect && !auth.isAuthenticatedAdmin()) {
-      return (
-        <Navigate to="/thanks-for-quote" replace={false} />
-      );
+      return <Navigate to="/thanks-for-quote" replace={false} />;
     }
     if (
       (!localStorage.getItem("sku") || this.state.inNull) &&
       !auth.isAuthenticatedAdmin()
     ) {
-      return (
-        <Navigate to="/empty-short-list" replace={false} />
-      );
+      return <Navigate to="/empty-short-list" replace={false} />;
     }
     if (
       (!localStorage.getItem("sku") || this.state.isEmpty) &&
       !auth.isAuthenticatedAdmin()
     ) {
-      return (
-        <Navigate to="/empty-short-list" replace={false} />
-      );
+      return <Navigate to="/empty-short-list" replace={false} />;
     }
 
     const worktop = this.state.worktop_options;
@@ -1394,20 +1284,18 @@ products.splice(checkFinish, 1);
     const survey_fit_Op = this.state.survey_fit_options;
     const cutouts_ = this.state.cutouts;
     const ExtraServices = this.state.Extra_Services;
+
     let addWorktopDimensions = this.state.addWorktopDimensions;
-    let addFabrication = this.state.addFabrication;
+    // use the fixed source of truth
+    let addFabrication = this.state.addfabrications;
     let addSplashbackDimensions = this.state.addSplashbackDimensions;
     let addExtraServices = this.state.AddExtraServices;
     let addExtraServicesGlass = this.state.AddExtraservicesGlass;
     let AddCutout = this.state.addCutouts;
-    let AddDesignGlass = this.state.AddDesignGlass;
     let AddDesignPanel = this.state.AddDesignPanel;
-    let selectedService = this.state.selectedService;
-    let selectedServiceStone = this.state.selectedServiceStone;
     let Extra_ServicesStone = this.state.Extra_ServicesStone;
     let total_worktop_area = this.state.total_worktop_area;
     let total_splashback_area = this.state.total_splashback_area;
-    let total_area = this.state.total_area;
     let total_glass_area = this.state.total_glass_area;
 
     let html6 = AddDesignPanel.map((designPanel, designPanelIndex) => {
@@ -1421,9 +1309,7 @@ products.splice(checkFinish, 1);
               Choose your Design(s):
             </div>
             <div className="col-md-12" style={{ paddingLeft: "0px" }}>
-              {designPanelIndex == 0 ? (
-                ""
-              ) : (
+              {designPanelIndex === 0 ? "" : (
                 <hr className="break2 break_mobile" />
               )}
               <button
@@ -1438,7 +1324,7 @@ products.splice(checkFinish, 1);
               >
                 Add New Design
               </button>
-              {designPanelIndex == 0 ? (
+              {designPanelIndex === 0 ? (
                 ""
               ) : (
                 <button
@@ -1454,7 +1340,6 @@ products.splice(checkFinish, 1);
             </div>
 
             <div className="col-md-10 pl-0 pr-5 pt-1">
-              {/* <Select options={design_options} /> */}
               <select
                 name={`design_select-${designPanelIndex}`}
                 className="custome-select-box-get-a-quote noborder changeColor"
@@ -1475,10 +1360,10 @@ products.splice(checkFinish, 1);
           </div>
           {designPanel.adddesignglass.map((GlassDesign, designIndex) => {
             return (
-              <React.Fragment>
+              <React.Fragment key={`${designPanelIndex}-${designIndex}`}>
                 <div className="row">
                   <div style={{ width: "13%" }}>
-                    {designIndex == 0 ? (
+                    {designIndex === 0 ? (
                       <div
                         className="panel-font panel-font-mobile"
                         style={{ marginTop: "10px" }}
@@ -1496,7 +1381,7 @@ products.splice(checkFinish, 1);
                     style={{ width: "84%", paddingLeft: "3%" }}
                   >
                     <div className="form-group form-group-mobile">
-                      {designIndex == 0 ? (
+                      {designIndex === 0 ? (
                         <button
                           type="button"
                           className="cutome-rounded-delete-button btn btn-outline-primary-2 btn-round btn-more"
@@ -1536,7 +1421,7 @@ products.splice(checkFinish, 1);
                 <div className="row col-md-12 pl-0 pr-0">
                   <div style={{ width: "15%" }}>
                     <div className="form-group form-group-mobile">
-                      {designIndex == 0 ? (
+                      {designIndex === 0 ? (
                         <label className="custome_lable custome_lable_mobile ">
                           Width(mm)
                         </label>
@@ -1548,7 +1433,6 @@ products.splice(checkFinish, 1);
                         style={{ marginTop: "2%" }}
                         placeholder=""
                         className="form-control custom_text_panel_mobile custom-text_panel noborder"
-                        // value={this.state.design_width}
                         name={`design_width-${designIndex}`}
                         onChange={(e) =>
                           this.CalculateGlassArea(
@@ -1563,9 +1447,8 @@ products.splice(checkFinish, 1);
                   </div>
                   <div className="ml-3" style={{ width: "15%" }}>
                     <div className="form-group form-group-mobile">
-                      {designIndex == 0 ? (
+                      {designIndex === 0 ? (
                         <label className="custome_lable custome_lable_mobile ">
-                          {" "}
                           Length(mm)
                         </label>
                       ) : (
@@ -1576,7 +1459,6 @@ products.splice(checkFinish, 1);
                         style={{ marginTop: "2%" }}
                         placeholder=""
                         className="form-control custom_text_panel_mobile custom-text_panel noborder"
-                        // value={this.state.design_lenght}
                         name={`design_lenght-${designIndex}`}
                         onChange={(e) =>
                           this.CalculateGlassArea(
@@ -1591,7 +1473,7 @@ products.splice(checkFinish, 1);
                   </div>
                   <div className="ml-3" style={{ width: "15%" }}>
                     <div className="form-group form-group-mobile">
-                      {designIndex == 0 ? (
+                      {designIndex === 0 ? (
                         <label className="custome_lable_pieces_mobile">
                           Pieces
                         </label>
@@ -1603,7 +1485,6 @@ products.splice(checkFinish, 1);
                         style={{ marginTop: "2%" }}
                         placeholder=""
                         className="form-control custom-text_panel custom_text_panel_mobile_Pieces noborder"
-                        // value={this.state.design_pieces}
                         name={`design_pieces-${designIndex}`}
                         onChange={(e) =>
                           this.CalculateGlassArea(
@@ -1618,7 +1499,7 @@ products.splice(checkFinish, 1);
                   </div>
                   <div className="ml-3" style={{ width: "14%" }}>
                     <div className="form-group form-group-mobile">
-                      {designIndex == 0 ? (
+                      {designIndex === 0 ? (
                         <label className="custome_lable custome_lable_mobile ">
                           Cutouts
                         </label>
@@ -1644,7 +1525,7 @@ products.splice(checkFinish, 1);
                   </div>
                   <div className="ml-1" style={{ width: "12%" }}>
                     <div className="form-group form-group-mobile Designtable">
-                      {designIndex == 0 ? (
+                      {designIndex === 0 ? (
                         <label className="custome_lable custome_lable_mobile ">
                           Shaped
                         </label>
@@ -1666,15 +1547,15 @@ products.splice(checkFinish, 1);
                             )
                           }
                         />
-                        <div style={{ "font-size": "10px" }}>
-                          {GlassDesign.shaped == 0 ? "No" : "Yes"}
+                        <div style={{ fontSize: "10px" }}>
+                          {GlassDesign.shaped === 0 ? "No" : "Yes"}
                         </div>
                       </div>
                     </div>
                   </div>
                   <div className="ml-3" style={{ width: "10%" }}>
                     <div className="form-group form-group-mobile">
-                      {designIndex == 0 ? (
+                      {designIndex === 0 ? (
                         <label className="custome_lable_area custome_lable_mobile">
                           Area(m²)
                         </label>
@@ -1716,14 +1597,13 @@ products.splice(checkFinish, 1);
               </div>
               <div style={{ width: "26%" }}>
                 <div className="form-group form-group-mobile">
-                  {indexofSplash == 0 ? (
+                  {indexofSplash === 0 ? (
                     <label className="custome_lable pdfLabel custome_lable_mobile">
                       Item
                     </label>
                   ) : (
                     ""
                   )}
-                  {/* <Select options={splashback} /> */}
                   <select
                     name="splashback_select"
                     className="custome-select-box-get-a-quote noborder changeColor"
@@ -1745,7 +1625,7 @@ products.splice(checkFinish, 1);
               </div>
               <div className="ml-3" style={{ width: "15%" }}>
                 <div className="form-group form-group-mobile">
-                  {indexofSplash == 0 ? (
+                  {indexofSplash === 0 ? (
                     <label className="custome_lable custome_lable_mobile ">
                       Width(mm)
                     </label>
@@ -1757,7 +1637,6 @@ products.splice(checkFinish, 1);
                     style={{ marginTop: "2%" }}
                     placeholder=""
                     className="form-control custom-text noborder custom_text_panel_mobile"
-                    // value={this.state.splashback_width}
                     name="splashback_width"
                     onChange={(e) =>
                       this.calculateSplashBackArea(
@@ -1771,7 +1650,7 @@ products.splice(checkFinish, 1);
               </div>
               <div className="ml-3" style={{ width: "15%" }}>
                 <div className="form-group form-group-mobile">
-                  {indexofSplash == 0 ? (
+                  {indexofSplash === 0 ? (
                     <label className="custome_lable custome_lable_mobile">
                       Length(mm)
                     </label>
@@ -1783,7 +1662,6 @@ products.splice(checkFinish, 1);
                     style={{ marginTop: "2%" }}
                     placeholder=""
                     className="form-control custom-text noborder custom_text_panel_mobile"
-                    // value={this.state.splashback_lenght}
                     name="splashback_lenght"
                     onChange={(e) =>
                       this.calculateSplashBackArea(
@@ -1797,7 +1675,7 @@ products.splice(checkFinish, 1);
               </div>
               <div className="ml-2" style={{ width: "15%" }}>
                 <div className="form-group form-group-mobile">
-                  {indexofSplash == 0 ? (
+                  {indexofSplash === 0 ? (
                     <label className="custome_lable_lenght custome_lable_mobile">
                       Area(m²)
                     </label>
@@ -1810,8 +1688,8 @@ products.splice(checkFinish, 1);
                     name={`worktop_value-${indexofSplash}`}
                     disabled
                     value={(
-                      (SplashbackDimension.splashback_width *
-                        SplashbackDimension.splashback_lenght) /
+                      ((SplashbackDimension.splashback_width || 0) *
+                        (SplashbackDimension.splashback_lenght || 0)) /
                       1000000
                     ).toFixed(3)}
                     style={{ width: "55px", paddingRight: "0px" }}
@@ -1820,13 +1698,13 @@ products.splice(checkFinish, 1);
               </div>
               <div style={{ width: "20%" }}>
                 <div className="form-group form-group-mobile">
-                  {indexofSplash == 0 ? (
+                  {indexofSplash === 0 ? (
                     <button
                       type="button"
                       className="Green-Add-Panel_button  Green-Add-Panel_button-mobile cutome-rounded-delete-button noprint first_plus_button"
                       key="add"
                       onClick={this.addSplashbackDimension}
-                      style={{ "margin-top": "35% !important" }}
+                      style={{ marginTop: "35%" }}
                     >
                       +
                     </button>
@@ -1871,14 +1749,13 @@ products.splice(checkFinish, 1);
             </div>
             <div style={{ width: "26%" }}>
               <div className="form-group form-group-mobile">
-                {index == 0 ? (
+                {index === 0 ? (
                   <label className="custome_lable custome_lable_mobile ">
                     Item
                   </label>
                 ) : (
                   ""
                 )}
-                {/* <Select options={worktop} /> */}
                 <select
                   name={`worktop_select-${index}`}
                   className="custome-select-box-get-a-quote noborder changeColor"
@@ -1900,7 +1777,7 @@ products.splice(checkFinish, 1);
             </div>
             <div className="ml-3" style={{ width: "15%" }}>
               <div className="form-group form-group-mobile">
-                {index == 0 ? (
+                {index === 0 ? (
                   <label className="custome_lable custome_lable_mobile ">
                     Width(mm)
                   </label>
@@ -1920,7 +1797,7 @@ products.splice(checkFinish, 1);
             </div>
             <div className="ml-3" style={{ width: "15%" }}>
               <div className="form-group form-group-mobile">
-                {index == 0 ? (
+                {index === 0 ? (
                   <label className="custome_lable custome_lable_mobile ">
                     Length(mm)
                   </label>
@@ -1942,7 +1819,7 @@ products.splice(checkFinish, 1);
               style={{ width: "15%", marginLeft: "1%" }}
             >
               <div className="form-group form-group-mobile">
-                {index == 0 ? (
+                {index === 0 ? (
                   <label
                     className="custome_lable_lenght"
                     style={{ marginLeft: "27%", fontSize: 8 }}
@@ -1958,8 +1835,8 @@ products.splice(checkFinish, 1);
                   name={`worktop_value-${index}`}
                   disabled
                   value={(
-                    (WorktopDimension.worktop_width *
-                      WorktopDimension.worktop_lenght) /
+                    ((WorktopDimension.worktop_width || 0) *
+                      (WorktopDimension.worktop_lenght || 0)) /
                     1000000
                   ).toFixed(3)}
                   style={{
@@ -1975,7 +1852,7 @@ products.splice(checkFinish, 1);
               className="ml-3"
               style={{ maxHeight: "15px", marginTop: "-5px" }}
             >
-              {index == 0 ? (
+              {index === 0 ? (
                 <div className="form-group form-group-mobile p-0 m-0 first_plus_button customMarginLeft">
                   <button
                     type="button"
@@ -2026,14 +1903,13 @@ products.splice(checkFinish, 1);
             </div>
             <div style={{ width: "40%" }}>
               <div className="form-group form-group-mobile">
-                {index == 0 ? (
+                {index === 0 ? (
                   <label className="custome_lable custome_lable_mobile ">
                     Item
                   </label>
                 ) : (
                   ""
                 )}
-                {/* <Select options={fabrication} /> */}
                 <select
                   name="fabrication_select"
                   className="custome-select-box-get-a-quote noborder changeColor"
@@ -2057,7 +1933,7 @@ products.splice(checkFinish, 1);
             </div>
             <div className="ml-3" style={{ width: "20%" }}>
               <div className="form-group form-group-mobile">
-                {index == 0 ? (
+                {index === 0 ? (
                   <label className="custome_lable_fabrication">Quantity</label>
                 ) : (
                   ""
@@ -2066,7 +1942,6 @@ products.splice(checkFinish, 1);
                   type="number"
                   placeholder=""
                   className="form-control custom-text_extra-services_quantity noborder"
-                  // value={this.state.fabrication_quantity}
                   name="fabrication_quantity"
                   id={`fabrication_quantity_${index}`}
                   onChange={(e) => this.handleFabrication(e, "quantity", index)}
@@ -2076,7 +1951,7 @@ products.splice(checkFinish, 1);
             </div>
             <div className="ml-3" style={{ width: "30%" }}>
               <div className="form-group form-group-mobile">
-                {index == 0 ? (
+                {index === 0 ? (
                   <button
                     type="button"
                     className="Green-Add-Panel_button  Green-Add-Panel_button-mobile cutome-rounded-delete-button noprint first_plus_button"
@@ -2112,20 +1987,20 @@ products.splice(checkFinish, 1);
         </React.Fragment>
       );
     });
+
     let cutouthtml = AddCutout.map((Cutouts, index) => {
       return (
         <React.Fragment key={index}>
           <div className="row">
             <div className="col-md-7 col-lg-7" style={{ width: "50%" }}>
               <div className="form-group form-group-mobile">
-                {index == 0 ? (
+                {index === 0 ? (
                   <label className="custome_lable custome_lable_mobile ">
                     Item
                   </label>
                 ) : (
                   ""
                 )}
-                {/* <Select options={cutouts_} /> */}
                 <select
                   name="cutout_select"
                   className="custome-select-box-get-a-quote noborder changeColor"
@@ -2147,7 +2022,7 @@ products.splice(checkFinish, 1);
 
             <div className="col-md-2 col-lg-2 " style={{ width: "10%" }}>
               <div className="form-group form-group-mobile">
-                {index == 0 ? (
+                {index === 0 ? (
                   <label className="custome_lable custome_lable_mobile ">
                     Quantity
                   </label>
@@ -2160,7 +2035,6 @@ products.splice(checkFinish, 1);
                   className="form-control custom-text_cutouts noborder"
                   name="Cutouts_quantity"
                   id={`checkout_quantity_${index}`}
-                  // value={this.state.Cutouts_quantity}
                   onChange={(e) => this.handleCutouts(e, "quantity", index)}
                   style={{ padding: "0px", marginTop: "2%" }}
                 />
@@ -2172,7 +2046,7 @@ products.splice(checkFinish, 1);
               style={{ width: "30%", paddingLeft: "10%" }}
             >
               <div className="form-group form-group-mobile">
-                {index == 0 ? (
+                {index === 0 ? (
                   <button
                     type="button"
                     className="Green-Add-Panel_button  Green-Add-Panel_button-mobile cutome-rounded-delete-button first_plus_button"
@@ -2209,6 +2083,7 @@ products.splice(checkFinish, 1);
         </React.Fragment>
       );
     });
+
     let html4 = addExtraServices.map((extraservices, index) => {
       return (
         <React.Fragment key={index}>
@@ -2224,16 +2099,13 @@ products.splice(checkFinish, 1);
               style={{ width: "30%", paddingLeft: "0px" }}
             >
               <div className="form-group form-group-mobile">
-                {index == 0 ? (
+                {index === 0 ? (
                   <label className="custome_lable custome_lable_mobile ">
                     Item
                   </label>
                 ) : (
                   ""
                 )}
-                {/* <Select options={Extra_ServicesStone}  */}
-                {/* onChange={this.handleServicePriceStone} */}
-                {/* />                           */}
                 <select
                   name="extra_stone_select"
                   className="custome-select-box-get-a-quote noborder changeColor"
@@ -2252,16 +2124,14 @@ products.splice(checkFinish, 1);
                         </option>
                       );
                     }
+                    return null;
                   })}
                 </select>
               </div>
             </div>
-            <div
-              className="ml-2 cust-marg-get-a-quote"
-              style={{ width: "10%" }}
-            >
+            <div className="ml-2 cust-marg-get-a-quote" style={{ width: "10%" }}>
               <div className="form-group form-group-mobile">
-                {index == 0 ? (
+                {index === 0 ? (
                   <label className="custome_lable custome_lable_mobile ">
                     UnitPrice
                   </label>
@@ -2282,7 +2152,7 @@ products.splice(checkFinish, 1);
             </div>
             <div className="ml-3" style={{ width: "15%" }}>
               <div className="form-group form-group-mobile">
-                {index == 0 ? (
+                {index === 0 ? (
                   <label className="custome_lable_extra custome_lable_mobile">
                     Quantity
                   </label>
@@ -2293,23 +2163,18 @@ products.splice(checkFinish, 1);
                   type="number"
                   placeholder=""
                   className="form-control custom-text_extra-services_quantity noborder"
-                  // value={this.state.extra_services_quantity}
                   name="extra_services_quantity"
-                  // onChange={this.handleChange.bind(this)}
                   onChange={(e) =>
                     this.calculateStoneService(e, "quantity", index)
                   }
-                  disabled={this.state.change === false ? true : false}
+                  disabled={this.state.change === false}
                   style={{ width: "60px", padding: "0px", marginTop: "2%" }}
                 />
               </div>
             </div>
-            <div
-              className="ml-3 cust-marg-get-a-quote"
-              style={{ width: "10%" }}
-            >
+            <div className="ml-3 cust-marg-get-a-quote" style={{ width: "10%" }}>
               <div className="form-group form-group-mobile">
-                {index == 0 ? (
+                {index === 0 ? (
                   <label className="custome_lable_lenght custome_lable_mobile">
                     Price
                   </label>
@@ -2321,13 +2186,13 @@ products.splice(checkFinish, 1);
                   className="form-control custom-text noborder disabled_text_field"
                   name={`worktop_value-${index}`}
                   disabled
-                  value={extraservices.quantity * extraservices.unit_price}
+                  value={(extraservices.quantity || 0) * (extraservices.unit_price || 0)}
                 />
               </div>
             </div>
             <div style={{ width: "20%" }}>
               <div className="form-group form-group-mobile">
-                {index == 0 ? (
+                {index === 0 ? (
                   <button
                     type="button"
                     className="Green-Add-Panel_button  Green-Add-Panel_button-mobile cutome-rounded-delete-button noprint first_plus_button"
@@ -2363,22 +2228,20 @@ products.splice(checkFinish, 1);
         </React.Fragment>
       );
     });
+
     let html5 = addExtraServicesGlass.map((extraservicesglass, index) => {
       return (
         <React.Fragment key={index}>
           <div className="row">
             <div className="col-md-4" style={{ width: "30%" }}>
               <div className="form-group form-group-mobile">
-                {index == 0 ? (
+                {index === 0 ? (
                   <label className="custome_lable custome_lable_mobile ">
                     Item
                   </label>
                 ) : (
                   ""
                 )}
-                {/* <Select options={ExtraServices}         
-                                onChange={this.handleServicePrice}
-                                /> */}
                 <select
                   name="extra_select"
                   className="custome-select-box-get-a-quote noborder changeColor"
@@ -2395,16 +2258,14 @@ products.splice(checkFinish, 1);
                         </option>
                       );
                     }
+                    return null;
                   })}
                 </select>
               </div>
             </div>
-            <div
-              className="ml-2 cust-marg-get-a-quote"
-              style={{ width: "10%" }}
-            >
+            <div className="ml-2 cust-marg-get-a-quote" style={{ width: "10%" }}>
               <div className="form-group form-group-mobile">
-                {index == 0 ? (
+                {index === 0 ? (
                   <label className="custome_lable custome_lable_mobile ">
                     UnitPrice{" "}
                   </label>
@@ -2424,7 +2285,7 @@ products.splice(checkFinish, 1);
             </div>
             <div className="ml-3" style={{ width: "15%" }}>
               <div className="form-group form-group-mobile">
-                {index == 0 ? (
+                {index === 0 ? (
                   <label className="custome_lable_extra custome_lable_mobile">
                     Quantity
                   </label>
@@ -2435,22 +2296,18 @@ products.splice(checkFinish, 1);
                   type="number"
                   placeholder=""
                   className="form-control custom-text_extra-services_quantity noborder"
-                  // value={this.state.extra_services2_quantity}
                   name="extra_services2_quantity"
                   onChange={(e) =>
                     this.calculateCutoutsService(e, "quantity", index)
                   }
-                  disabled={this.state.change === false ? true : false}
+                  disabled={this.state.change === false}
                   style={{ width: "60px", padding: "0px", marginTop: "2%" }}
                 />
               </div>
             </div>
-            <div
-              className="ml-3 cust-marg-get-a-quote"
-              style={{ width: "10%" }}
-            >
+            <div className="ml-3 cust-marg-get-a-quote" style={{ width: "10%" }}>
               <div className="form-group form-group-mobile">
-                {index == 0 ? (
+                {index === 0 ? (
                   <label className="custome_lable_lenght custome_lable_mobile">
                     Price
                   </label>
@@ -2462,15 +2319,13 @@ products.splice(checkFinish, 1);
                   className="form-control custom-text noborder disabled_text_field"
                   name={`worktop_value-${index}`}
                   disabled
-                  value={
-                    extraservicesglass.quantity * extraservicesglass.unit_price
-                  }
+                  value={(extraservicesglass.quantity || 0) * (extraservicesglass.unit_price || 0)}
                 />
               </div>
             </div>
             <div style={{ width: "20%" }}>
               <div className="form-group form-group-mobile">
-                {index == 0 ? (
+                {index === 0 ? (
                   <button
                     type="button"
                     className="Green-Add-Panel_button  Green-Add-Panel_button-mobile cutome-rounded-delete-button noprint first_plus_button"
@@ -2512,20 +2367,11 @@ products.splice(checkFinish, 1);
         <Helmet>
           <title>{`GNF - Get A Quote`}</title>
         </Helmet>
-        {/*Forget Password section*/}
+
         <form onSubmit={this.handleSubmit}>
           <section>
             <div className="row">
-              <div className="col-sm-12" style={{ "margin-bottom": "10px" }}>
-                {/* <button  className="btn btc ">
-                      <Link
-                        to={`${import.meta.env.VITE_PUBLIC_URL}/`}
-                        className="Custom-color"
-                      >
-                        Add new item to Selection
-                    </Link>
-                    </button> */}
-              </div>
+              <div className="col-sm-12" style={{ marginBottom: "10px" }}></div>
               <div className="main">
                 <br />
                 <InnerOverlay />
@@ -2535,7 +2381,10 @@ products.splice(checkFinish, 1);
                     {this.state.products.length > 0 ? (
                       <div className="row">
                         <div className="col-md-12">
-                          <span style={{ fontSize: "20px", fontWeight: 'normal' }} className="custom-span">
+                          <span
+                            style={{ fontSize: "20px", fontWeight: "normal" }}
+                            className="custom-span"
+                          >
                             {!auth.isAuthenticatedAdmin() && (
                               <Fragment>
                                 {" "}
@@ -2569,38 +2418,33 @@ products.splice(checkFinish, 1);
                             <tbody>
                               {this.state.products.map((product, index) => {
                                 return (
-                                  <tr>
+                                  <tr key={product.sku_id || index}>
                                     <td>{product.name}</td>
-                                    <td>
-                                      &nbsp;&nbsp;&nbsp;{product.material}
-                                    </td>
+                                    <td>&nbsp;&nbsp;&nbsp;{product.material}</td>
                                     <td className="w-25">
-                                      {
-                                        product.image ?
-                                          <img
-                                            src={`${import.meta.env.VITE_API_URL}${product.image}`}
-                                            className="img-fluid sku_img_thumbnails"
-                                            alt={`${product.name}`}
-                                          />
-                                          :
-                                          <img
-                                            src={`${import.meta.env.VITE_PUBLIC_URL}/assets/images/default-placeholder.jpg`}
-                                            className="img-fluid sku_img_thumbnails"
-                                            alt={`${product.name}`}
-                                          />
-                                      }
+                                      {product.image ? (
+                                        <img
+                                          src={`${import.meta.env.VITE_API_URL}${product.image}`}
+                                          className="img-fluid sku_img_thumbnails"
+                                          alt={`${product.name}`}
+                                        />
+                                      ) : (
+                                        <img
+                                          src={`${import.meta.env.VITE_PUBLIC_URL}/assets/images/default-placeholder.jpg`}
+                                          className="img-fluid sku_img_thumbnails"
+                                          alt={`${product.name}`}
+                                        />
+                                      )}
                                     </td>
 
-                                    <td>
-                                      &nbsp;&nbsp;&nbsp;{product.thickness}
-                                    </td>
+                                    <td>&nbsp;&nbsp;&nbsp;{product.thickness}</td>
                                     <td>&nbsp;&nbsp;&nbsp;{product.finish}</td>
 
                                     <td className="remove_item_sku">
                                       <button
                                         className="cutome-rounded-delete-button btn btn-outline-primary-2 btn-round btn-more"
                                         type="button"
-                                        onClick={(e) =>
+                                        onClick={() =>
                                           this.removeSkuFromLocal(index)
                                         }
                                       >
@@ -2646,11 +2490,11 @@ products.splice(checkFinish, 1);
                         <span
                           className="custom-span"
                           style={{
-                            "font-size": "20px",
+                            fontSize: "20px",
                             fontWeight: "normal",
                           }}
                         >
-                          <b>Step 2:</b> Measurements & Price Estimator
+                          <b>Step 2:</b> Measurements & Price Estimator{" "}
                           <span style={{ fontSize: "15px" }}>
                             (Quartz, Marble, Granite, Compact Worktops)
                           </span>
@@ -2659,15 +2503,6 @@ products.splice(checkFinish, 1);
                           <div className="col-md-6 col-sm-12 custome_table_get_a_quote">
                             <div className="padding-class">{html}</div>
                             <div className="padding-class">{html2}</div>
-                            {/* <div
-                          className="col-md-12"
-                          style={{
-                            borderTop: "1px solid black",
-                            float: "bottom"
-                          }}
-                        >
-                          Total Area: 12.72m²
-                        </div> */}
                             <hr className="break break_mobile" />
                             <div className="padding-class">
                               <span>
@@ -2687,10 +2522,8 @@ products.splice(checkFinish, 1);
                               >
                                 <div className="form-group form-group-mobile">
                                   <div className="font-class-design font-class-design-mobile">
-                                    {" "}
                                     Edge Details
                                   </div>
-                                  {/* <Select options={edge_detailss} /> */}
                                   <select
                                     name="edge_details_select"
                                     className="custome-select-box-get-a-quote noborder"
@@ -2729,7 +2562,7 @@ products.splice(checkFinish, 1);
                         <span
                           className="custom-span mobile-container"
                           style={{
-                            "font-size": "20px",
+                            fontSize: "20px",
                             fontWeight: "normal",
                           }}
                         >
@@ -2744,13 +2577,12 @@ products.splice(checkFinish, 1);
                             <div className="col-md-12">
                               <ol>
                                 <li>
-                                  {" "}
                                   <b>1.</b> Make sure you put all the sizes in
                                   millimetres
                                 </li>
                                 <li>
                                   <b>2.</b> Glass panels over 2950 x 1350 mm are
-                                  charged as oversized panels- please call us
+                                  charged as oversized panels, please call us
                                   for a quotation.
                                 </li>
                                 <li>
@@ -2797,7 +2629,6 @@ products.splice(checkFinish, 1);
                               <hr className="break break_mobile" />
                               <div className="padding-class">
                                 <span>
-                                  {" "}
                                   Total Area:{total_glass_area.toFixed(3)}m²
                                 </span>
                               </div>
@@ -2922,9 +2753,9 @@ products.splice(checkFinish, 1);
                       <div
                         className="col-sm-6"
                         style={{
-                          "margin-bottom": "30px",
-                          "margin-left": "-1%",
-                          "font-size": "20px",
+                          marginBottom: "30px",
+                          marginLeft: "-1%",
+                          fontSize: "20px",
                           fontWeight: "normal",
                           marginTop: 20,
                         }}
@@ -2952,8 +2783,8 @@ products.splice(checkFinish, 1);
                     <span
                       className="custom-span"
                       style={{
-                        "margin-left": "-1%",
-                        "font-size": "20px",
+                        marginLeft: "-1%",
+                        fontSize: "20px",
                         fontWeight: "normal",
                       }}
                     >
@@ -2966,8 +2797,6 @@ products.splice(checkFinish, 1);
                     className=""
                     style={{
                       border: "1px solid black",
-                      //   width: " 87%",
-                      //   "margin-left": "5.4%",
                       marginLeft: "-1.2%",
                       width: "100%",
                     }}
@@ -2981,7 +2810,7 @@ products.splice(checkFinish, 1);
                           <input
                             type="text"
                             placeholder="First Name"
-                            className="form-control custom-text_cutouts noborder"
+                            className="form-control custom-text_cutouts noborder w-100"
                             name="Cutouts_quantity"
                             style={{ width: "100%" }}
                             value={this.state.userInfo.firstname}
@@ -3000,7 +2829,7 @@ products.splice(checkFinish, 1);
                           <input
                             type="text"
                             placeholder="Last Name"
-                            className="form-control custom-text_cutouts noborder"
+                            className="form-control custom-text_cutouts noborder w-100"
                             name="Cutouts_quantity"
                             style={{ width: "100%" }}
                             value={this.state.userInfo.lastname}
@@ -3017,7 +2846,7 @@ products.splice(checkFinish, 1);
                           <input
                             type="email"
                             placeholder="Email"
-                            className="form-control custom-text_cutouts noborder"
+                            className="form-control custom-text_cutouts noborder w-100"
                             name="Cutouts_quantity"
                             style={{ width: "100%" }}
                             value={this.state.userInfo.email}
@@ -3034,7 +2863,7 @@ products.splice(checkFinish, 1);
                           <input
                             type="text"
                             placeholder="Phone Number"
-                            className="form-control custom-text_cutouts noborder"
+                            className="form-control custom-text_cutouts noborder w-100"
                             name="Cutouts_quantity"
                             style={{ width: "100%" }}
                             value={this.state.userInfo.phone}
@@ -3052,7 +2881,7 @@ products.splice(checkFinish, 1);
                               <input
                                 type="text"
                                 placeholder="Address"
-                                className="form-control custom-text_cutouts noborder"
+                                className="form-control custom-text_cutouts noborder w-100"
                                 name="Cutouts_quantity"
                                 style={{ width: "100%" }}
                                 value={this.state.userInfo.address}
@@ -3071,7 +2900,7 @@ products.splice(checkFinish, 1);
                               <input
                                 type="text"
                                 placeholder="Post code"
-                                className="form-control custom-text_cutouts noborder"
+                                className="form-control custom-text_cutouts noborder w-100"
                                 name="Cutouts_quantity"
                                 style={{ width: "100%" }}
                                 value={this.state.userInfo.postcode}
@@ -3090,7 +2919,7 @@ products.splice(checkFinish, 1);
                               <input
                                 type="text"
                                 placeholder="City"
-                                className="form-control custom-text_cutouts noborder"
+                                className="form-control custom-text_cutouts noborder w-100"
                                 name="Cutouts_quantity"
                                 style={{ width: "100%" }}
                                 value={this.state.userInfo.city}
@@ -3109,7 +2938,7 @@ products.splice(checkFinish, 1);
                       <span
                         className="font-12"
                         style={{
-                          "font-size": "20px",
+                          fontSize: "20px",
                           fontWeight: "normal",
                           color: "black",
                         }}
@@ -3139,7 +2968,9 @@ products.splice(checkFinish, 1);
                             Terms & Conditions
                           </Link>
                           &nbsp; and &nbsp;
-                          <Link to={`${import.meta.env.VITE_PUBLIC_URL}/privacy-policy`}>
+                          <Link
+                            to={`${import.meta.env.VITE_PUBLIC_URL}/privacy-policy`}
+                          >
                             &nbsp; Privacy policy
                           </Link>
                         </label>
