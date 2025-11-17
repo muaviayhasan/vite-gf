@@ -37,10 +37,7 @@ class ProductDetailClass extends SingleProductComponent {
       finish: "",
       video: "",
       color_shade: "",
-      redirect: false,
       loading: true,
-      blockSize: 50,
-      finishes: [],
     };
   }
 
@@ -94,6 +91,21 @@ class ProductDetailClass extends SingleProductComponent {
         }
       }
 
+    this.setState({
+      data: resp.data,
+      thickness: null,
+      manufacturer: manufacturer,
+      brand: brand,
+      color: color,
+      productName: resp.data.sku.name,
+      video: getVideo,
+      loading: false,
+      blockSize: 50,
+      finishes: resp.data.finishes,
+      color_shade: getColour.data[0].color_shade,
+    });
+
+    if (resp.data.images.length > 0) {
       this.setState({
         data: resp.data,
         thickness: "",

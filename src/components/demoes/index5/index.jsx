@@ -771,10 +771,9 @@ class IndexFive extends Component {
                 backgroundSize: "cover",
                 height: "auto",
                 minHeight: "400px",
-                display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                display: "block",
+                display: "flex"
               }}
             >
               <br />

@@ -255,31 +255,41 @@ class SearchBar extends Component {
     if (redirectNode) return redirectNode;
 
     return (
-      <div className="container custome-search-container" style={{ textAlign: "center" }}>
+      <div
+        className="container custome-search-container"
+        style={{ "textAlign": "center" }}
+      >
         <div style={{ display: "flex" }}>
           <div className="custom-control custom-radio">
             <input
               type="radio"
-              name="search_material"
+              name="search_metrial"
               className="custom-control-input"
-              id="radio-glass"
-              checked={currentMaterial === "Glass"}
-              onChange={() => this.handleMaterial("Glass")}
+              id="free-shipping-1"
+              defaultChecked={
+                this.state.currentMaterial === "Glass" ? true : false
+              }
+              onClick={(e) => this.handleMaterial("Glass")}
             />
             <label
               className="custom-control-label"
-              htmlFor="radio-glass"
-              style={{ fontSize: 19, fontWeight: 600, color: "white" }}
+              htmlFor="free-shipping-1"
+              style={{
+                fontSize: 19,
+                color: "#333333",
+                fontWeight: "600",
+                color: "white",
+              }}
             >
               Search Glass Range
             </label>
           </div>
-
           <span
             className="______pipe"
             style={{
               fontSize: 19,
-              fontWeight: 600,
+              color: "#333333",
+              fontWeight: "600",
               marginTop: "1.1rem",
               paddingLeft: "4%",
               color: "#cc9966",
@@ -287,66 +297,75 @@ class SearchBar extends Component {
           >
             ||
           </span>
-
           <div className="custom-control custom-radio" style={{ marginLeft: "2%" }}>
             <input
               type="radio"
-              name="search_material"
+              name="search_metrial"
               className="custom-control-input"
-              id="radio-stone"
-              checked={currentMaterial === "Stone"}
-              onChange={() => this.handleMaterial("Stone")}
+              id="free-shipping-2"
+              defaultChecked={
+                this.state.currentMaterial === "Stone" ? true : false
+              }
+              onClick={(e) => this.handleMaterial("Stone")}
             />
             <label
               className="custom-control-label"
-              htmlFor="radio-stone"
-              style={{ fontSize: 19, fontWeight: 600, color: "white" }}
+              htmlFor="free-shipping-2"
+              style={{
+                fontSize: 19,
+                color: "#333333",
+                fontWeight: "600",
+                color: "white",
+              }}
             >
               Search Stones Range
             </label>
-          </div>
+          </div>{" "}
         </div>
-
-        {currentMaterial === "Glass" ? (
+        {this.state.currentMaterial === "Glass" ? (
           <div className="row seven-cols">
             <div className="col-lg-1 col-md-3 col-sm-4 col-xs-6">
-              <Select
-                value={
-                  glass_category !== 0
-                    ? glass_materials.find((o) => o.value === glass_category)
-                    : null
-                }
-                placeholder="Category"
-                className="custome_select_box"
-                onChange={(e) => this.handleChange("glass_category", e)}
-                options={glass_materials}
-                isClearable
-              />
+              <div>
+                <Select
+                  value={glass_materials.filter(
+                    (option) =>
+                      this.state.glass_category !== 0 &&
+                      option.value === this.state.glass_category
+                  )}
+                  placeholder="Category"
+                  className="custome_select_box"
+                  onChange={(e) => this.handleChange("glass_category", e)}
+                  options={glass_materials}
+                />
+              </div>
             </div>
 
             <div className="col-lg-1 col-md-3 col-sm-4 col-xs-6 _selSearch">
-              <Select
-                value={
-                  base_color !== 0
-                    ? base_colors.find((o) => o.value === base_color)
-                    : null
-                }
-                placeholder="Main Colour"
-                className="custome_select_box"
-                onChange={(e) => this.handleChange("base_color", e)}
-                options={base_colors}
-                isClearable
-              />
+              <div>
+                <Select
+                  value={base_colors.filter(
+                    (option) =>
+                      this.state.base_color !== 0 &&
+                      option.value === this.state.base_color
+                  )}
+                  placeholder="Main Colour"
+                  className="custome_select_box"
+                  onChange={(e) => this.handleChange("base_color", e)}
+                  options={base_colors}
+                />
+              </div>
             </div>
 
             <div className="col-lg-1 col-md-3 col-sm-4 col-xs-6 _selSearch">
-              <input
-                type="text"
-                placeholder="Product Name"
-                className="form-control"
-                onChange={this.handleGlassProductName}
-                style={{ marginBottom: "0rem" }}
-              />
+              <div>
+                <input
+                  type="text"
+                  placeholder="Product Name"
+                  className="form-control"
+                  onChange={(e) => this.handleGlassProductName(e)}
+                  style={{ marginBottom: "0rem" }}
+                />
+              </div>
             </div>
 
             <div className="col-lg-1 col-md-3 col-sm-4 col-xs-6 _selSearch">
@@ -365,14 +384,16 @@ class SearchBar extends Component {
             </div>
 
             <div className="col-lg-1 col-md-3 col-sm-4 col-xs-6 _selSearch">
-              <button
-                type="button"
-                className="btn btn-outline-primary-2 btn-round btn-more custome-search-button"
-                onClick={() => this.handleSubmit("glass")}
-                style={{ paddingTop: "0.8rem", paddingBottom: "0.8rem" }}
-              >
-                search
-              </button>
+              <div>
+                <button
+                  type="button"
+                  className="btn btn-outline-primary-2 btn-round btn-more custome-search-button"
+                  onClick={(e) => this.handleSubmit("glass")}
+                  style={{ paddingTop: "0.8rem", paddingBottom: "0.8rem" }}
+                >
+                  search
+                </button>
+              </div>
             </div>
           </div>
         ) : (

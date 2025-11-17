@@ -1419,7 +1419,6 @@ class editQuote extends Component {
 
     this.setState({
       ...this.state,
-      AddExtraservicesGlass: variable,
       AddExtraservicesGlass: oldarray,
     });
   };
@@ -1443,7 +1442,6 @@ class editQuote extends Component {
 
     this.setState({
       ...this.state,
-      AddExtraServices: variable,
       AddExtraServices: oldarray,
     });
     this.getStoneExtraTotal();

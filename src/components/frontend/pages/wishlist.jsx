@@ -192,41 +192,227 @@ class Wishlist extends Component {
               Using the form below, please feel free to send us your queries. You may also request a FREE quote from us
             </h5>
 
-            <form className="contact-form mb-3">
-              <div className="row">
-                <div className="col-sm-4">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="Name *"
-                    required
-                    name="name"
-                    value={name}
-                    onChange={this._handleChange}
-                  />
-                </div>
-                <div className="col-sm-4">
-                  <input
-                    type="email"
-                    className="form-control"
-                    placeholder="Email *"
-                    required
-                    name="email"
-                    value={email}
-                    onChange={this._handleChange}
-                  />
-                </div>
-                <div className="col-sm-4">
-                  <input
-                    type="tel"
-                    className="form-control"
-                    placeholder="Phone *"
-                    required
-                    name="phone"
-                    value={phone}
-                    onChange={this._handleChange}
-                  />
-                </div>
+                <form action="#" className="contact-form mb-3">
+                  <div className="row">
+                    <div className="col-sm-4">
+                      <label htmlFor="cname" className="sr-only">
+                        Name
+                      </label>
+                      <br />
+                      {name === "" && loading && (
+                        <span className="error text-danger">
+                          Name is required*
+                        </span>
+                      )}
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="cname"
+                        placeholder="Name *"
+                        required
+                        name="name"
+                        value={name}
+                        onChange={this._handleChange}
+                      />
+                    </div>
+                    <div className="col-sm-4">
+                      <label htmlFor="cemail" className="sr-only">
+                        Email
+                      </label>
+                      <br />
+                      {email === "" && loading && (
+                        <span className="error text-danger">
+                          Email is required*
+                        </span>
+                      )}
+                      <input
+                        type="email"
+                        className="form-control"
+                        id="cemail"
+                        placeholder="Email *"
+                        required
+                        name="email"
+                        value={email}
+                        onChange={this._handleChange}
+                      />
+                    </div>
+                    <div className="col-sm-4">
+                      <label htmlFor="cphone" className="sr-only">
+                        Phone
+                      </label>
+                      <br />
+                      {phone === "" && loading && (
+                        <span className="error text-danger">
+                          Phone is required*
+                        </span>
+                      )}
+                      <input
+                        type="tel"
+                        className="form-control"
+                        id="cphone"
+                        placeholder="Phone *"
+                        required
+                        name="phone"
+                        value={phone}
+                        onChange={this._handleChange}
+                      />
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-sm-12">
+                      <label htmlFor="cmessage" className="sr-only">
+                        Message
+                      </label>
+                      <br />
+                      {message === "" && loading && (
+                        <span className="error text-danger">
+                          Message is required*
+                        </span>
+                      )}
+                      <textarea
+                        className="form-control"
+                        cols="30"
+                        rows="4"
+                        id="cmessage"
+                        required
+                        name="message"
+                        value={message}
+                        onChange={this._handleChange}
+                        placeholder="Message *"
+                      ></textarea>
+
+                      <div
+                        className="col-md-12"
+                        style={{ display: "flex", flexDirection: "column" }}
+                      >
+                        <div style={{ display: "flex", flexDirection: "row" }}>
+                          <div className="custom-control custom-radio">
+                            <h6
+                              className="mb-2"
+                              style={{
+                                fontWeight: "bold",
+                                marginTop: "5%",
+                                marginLeft: "-18%",
+                                fontSize: "inherit",
+                              }}
+                            >
+                              <span style={{ color: "red" }}>*</span> Would you
+                              like us to send a Quote:
+                            </h6>
+                          </div>
+                          <div className="custom-control custom-radio">
+                            <input
+                              type="radio"
+                              name="search_metrial"
+                              className="custom-control-input"
+                              id="free-shipping-1"
+                              style={{ fontSize: 12 }}
+                              onChange={() => {
+                                this.setState({ requestForQuote: true });
+                              }}
+                            />
+                            <label
+                              class="custom-control-label __yes"
+                              htmlFor="free-shipping-1"
+                              style={{
+                                fontSize: 14,
+                                color: "#333",
+                                fontWeight: "600",
+                                marginTop: "8%",
+                              }}
+                            >
+                              Yes, please
+                            </label>
+                          </div>
+                          <span
+                            class="custom-control-label custom-control-label1 custom-control-label-mobile"
+                            style={{
+                              fontSize: 12,
+                              color: "#333",
+                              fontWeight: "600",
+                              marginTop: "1.8rem",
+                              paddingLeft: "4%",
+                            }}
+                          >
+                            ||
+                          </span>
+                          <div
+                            className="custom-control custom-radio"
+                            style={{ marginLeft: "2%" }}
+                          >
+                            <input
+                              type="radio"
+                              name="search_metrial"
+                              className="custom-control-input"
+                              id="free-shipping-2"
+                              style={{ fontSize: 14 }}
+                              onChange={() => {
+                                this.setState({ requestForQuote: false });
+                              }}
+                            />
+                            <label
+                              class="custom-control-label __yes"
+                              htmlFor="free-shipping-2"
+                              style={{
+                                fontSize: 14,
+                                color: "#333",
+                                fontWeight: "600",
+                                marginTop: "8%",
+                              }}
+                            >
+                              No, thanks
+                            </label>
+                          </div>{" "}
+                        </div>
+                      </div>
+                      <div className="col-md-12" style={{ marginTop: "2%" }}>
+                        <div className="form-group form-check">
+                          <input
+                            style={{ marginTop: "0.6rem" }}
+                            name="check"
+                            type="checkbox"
+                            className="form-check-input"
+                            id="check"
+                            required=""
+                            onChange={(e) => this.termsandconditions(e)}
+                          />
+                          <label
+                            className="custome_lable form-check-label"
+                            htmlFor="check"
+                            style={{
+                              marginLeft: "1%",
+                              color: "#333",
+                            }}
+                          >
+                            <span style={{ color: "red" }}>*</span> I accept the
+                            &nbsp;
+                            <Link
+                              to={`${import.meta.env.VITE_PUBLIC_URL}/terms-and-condition`}
+                            >
+                              Terms & Conditions
+                            </Link>
+                            &nbsp; and &nbsp;
+                            <Link
+                              to={`${import.meta.env.VITE_PUBLIC_URL}/privacy-policy`}
+                            >
+                              &nbsp; Privacy policy
+                            </Link>
+                          </label>
+                        </div>
+                      </div>
+
+                      <button
+                        type="button"
+                        disabled={!this.state.checked}
+                        onClick={this.submit}
+                        className="btn btn-outline-primary-2 btn-minwidth-sm btn-round"
+                      >
+                        <span>SUBMIT</span>
+                        <i className="icon-long-arrow-right"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
               </div>
 
               <div className="row">

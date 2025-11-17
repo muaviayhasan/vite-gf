@@ -783,7 +783,7 @@ class GetAQuoteMobile extends Component {
 
     this.setState({
       ...this.state,
-      AddExtraservicesGlass: variable,
+      AddExtraServices: oldarray,
       change: true,
     });
   };
@@ -807,7 +807,7 @@ class GetAQuoteMobile extends Component {
 
     this.setState({
       ...this.state,
-      AddExtraServices: variable,
+      AddExtraServices: oldarray,
       change: true,
     });
   };

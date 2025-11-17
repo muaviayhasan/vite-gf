@@ -314,7 +314,6 @@ class CustomPage extends Component {
           style={{
             width: "100%",
             paddingRight: "5%",
-            width: "100%",
             paddingLeft: "5%",
           }}
         >
@@ -678,10 +677,8 @@ class CustomPage extends Component {
                   <div className="instagram-feed">
                     <img
                       alt="img"
-                      // height={218}
                       src="/assets/images/gnf/showcase-projects/joy-kitchen-design-dubai-4.jpg"
-                      // width={218}
-                      style={{ height: "100%", height: 277 }}
+                      style={{ height: 277 }}
                     />
                   </div>
                 </div>

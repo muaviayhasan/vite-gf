@@ -12,6 +12,15 @@ import { initSettings } from "../../../utils/utils";
 import "./search-bar.css";
 
 class Search extends Component {
+  UNSAFE_componentWillMount() {
+    initSettings();
+    store.dispatch(changeDemo("5"));
+    store.dispatch(outerLoading());
+  }
+
+  componentWillUnmount() {
+  }
+
   constructor(props) {
     super(props);
     const params = this.props.searchParams || {};
@@ -423,8 +432,12 @@ class Search extends Component {
                 />
                 <label
                   className="custom-control-label"
-                  htmlFor="radio-glass"
-                  style={{ fontSize: 19, fontWeight: 600, color: "white" }}
+                  htmlFor="free-shipping-1"
+                  style={{
+                    fontSize: 19,
+                    color: "white",
+                    fontWeight: "600",
+                  }}
                 >
                   Search Glass Range
                 </label>
@@ -434,10 +447,10 @@ class Search extends Component {
                 className="custom-control-label custom-control-label-mobile ______pipe"
                 style={{
                   fontSize: 19,
-                  fontWeight: 600,
+                  color: "#cc9966",
+                  fontWeight: "600",
                   marginTop: "1.1rem",
                   paddingLeft: "4%",
-                  color: "#cc9966",
                 }}
               >
                 ||
@@ -454,8 +467,12 @@ class Search extends Component {
                 />
                 <label
                   className="custom-control-label"
-                  htmlFor="radio-stone"
-                  style={{ fontSize: 19, fontWeight: 600, color: "white" }}
+                  htmlFor="free-shipping-2"
+                  style={{
+                    fontSize: 19,
+                    color: "white",
+                    fontWeight: "600",
+                  }}
                 >
                   Search Stones Range
                 </label>

@@ -147,26 +147,24 @@ class LandingPage extends Component {
                         }}
                       >
                         <a
-                          className="spn-cls"
+                          className="landing-page-box-a"
                           style={{
                             color: "black",
                             fontSize: 14,
                             fontWeight: "normal",
                           }}
                           href="tel:02039359199"
-                          className="landing-page-box-a"
                         >
                           02039359199
                         </a>
                         <a
-                          className="spn-cls"
+                          className="landing-page-box-a"
                           style={{
                             color: "black",
                             fontSize: 14,
                             fontWeight: "normal",
                           }}
                           href="tel:07823345500"
-                          className="landing-page-box-a"
                         >
                           07823345500
                         </a>

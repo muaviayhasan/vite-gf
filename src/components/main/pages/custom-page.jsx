@@ -16,6 +16,7 @@ class CustomPage extends Component {
       menu_name: "",
       image: "",
       markup: "",
+      isLoaded: false,
       meta: "",
       tags: "",
       isLoaded: false,

@@ -70,7 +70,13 @@ class editSku extends Component {
       selected_metrial_id: 0,
       effects_notes: "",
       application_notes: "",
-      image_caption: "",
+      image_caption: {
+        image_caption_1: "",
+        image_caption_2: "",
+        image_caption_3: "",
+        image_caption_4: "",
+        image_caption_5: "",
+      },
       data: [],
       isChecked: true,
       slab_checked: [],
@@ -124,13 +130,6 @@ class editSku extends Component {
         imagepreview_3: "http://placehold.it/180",
         imagepreview_4: "http://placehold.it/180",
         imagepreview_5: "http://placehold.it/180",
-      },
-      image_caption: {
-        image_caption_1: "",
-        image_caption_2: "",
-        image_caption_3: "",
-        image_caption_4: "",
-        image_caption_5: "",
       },
       image_sequence: {
         image_sequence_1: "",
